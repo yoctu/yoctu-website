@@ -75,6 +75,7 @@ function writeToScreen(message) {
         var pre = document.createElement("p");
         pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';
         output.appendChild(pre);
+        document.getElementById("chat-popup-form").style.display = "block";
     }
 }
 

@@ -54,7 +54,7 @@ function closeForm() {
   document.getElementById("chat-popup-form").style.display = "none";
 }
 
-cleanMessage() {
+function cleanMessage() {
     if (msgnum > 6) {
         output = document.getElementById("chat-messages-container");
         output.removeChild(output.childNodes[0]);

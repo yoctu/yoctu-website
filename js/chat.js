@@ -1,5 +1,5 @@
-var wsUri = document.querySelector('#chat-popup-form').dataset.url;
-var chan = document.querySelector('#chat-popup-form').dataset.wsUri;
+var wsUri;
+var chan;
 //var wsUri = "ws://v-1538492917-525.dev.yoctu.ovh:7002";
 //var chan = "upela";
 var nick = Math.random().toString(36).substring(7);

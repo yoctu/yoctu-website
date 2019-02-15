@@ -93,8 +93,8 @@ function writeToScreen(message) {
     if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***')) {
         var pre = document.createElement("p");
         let privmsgbody = "";
-        chan = privmsg[2];
-        console.log(privmsg)
+        chan = privmsg[0].split("!")[0].substring(1);
+        console.log(privmsg);
         for(var i = 3; i < privmsg.length; i++){
             privmsgbody += " " + privmsg[i];
         }

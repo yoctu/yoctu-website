@@ -8,7 +8,7 @@ function sleep (time) {
 }
 
 function init() {
-    const chat = document.querySelector('chat-popup-form');
+    const chat = document.querySelector('#chat-popup-form');
     var wsUri = chat.dataset.url;
     var chan = chat.dataset.chan;
     startWebSocket();

@@ -93,6 +93,7 @@ function writeToScreen(message) {
         var pre = document.createElement("p");
         let privmsgbody = "";
         chan = privmsg[2];
+        console.log(chan)
         for(var i = 3; i < privmsg.length; i++){
             privmsgbody += " " + privmsg[i];
         }

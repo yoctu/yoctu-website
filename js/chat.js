@@ -1,3 +1,64 @@
+var wsUri = "ws://v-1538492917-525.dev.yoctu.ovh:7002";
+var output;
+
+let nick = Math.random().toString(36).substring(7);
+
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+function init()
+{
+    output = document.getElementById("chat-messages-container");
+    startWebSocket();
+}
+
+function startWebSocket()
+{
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+}
+
+function onOpen(evt)
+{
+    writeToScreen("CONNECTED");
+    doSend("USER upela_" + nick + "  * * :Upela_" + nick);
+    sleep(1000).then(() => {
+            doSend("NICK upela_" + nick);
+    });
+    sleep(2000).then(() => {
+            doSend("JOIN #upela");
+    });
+}
+
+function onClose(evt) {}
+
+function onMessage(evt) {
+    writeToScreen(evt.data);
+}
+
+function onError(evt) {
+    console.log(evt.data);
+}
+
+function doSend(message) {
+    websocket.send(message);
+}
+
+function writeToScreen(message)
+{
+    privmsg = message.split(" ");
+    msgdate = new  Date();
+    if (privmsg[1] == "PRIVMSG") {
+        var pre = document.createElement("p");
+        pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';
+        output.appendChild(pre);
+    }
+}
+
 function openForm() {
   document.getElementById("chat-popup-form").style.display = "block";
 }
@@ -5,3 +66,14 @@ function openForm() {
 function closeForm() {
   document.getElementById("chat-popup-form").style.display = "none";
 }
+
+function sendPRVMSG() {
+    input = document.getElementById("prvmsg");
+    doSend("PRIVMSG #upela " + input.value);
+    var pre = document.createElement("p");
+    pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
+    output.appendChild(pre);
+    input.value = "";
+}
+
+window.addEventListener("load", init, false);

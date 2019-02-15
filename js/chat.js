@@ -51,7 +51,7 @@ function writeToScreen(message)
 {
     privmsg = message.split(" ");
     msgdate = new  Date();
-    if (privmsg[1] == "PRIVMSG") {
+    if (privmsg[1] == "PRIVMSG" && output) {
         var pre = document.createElement("p");
         pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';
         output.appendChild(pre);

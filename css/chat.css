@@ -64,6 +64,7 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  text-align: left;
 }
 
 .darker {
@@ -74,14 +75,4 @@
   content: "";
   clear: both;
   display: table;
-}
-
-.chat-text-right {
-  text-align: right;
-  float: right;
-}
-
-.chat-text-left {
-  text-align: left;
-  float: left;
 }

@@ -19,7 +19,8 @@ function sleep (time) {
 
 function init() {
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
-    chan = "#" + document.querySelector('#yoctu-chat').dataset.chan;
+    chatuser = document.querySelector('#yoctu-chat').dataset.chan;
+    chan = "#" + chatuser;
     color = document.querySelector('#yoctu-chat').dataset.color;
     document.querySelector(':root').style.setProperty('--main-color', color);
     websocket = new WebSocket(wsUri);
@@ -32,9 +33,9 @@ function init() {
 function onOpen(evt)
 {
     writeToScreen("CONNECTED");
-    doSend("USER " + chan + "_" + nick + "  * * :" + chan + "_" + nick);
+    doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
     sleep(1000).then(() => {
-            doSend("NICK " + chan + "_" + nick);
+            doSend("NICK " + chatuser + "_" + nick);
     });
     sleep(2000).then(() => {
             doSend("JOIN " + chan);

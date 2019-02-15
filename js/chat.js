@@ -67,7 +67,7 @@ function writeToScreen(message) {
     privmsg = message.split(" ");
     msgdate = new  Date();
     output = document.getElementById("chat-messages-container");
-    if (privmsg[1] == "PRIVMSG" && output) {
+    if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***')) {
         var pre = document.createElement("p");
         let privmsgbody = "";
         for(var i = 3; i < privmsg.length; i++){

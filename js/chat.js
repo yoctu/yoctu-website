@@ -65,8 +65,7 @@ function sendPRVMSG() {
     input.value = "";
 }
 
-function writeToScreen(message)
-{
+function writeToScreen(message) {
     privmsg = message.split(" ");
     msgdate = new  Date();
     output = document.getElementById("chat-messages-container");
@@ -74,6 +73,15 @@ function writeToScreen(message)
         var pre = document.createElement("p");
         pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';
         output.appendChild(pre);
+    }
+}
+
+function tableInputKeyPress(e){
+    e=e||window.event;
+    var key = e.keyCode;
+    if(key==13) {
+        sendPRVMSG();
+        return false;
     }
 }
 

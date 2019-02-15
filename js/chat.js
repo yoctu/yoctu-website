@@ -1,7 +1,6 @@
 var wsUri = "ws://v-1538492917-525.dev.yoctu.ovh:7002";
-var output = document.getElementById("chat-messages-container");
-
-let nick = Math.random().toString(36).substring(7);
+var chan = "upela";
+var nick = Math.random().toString(36).substring(7);
 
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -24,12 +23,12 @@ function startWebSocket()
 function onOpen(evt)
 {
     writeToScreen("CONNECTED");
-    doSend("USER upela_" + nick + "  * * :Upela_" + nick);
+    doSend("USER " + chan + "_" + nick + "  * * :" + chan + "_" + nick);
     sleep(1000).then(() => {
-            doSend("NICK upela_" + nick);
+            doSend("NICK " + chan + " _" + nick);
     });
     sleep(2000).then(() => {
-            doSend("JOIN #upela");
+            doSend("JOIN #" + chan);
     });
 }
 

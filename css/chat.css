@@ -77,9 +77,11 @@
 }
 
 .chat-text-right {
+  text-align: right;
   float: right;
 }
 
 .chat-text-left {
+  text-align: left;
   float: left;
 }

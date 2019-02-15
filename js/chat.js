@@ -19,7 +19,7 @@ function sleep (time) {
 
 function init() {
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
-    chan = document.querySelector('#yoctu-chat').dataset.chan;
+    chan = "#" + document.querySelector('#yoctu-chat').dataset.chan;
     color = document.querySelector('#yoctu-chat').dataset.color;
     document.querySelector(':root').style.setProperty('--main-color', color);
     websocket = new WebSocket(wsUri);

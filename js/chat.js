@@ -1,5 +1,4 @@
 var wsUri = "ws://v-1538492917-525.dev.yoctu.ovh:7002";
-var output;
 
 let nick = Math.random().toString(36).substring(7);
 

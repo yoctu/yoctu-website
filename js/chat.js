@@ -1,4 +1,5 @@
 var wsUri = "ws://v-1538492917-525.dev.yoctu.ovh:7002";
+var output = document.getElementById("chat-messages-container");
 
 let nick = Math.random().toString(36).substring(7);
 
@@ -8,7 +9,6 @@ function sleep (time) {
 
 function init()
 {
-    output = document.getElementById("chat-messages-container");
     startWebSocket();
 }
 

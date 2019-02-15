@@ -95,7 +95,7 @@ function writeToScreen(message) {
         for(var i = 3; i < privmsg.length; i++){
             privmsgbody += " " + privmsg[i];
         }
-        pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsgbody.substring(2) + '</div>';
+        pre.innerHTML = '<div class="chat-container"><font color="' + color + '">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsgbody.substring(2) + '</font></div>';
         output.appendChild(pre);
         msgnum += 1;
         cleanMessage();

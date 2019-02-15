@@ -69,6 +69,7 @@ function sendPRVMSG() {
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
     output.appendChild(pre);
     msgnum += 1;
+    cleanMessage();
     input.value = "";
 }
 
@@ -85,6 +86,7 @@ function writeToScreen(message) {
         pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsgbody.substring(2) + '</div>';
         output.appendChild(pre);
         msgnum += 1;
+        cleanMessage();
         document.getElementById("chat-popup-form").style.display = "block";
     }
 }

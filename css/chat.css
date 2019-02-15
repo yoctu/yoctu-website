@@ -1,0 +1,101 @@
+.open-button {
+  background-color: #e55933;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 5px;
+  right: 3px;
+  width: 380px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 3px;
+  border: 1px solid #f1f1f1;
+  z-index: 9;
+  background-color: white;
+  width: 380px;
+}
+
+.form-container {
+  padding: 10px;
+  padding-top: 0px;
+  background-color: white;
+}
+
+.form-container input {
+  width: 80%;
+  background-color: #eee;
+  min-height: 32px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #e55933;
+}
+
+.form-container input:focus {
+  outline: none;
+}
+
+.form-container .chat-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #e55933;
+}
+
+.form-container .chat-btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.chat-container {
+  border: 2px solid #dedede;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+}
+
+.chat-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.chat-container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.chat-container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}

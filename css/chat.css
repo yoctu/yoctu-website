@@ -90,12 +90,10 @@
   margin-right:0;
 }
 
-.time-right {
+.chat-text-right {
   float: right;
-  color: #aaa;
 }
 
-.time-left {
+.chat-text-left {
   float: left;
-  color: #999;
 }

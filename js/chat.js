@@ -25,7 +25,7 @@ function onOpen(evt)
     writeToScreen("CONNECTED");
     doSend("USER " + chan + "_" + nick + "  * * :" + chan + "_" + nick);
     sleep(1000).then(() => {
-            doSend("NICK " + chan + " _" + nick);
+            doSend("NICK " + chan + "_" + nick);
     });
     sleep(2000).then(() => {
             doSend("JOIN #" + chan);

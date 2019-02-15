@@ -9,11 +9,6 @@ function sleep (time) {
 }
 
 function init() {
-    startWebSocket();
-}
-
-function startWebSocket()
-{
     wsUri = document.querySelector('#chat-popup-form').dataset.url;
     chan = document.querySelector('#chat-popup-form').dataset.wsUri;
     websocket = new WebSocket(wsUri);

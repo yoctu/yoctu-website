@@ -3,13 +3,23 @@ var chan;
 var nick = Math.random().toString(36).substring(7);
 var msgnum = 0;
 
+fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
+    .then((response) => response.text())
+    .then((html) => {
+        document.getElementById("yoctu-chat").innerHTML = html;
+    })
+    .catch((error) => {
+        console.warn(error);
+    });
+
+
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 function init() {
-    wsUri = document.querySelector('#chat-popup-form').dataset.url;
-    chan = document.querySelector('#chat-popup-form').dataset.chan;
+    wsUri = document.querySelector('#yoctu-chat').dataset.url;
+    chan = document.querySelector('#yoctu-chat').dataset.chan;
     websocket = new WebSocket(wsUri);
     websocket.onopen = function(evt) { onOpen(evt) };
     websocket.onclose = function(evt) { onClose(evt) };

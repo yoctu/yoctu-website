@@ -40,7 +40,7 @@ function onOpen(evt)
             doSend("JOIN #" + chan);
     });
     sleep(2000).then(() => {
-        setInterval(function(){ doSend("PING :upela"); }, 30000);
+        setInterval(function(){ doSend("PING :test"); }, 30000);
     });
 }
 
@@ -76,7 +76,7 @@ function cleanMessage() {
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
-    doSend("PRIVMSG #upela " + input.value);
+    doSend("PRIVMSG " + chan + " " + input.value);
     var pre = document.createElement("p");
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
     output.appendChild(pre);
@@ -92,6 +92,7 @@ function writeToScreen(message) {
     if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***')) {
         var pre = document.createElement("p");
         let privmsgbody = "";
+        chan = privmsg[2];
         for(var i = 3; i < privmsg.length; i++){
             privmsgbody += " " + privmsg[i];
         }

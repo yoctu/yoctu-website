@@ -30,6 +30,9 @@ function onOpen(evt)
     sleep(2000).then(() => {
             doSend("JOIN #" + chan);
     });
+    sleep(2000).then(() => {
+        setInterval(function(){ doSend("PING :upela"); }, 30000);
+    });
 }
 
 function onClose(evt) {}

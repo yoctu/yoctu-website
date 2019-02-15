@@ -1,6 +1,5 @@
-const chat = document.querySelector('#chat-popup-form');
-var wsUri = chat.dataset.url;
-var chan = chat.dataset.chan;
+var wsUri = document.querySelector('#chat-popup-form').dataset.url;
+var chan = document.querySelector('#chat-popup-form').dataset.wsUri;
 //var wsUri = "ws://v-1538492917-525.dev.yoctu.ovh:7002";
 //var chan = "upela";
 var nick = Math.random().toString(36).substring(7);
@@ -15,6 +14,8 @@ function init() {
 
 function startWebSocket()
 {
+    wsUri = document.querySelector('#chat-popup-form').dataset.url;
+    chan = document.querySelector('#chat-popup-form').dataset.wsUri;
     websocket = new WebSocket(wsUri);
     websocket.onopen = function(evt) { onOpen(evt) };
     websocket.onclose = function(evt) { onClose(evt) };

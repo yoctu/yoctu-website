@@ -37,7 +37,7 @@ function onOpen(evt)
             doSend("NICK " + chan + "_" + nick);
     });
     sleep(2000).then(() => {
-            doSend("JOIN #" + chan);
+            doSend("JOIN " + chan);
     });
     sleep(2000).then(() => {
         setInterval(function(){ doSend("PING :test"); }, 30000);

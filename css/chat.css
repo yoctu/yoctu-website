@@ -1,5 +1,9 @@
+:root {
+    --main-color: #e55933; 
+}
+
 .open-button {
-  background-color: #e55933;
+  background-color: var(--main-color);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -23,7 +27,7 @@
 }
 
 .chat-header {
-  background-color: #e55933; 
+  background-color: var(--main-color); 
   color: white; 
   text-align: center; 
   padding: 10px 20px
@@ -41,7 +45,7 @@
   min-height: 32px;
   border: none;
   background: transparent;
-  border-bottom: 1px solid #e55933;
+  border-bottom: 1px solid var(--main-color);
 }
 
 .form-container input:focus {
@@ -59,7 +63,7 @@
 }
 
 .form-container .cancel {
-  background-color: #e55933;
+  background-color: var(--main-color);
 }
 
 .form-container .chat-btn:hover, .open-button:hover {

@@ -1,0 +1,13 @@
+<button class="open-button" onclick="openForm()">Chat</button>
+<div class="chat-popup" id="chat-popup-form" data-color="#e55933" data-url="ws://v-1538492917-525.dev.yoctu.ovh:7002" data-chan="upela">
+    <a href="#" onclick="closeForm()"><div class="chat-header">Help</div></a>
+        <form class="form-container">
+            <div id="chat-messages-container"></div>
+            <div class="chat-container">
+                <table width="100%"><tr>
+                    <td align="left"><input id="prvmsg" onkeypress="return tableInputKeyPress(event);"></input></td>
+                    <td><button type="button" onclick="sendPRVMSG();" class="chat-btn">Send</button></td>
+                </tr></table>
+            </div>
+        </form>
+</div>

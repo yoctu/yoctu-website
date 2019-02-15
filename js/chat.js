@@ -1,6 +1,7 @@
 var wsUri;
 var chan;
 var nick = Math.random().toString(36).substring(7);
+var msgnum = 0;
 
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -53,6 +54,13 @@ function closeForm() {
   document.getElementById("chat-popup-form").style.display = "none";
 }
 
+cleanMessage() {
+    if (msgnum > 6) {
+        output = document.getElementById("chat-messages-container");
+        output.removeChild(output.childNodes[0]);
+    }
+}
+
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
@@ -60,6 +68,7 @@ function sendPRVMSG() {
     var pre = document.createElement("p");
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
     output.appendChild(pre);
+    msgnum += 1;
     input.value = "";
 }
 
@@ -75,6 +84,7 @@ function writeToScreen(message) {
         }
         pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsgbody.substring(2) + '</div>';
         output.appendChild(pre);
+        msgnum += 1;
         document.getElementById("chat-popup-form").style.display = "block";
     }
 }

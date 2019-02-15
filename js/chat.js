@@ -90,7 +90,7 @@ function writeToScreen(message) {
     privmsg = message.split(" ");
     msgdate = new  Date();
     output = document.getElementById("chat-messages-container");
-    if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***')) {
+    if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***') && (chan != "#" + chatuser)) {
         var pre = document.createElement("p");
         let privmsgbody = "";
         chan = privmsg[0].split("!")[0].substring(1);

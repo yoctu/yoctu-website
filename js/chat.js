@@ -21,7 +21,7 @@ function init() {
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
     chan = document.querySelector('#yoctu-chat').dataset.chan;
     color = document.querySelector('#yoctu-chat').dataset.color;
-    root.style.setProperty('--main-color', color);
+    document.querySelector(':root').style.setProperty('--main-color', color);
     websocket = new WebSocket(wsUri);
     websocket.onopen = function(evt) { onOpen(evt) };
     websocket.onclose = function(evt) { onClose(evt) };

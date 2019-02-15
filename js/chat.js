@@ -73,7 +73,7 @@ function writeToScreen(message) {
         for(var i = 3; i < privmsg.length; i++){
             privmsgbody += " " + privmsg[i];
         }
-        pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsgbody.substring(1) + '</div>';
+        pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsgbody.substring(2) + '</div>';
         output.appendChild(pre);
         document.getElementById("chat-popup-form").style.display = "block";
     }

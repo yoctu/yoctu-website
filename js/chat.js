@@ -47,17 +47,6 @@ function doSend(message) {
     websocket.send(message);
 }
 
-function writeToScreen(message)
-{
-    privmsg = message.split(" ");
-    msgdate = new  Date();
-    if (privmsg[1] == "PRIVMSG" && output) {
-        var pre = document.createElement("p");
-        pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';
-        output.appendChild(pre);
-    }
-}
-
 function openForm() {
   document.getElementById("chat-popup-form").style.display = "block";
 }
@@ -73,6 +62,17 @@ function sendPRVMSG() {
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
     output.appendChild(pre);
     input.value = "";
+}
+
+function writeToScreen(message)
+{
+    privmsg = message.split(" ");
+    msgdate = new  Date();
+    if (privmsg[1] == "PRIVMSG" && output) {
+        var pre = document.createElement("p");
+        pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';
+        output.appendChild(pre);
+    }
 }
 
 window.addEventListener("load", init, false);

@@ -57,6 +57,7 @@ function closeForm() {
 
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
+    output = document.getElementById("chat-messages-container");
     doSend("PRIVMSG #upela " + input.value);
     var pre = document.createElement("p");
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
@@ -68,6 +69,7 @@ function writeToScreen(message)
 {
     privmsg = message.split(" ");
     msgdate = new  Date();
+    output = document.getElementById("chat-messages-container");
     if (privmsg[1] == "PRIVMSG" && output) {
         var pre = document.createElement("p");
         pre.innerHTML = '<div class="chat-container">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + privmsg[3].substring(1) + '</div>';

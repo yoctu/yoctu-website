@@ -77,7 +77,7 @@ function cleanMessage() {
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
-    if !chan.startsWith('#') {
+    if (!chan.startsWith('#') && msgnum > 1) {
         doSend("PRIVMSG " + chan + " " + input.value);
         var pre = document.createElement("p");
         pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';

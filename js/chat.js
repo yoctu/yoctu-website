@@ -77,20 +77,22 @@ function cleanMessage() {
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
-    doSend("PRIVMSG " + chan + " " + input.value);
-    var pre = document.createElement("p");
-    pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
-    output.appendChild(pre);
-    msgnum += 1;
-    cleanMessage();
-    input.value = "";
+    if !chan.startsWith('#') {
+        doSend("PRIVMSG " + chan + " " + input.value);
+        var pre = document.createElement("p");
+        pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
+        output.appendChild(pre);
+        msgnum += 1;
+        cleanMessage();
+        input.value = "";
+    }
 }
 
 function writeToScreen(message) {
     privmsg = message.split(" ");
     msgdate = new  Date();
     output = document.getElementById("chat-messages-container");
-    if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***') && !privmsg[0].split("!")[0].startsWith('#')) {
+    if (privmsg[1] == "PRIVMSG" && output && !privmsg[3].startsWith(':***')) {
         var pre = document.createElement("p");
         let privmsgbody = "";
         chan = privmsg[0].split("!")[0].substring(1);

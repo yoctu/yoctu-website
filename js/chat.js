@@ -78,9 +78,9 @@ function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
     if (chan.startsWith('#')) {
-        doSend("NOTICE " + chan + " " + input.value);
+        doSend("NOTICE " + chan + " " + chatuser + "_" + nick + " " + input.value);
     } else {
-        doSend("PRIVMSG " + chan + " " + chatuser + "_" + nick + " " + input.value);
+        doSend("PRIVMSG " + chan + " " + input.value);
     }
     var pre = document.createElement("p");
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';

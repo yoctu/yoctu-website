@@ -77,15 +77,17 @@ function cleanMessage() {
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
-    if (!chan.startsWith('#') || msgnum <= 1) {
-        doSend("PRIVMSG " + chan + " " + input.value);
-        var pre = document.createElement("p");
-        pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
-        output.appendChild(pre);
-        msgnum += 1;
-        cleanMessage();
-        input.value = "";
+    if (chan.startsWith('#')) {
+        doSend("NOTICE " + chan + " " + input.value);
+    } else {
+        doSend("PRIVMSG " + chan + " " + chatuser + "_" + nick + " " + input.value);
     }
+    var pre = document.createElement("p");
+    pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
+    output.appendChild(pre);
+    msgnum += 1;
+    cleanMessage();
+    input.value = "";
 }
 
 function writeToScreen(message) {

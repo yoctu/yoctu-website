@@ -3,7 +3,12 @@ var chan;
 var nick = Math.random().toString(36).substring(7);
 var msgnum = 0;
 
-fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+function init() {
+    fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
     .then((response) => response.text())
     .then((html) => {
         document.getElementById("yoctu-chat").innerHTML = html;
@@ -11,13 +16,7 @@ fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
     .catch((error) => {
         console.warn(error);
     });
-
-
-function sleep (time) {
-    return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-function init() {
+    
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
     chatuser = document.querySelector('#yoctu-chat').dataset.chan;
     chan = "#" + chatuser;

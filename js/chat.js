@@ -3,6 +3,15 @@ var chan;
 var nick = Math.random().toString(36).substring(7);
 var msgnum = 0;
 
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("yoctu-chat").innerHTML = this.responseText;
+  }
+};
+xhttp.open("GET", "https://yoctu.github.io/yoctu-website/html/chat.html", true);
+xhttp.send();  
+
 document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113891182-2"></script>');
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -14,14 +23,14 @@ function sleep (time) {
 }
 
 function init() {
-    fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
+    /*fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
     .then((response) => response.text())
     .then((html) => {
         document.getElementById("yoctu-chat").innerHTML = html;
     })
     .catch((error) => {
         console.warn(error);
-    });
+    });*/
     
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
     chatuser = document.querySelector('#yoctu-chat').dataset.chan;
@@ -38,10 +47,10 @@ function init() {
 function onOpen(evt)
 {
     writeToScreen("CONNECTED");
-    /*doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
+    doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
     sleep(1000).then(() => {
             doSend("NICK " + chatuser + "_" + nick);
-    });*/
+    });
     sleep(2000).then(() => {
             doSend("JOIN " + chan);
     });

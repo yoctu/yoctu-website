@@ -38,10 +38,10 @@ function init() {
 function onOpen(evt)
 {
     writeToScreen("CONNECTED");
-    doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
+    /*doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
     sleep(1000).then(() => {
             doSend("NICK " + chatuser + "_" + nick);
-    });
+    });*/
     sleep(2000).then(() => {
             doSend("JOIN " + chan);
     });

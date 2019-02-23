@@ -3,14 +3,19 @@ var chan;
 var nick = Math.random().toString(36).substring(7);
 var msgnum = 0;
 
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    document.getElementById("yoctu-chat").innerHTML = this.responseText;
-  }
-};
-xhttp.open("GET", "https://yoctu.github.io/yoctu-website/html/chat.html", true);
-xhttp.send();  
+document.getElementById("yoctu-chat").innerHTML = '<button class="open-button" onclick="openForm()">Chat</button>\
+<div class="chat-popup" id="chat-popup-form">\
+    <a href="#" onclick="closeForm()"><div class="chat-header">Help</div></a>\
+        <form class="form-container">\
+            <div id="chat-messages-container"></div>\
+            <div class="chat-container">\
+                <table width="100%"><tr>\
+                    <td align="left"><input id="prvmsg" onkeypress="return tableInputKeyPress(event);"></input></td>\
+                    <td><button type="button" onclick="sendPRVMSG();" class="chat-btn">Send</button></td>\
+                </tr></table>\
+            </div>\
+        </form>\
+</div>';
 
 document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113891182-2"></script>');
 window.dataLayer = window.dataLayer || [];

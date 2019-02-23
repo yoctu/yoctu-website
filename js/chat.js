@@ -3,6 +3,12 @@ var chan;
 var nick = Math.random().toString(36).substring(7);
 var msgnum = 0;
 
+document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113891182-2"></script>');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-113891182-2');
+
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }

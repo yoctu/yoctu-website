@@ -22,16 +22,7 @@ function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function init() {
-    /*fetch("https://yoctu.github.io/yoctu-website/html/chat.html")
-    .then((response) => response.text())
-    .then((html) => {
-        document.getElementById("yoctu-chat").innerHTML = html;
-    })
-    .catch((error) => {
-        console.warn(error);
-    });*/
-    
+function init() {   
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
     chatuser = document.querySelector('#yoctu-chat').dataset.chan;
     chan = "#" + chatuser;
@@ -44,8 +35,7 @@ function init() {
     websocket.onerror = function(evt) { onError(evt) };
 }
 
-function onOpen(evt)
-{
+function onOpen(evt) {
     writeToScreen("CONNECTED");
     doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
     sleep(1000).then(() => {
@@ -53,6 +43,7 @@ function onOpen(evt)
     });
     sleep(2000).then(() => {
             doSend("JOIN " + chan);
+            document.getElementById("yoctu-chat").style.display = 'block';
     });
     sleep(2000).then(() => {
         setInterval(function(){ doSend("PING :test"); }, 30000);

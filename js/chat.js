@@ -3,20 +3,6 @@ var chan;
 var nick = Math.random().toString(36).substring(7);
 var msgnum = 0;
 
-document.getElementById("yoctu-chat").innerHTML = '<button class="open-button" onclick="openForm()">Chat</button>\
-<div class="chat-popup" id="chat-popup-form">\
-    <a href="#" onclick="closeForm()"><div class="chat-header">Help</div></a>\
-        <form class="form-container">\
-            <div id="chat-messages-container"></div>\
-            <div class="chat-container">\
-                <table width="100%"><tr>\
-                    <td align="left"><input id="prvmsg" onkeypress="return tableInputKeyPress(event);"></input></td>\
-                    <td><button type="button" onclick="sendPRVMSG();" class="chat-btn">Send</button></td>\
-                </tr></table>\
-            </div>\
-        </form>\
-</div>';
-
 document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113891182-2"></script>');
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -48,6 +34,19 @@ function onOpen(evt) {
     });
     sleep(2000).then(() => {
             doSend("JOIN " + chan);
+            document.getElementById("yoctu-chat").innerHTML = '<button class="open-button" onclick="openForm()">Chat</button>\
+<div class="chat-popup" id="chat-popup-form">\
+    <a href="#" onclick="closeForm()"><div class="chat-header">Help</div></a>\
+        <form class="form-container">\
+            <div id="chat-messages-container"></div>\
+            <div class="chat-container">\
+                <table width="100%"><tr>\
+                    <td align="left"><input id="prvmsg" onkeypress="return tableInputKeyPress(event);"></input></td>\
+                    <td><button type="button" onclick="sendPRVMSG();" class="chat-btn">Send</button></td>\
+                </tr></table>\
+            </div>\
+        </form>\
+</div>';
             document.getElementById("yoctu-chat").style.display = 'block';
     });
     sleep(2000).then(() => {

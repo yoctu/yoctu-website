@@ -1,3 +1,8 @@
+var start = 0;
+var rows = 10;
+var order = [[0, 'asc']];
+var query = [ "*", "*" ]
+
 jQuery(document).ready(function($) {
 
    $('#solrDT').dataTable( {

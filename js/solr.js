@@ -1,7 +1,9 @@
 var start = 0;
 var rows = 10;
 var order = [[0, 'asc']];
-var query = [ "*", "*" ]
+var query = [ "*", "*" ];
+
+var renderFunction = function ( data, type, row, meta ) { return JSON.stringify(data); };
 
 jQuery(document).ready(function($) {
 

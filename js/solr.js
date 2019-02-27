@@ -11,40 +11,40 @@ if (urlParams.has('entity')) {
     urlEntity = urlParams.get('entity');
 }
 
-var user = entities[urlEntity]["user"];
-var password = entities[urlEntity]["password"];
-var host = entities[urlEntity]["host"];
-var columns = entities[urlEntity]["data"];
-
 jQuery(document).ready(function($) {
 
-   var row ='<button class="dt-solr-button" id="clearFilter">clear filter</button>';
-row += '<div style="float:right"><select id="solrhost">';
-for (var entity in entities) {
+    var user = entities[urlEntity]["user"];
+    var password = entities[urlEntity]["password"];
+    var host = entities[urlEntity]["host"];
+    var columns = entities[urlEntity]["data"];
+	
+    var row ='<button class="dt-solr-button" id="clearFilter">clear filter</button>';
+    row += '<div style="float:right"><select id="solrhost">';
+    for (var entity in entities) {
         if (entity == urlEntity) {
             row += '<option value="'+entity+'" selected>' + entities[entity].label  + '</option>';
         } else {
             row += '<option value="'+entity+'">' + entities[entity].label + "</option>";
         }
-}
-row += '</select></div><br><br>';
-row += '<div align="center">';
-for (var column in columns) {
+    }
+    row += '</select></div><br><br>';
+    row += '<div align="center">';
+    for (var column in columns) {
         row += '<button class="dt-solr-button toggle-vis" data-column="'+column+'">' + columns[column].name  + "</button>";
-}
-row += '</div><br>';
-row += '<table id="solrDT" class="display" width="100%"><thead><tr>';
-for (var column in columns) {
+    }
+    row += '</div><br>';
+    row += '<table id="solrDT" class="display" width="100%"><thead><tr>';
+    for (var column in columns) {
         row += "<th>" + columns[column].name  + "</th>";
 }
-row += '</tr></thead><tfoot><tr>';
-for (var column in columns) {
+    row += '</tr></thead><tfoot><tr>';
+    for (var column in columns) {
         row += "<th>" + columns[column].name  + "</th>";
-}
-row =+ '</tr></tfoot></table>';
-$('#solr-div').html(row);
+    }
+    row =+ '</tr></tfoot></table>';
+    $('#solr-div').html(row);
 	
-   $('#solrDT').dataTable( {
+    $('#solrDT').dataTable( {
        "processing":true,
        "pagingType":"numbers",
        "responsive": true,

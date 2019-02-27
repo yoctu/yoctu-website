@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
     for (var column in columns) {
         row += "<th>" + columns[column].name  + "</th>";
     }
-    row =+ '</tr></tfoot></table>';
+    row += '</tr></tfoot></table>';
     $('#solr-div').html(row);
 	
     $('#solrDT').dataTable( {

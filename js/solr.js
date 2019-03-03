@@ -18,8 +18,8 @@ jQuery(document).ready(function($) {
     var host = entities[urlEntity]["host"];
     var columns = entities[urlEntity]["data"];
 	
-    var row ='<button class="dt-solr-button" id="clearFilter">clear filter</button>';
-    row += '<div style="float:right"><select id="solrhost">';
+    var row ='<div><table width="100%"><tr><td align="center" width="20%"><button class="dt-solr-button" id="clearFilter">clear</button>';
+    row += '<td align="center" width="60%"><select id="solrhost">';
     for (var entity in entities) {
         if (entity == urlEntity) {
             row += '<option value="'+entity+'" selected>' + entities[entity].label  + '</option>';
@@ -27,12 +27,14 @@ jQuery(document).ready(function($) {
             row += '<option value="'+entity+'">' + entities[entity].label + "</option>";
         }
     }
-    row += '</select></div><br><br>';
-    row += '<div align="center">';
+    row += '</select></td><td align="20%" width="20%"><button class="dt-solr-button" id="toggleFilter">show</button></td>';
+    row += '</tr></table></div>';
+
+    row += '<div align="center" id="solr-filter-buttons" style="display: none;">';
     for (var column in columns) {
         row += '<button class="dt-solr-button toggle-vis" data-column="'+column+'">' + columns[column].name  + "</button>";
     }
-    row += '</div><br>';
+    row += '</div><br></tr></table>';
     row += '<table id="solrDT" class="display" width="100%"><thead><tr>';
     for (var column in columns) {
         row += "<th>" + columns[column].name  + "</th>";
@@ -121,6 +123,10 @@ jQuery(document).ready(function($) {
    $( "#solrhost" ).change(function() {
 	host = entities[$( "#solrhost option:selected" ).val()].host;
 	window.location.replace('?entity='+$( "#solrhost option:selected" ).val());
+   });
+
+   $('#toggleFilter').on( 'click', function (e) {
+        $('#solr-filter-buttons').toggle();
    });
 
    $('#clearFilter').on( 'click', function (e) {

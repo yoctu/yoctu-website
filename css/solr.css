@@ -1,6 +1,6 @@
 :root {
-    --main-color: #4993E3; 
-    --second-color: #337ab7;
+    --main-solr-color: #4993E3; 
+    --second-solr-color: #337ab7;
 }
 
 .dataTables_wrapper .dataTables_info,
@@ -12,18 +12,18 @@ th, label {
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
     color: #ffffff !important;
     border: none;
-    background: linear-gradient(to bottom, var(--main-color) 0%, var(--main-color) 100%);
+    background: linear-gradient(to bottom, var(--main-solr-color) 0%, var(--main-solr-color) 100%);
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #ffffff !important;
     border: none;
-    background: linear-gradient(to bottom, var(--second-color) 0%, var(--second-color) 100%);
+    background: linear-gradient(to bottom, var(--second-solr-color) 0%, var(--second-solr-color) 100%);
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #ffffff !important;
     border: none;
-    background: linear-gradient(to bottom, var(--main-color) 0%, var(--main-color) 100%);
+    background: linear-gradient(to bottom, var(--main-solr-color) 0%, var(--main-solr-color) 100%);
 }
 
 .dt-solr-button {
@@ -34,17 +34,17 @@ th, label {
     border-radius: 2px;
     font-size: 14px;
     color: #fff;
-    background-image: linear-gradient(to bottom, var(--main-color) 0%, var(--main-color) 100%);
+    background-image: linear-gradient(to bottom, var(--main-solr-color) 0%, var(--main-solr-color) 100%);
     text-shadow: none;
 }
 
 .toggle-vis.highlight {
-    background-image: linear-gradient(to bottom, var(--second-color) 0%, var(--main-color) 100%);
+    background-image: linear-gradient(to bottom, var(--second-solr-color) 0%, var(--main-solr-color) 100%);
 }
 
 input[type=search] {
     border: 0;
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-solr-color);
 }
 
 #solrDT > thead > tr > th > input {
@@ -53,7 +53,7 @@ input[type=search] {
     padding: 6px 0 7px;
     width: 100%;
     display: block;
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-solr-color);
 }
 
 select {

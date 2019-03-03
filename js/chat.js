@@ -100,7 +100,6 @@ function sendPRVMSG() {
 }
 
 function writeToScreen(message) {
-    console.log(message);
     privmsg = message.split(" ");
     msgdate = new  Date();
     output = document.getElementById("chat-messages-container");

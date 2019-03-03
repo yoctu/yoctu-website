@@ -6,7 +6,7 @@
 .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate .paginate_button,
 th, label {
-    color: var(--second-color) !important;
+    color: var(--second-solr-color) !important;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {

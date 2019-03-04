@@ -64,9 +64,8 @@ jQuery(document).ready(function($) {
          "url": host + "/select?q="+query[0]+":"+query[1]+"&wt=json&rows=" + rows + "&start=" + start + "&sort="+columns[order[0][0]].data+"%20"+order[0][1],
          "dataType": "jsonp",
          "jsonp":"json.wrf",
-	 "headers": {
-            "Authorization": "Basic " + btoa(user+':'+password) 
-	 },
+	 "username": user,
+         "password": password,
 	/*"beforeSend": function(xhr){
             xhr.setRequestHeader("Authorization", "Basic " + btoa(user+':'+password));
          },*/

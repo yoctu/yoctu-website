@@ -55,6 +55,12 @@ input[type=search] {
     border-bottom: 1px solid var(--main-solr-color);
 }
 
+a, a:hover, a:focus {
+	color: var(--second-solr-color);
+	text-decoration: none;
+	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
 select {
     border: 1px solid #ccc;
     border-radius: 3px;

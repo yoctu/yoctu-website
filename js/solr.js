@@ -65,7 +65,9 @@ jQuery(document).ready(function($) {
          "dataType": "jsonp",
          "jsonp":"json.wrf",
 	"beforeSend": function(xhr){
-            xhr.setRequestHeader("Authorization", "Basic " + btoa(user+':'+password));
+	    var hash = btoa(user+':'+password);
+	     console.log(hash);
+            xhr.setRequestHeader("Authorization", "Basic " + hash);
          },
          "success": function ( json ) {
            var o = {

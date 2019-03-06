@@ -116,8 +116,8 @@ function writeToScreen(message) {
         cleanMessage();
         document.getElementById("chat-popup-form").style.display = "block";
     } else {
-           console.log(privmsg[3]);
-           if (privmsg[3].startsWith('JOIN :You have not registered')) {
+           console.log(privmsg);
+           if (privmsg[1] == "PRIVMSG" && privmsg[2].startsWith(':You have not registered')) {
                sleep(500).then(() => {
                    doSend("JOIN " + chan);
                });

@@ -29,10 +29,10 @@ function init() {
 function onOpen(evt) {
     writeToScreen("CONNECTED");
     doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
-    sleep(2000).then(() => {
+    sleep(200).then(() => {
             doSend("NICK " + chatuser + "_" + nick);
     });
-    sleep(5000).then(() => {
+    sleep(500).then(() => {
             doSend("JOIN " + chan);
             document.getElementById("yoctu-chat").innerHTML = '<button class="open-button" onclick="openForm()">Chat</button>\
 <div class="chat-popup" id="chat-popup-form">\
@@ -49,7 +49,7 @@ function onOpen(evt) {
 </div>';
             document.getElementById("yoctu-chat").style.display = 'block';
     });
-    sleep(10000).then(() => {
+    sleep(2000).then(() => {
         setInterval(function(){ doSend("PING :test"); }, 30000);
     });
 }

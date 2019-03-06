@@ -28,9 +28,9 @@ function init() {
 
 function onOpen(evt) {
     writeToScreen("CONNECTED");
-    doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
+    doSend("NICK " + chatuser + "_" + nick);
     sleep(200).then(() => {
-            doSend("NICK " + chatuser + "_" + nick);
+            doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
     });
     sleep(500).then(() => {
             doSend("JOIN " + chan);

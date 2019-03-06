@@ -29,10 +29,10 @@ function init() {
 function onOpen(evt) {
     writeToScreen("CONNECTED");
     doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
-    sleep(100).then(() => {
+    //sleep(100).then(() => {
             doSend("NICK " + chatuser + "_" + nick);
-    });
-    sleep(200).then(() => {
+    //});
+    sleep(500).then(() => {
             doSend("JOIN " + chan);
             document.getElementById("yoctu-chat").innerHTML = '<button class="open-button" onclick="openForm()">Chat</button>\
 <div class="chat-popup" id="chat-popup-form">\

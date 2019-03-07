@@ -1,6 +1,5 @@
 var wsUri;
-var chatuser = Math.random().toString(36).substring(7);
-var chan = chatuser;
+var chan = "#general";
 var general = "";
 var nick = Math.random().toString(36).substring(7);
 var invite = "";
@@ -20,8 +19,7 @@ function sleep (time) {
 function init() {   
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
     if (document.querySelector('#yoctu-chat').dataset.chan) {
-        chatuser = document.querySelector('#yoctu-chat').dataset.chan;
-        chan = chatuser;
+        chan = document.querySelector('#yoctu-chat').dataset.chan;
     }
     if (document.querySelector('#yoctu-chat').dataset.general) {
         general = document.querySelector('#yoctu-chat').dataset.general;
@@ -48,9 +46,9 @@ function init() {
 
 function onOpen(evt) {
     writeToScreen("CONNECTED");
-    doSend("NICK " + chatuser + "_" + nick);
+    doSend("NICK " + chan + "_" + nick);
     sleep(200).then(() => {
-            doSend("USER " + chatuser + "_" + nick + "  * * :" + chatuser + "_" + nick);
+            doSend("USER " + nick + "  * * :" + nick);
     });
     sleep(500).then(() => {
             doSend("JOIN " + chan);
@@ -146,7 +144,7 @@ function writeToScreen(message) {
            }
            if ((notice != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
                sleep(500).then(() => {
-                   doSend("NOTICE " + chatuser + "_" + nick + " " + chatuser + " join " + chan);
+                   doSend("NOTICE " + notice + " " + nick + " join " + chan);
                });
            }
     }

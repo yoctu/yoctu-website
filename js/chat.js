@@ -46,7 +46,7 @@ function init() {
 
 function onOpen(evt) {
     writeToScreen("CONNECTED");
-    doSend("NICK " + chan + "_" + nick);
+    doSend("NICK " + nick);
     sleep(200).then(() => {
             doSend("USER " + nick + "  * * :" + nick);
     });

@@ -138,7 +138,7 @@ function writeToScreen(message) {
            }
            if ((notice != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
                sleep(500).then(() => {
-                   doSend("NOTICE " + chan + " " + chatuser + " join " + chan);
+                   doSend("NOTICE " + notice + " " + chatuser + " join " + chan);
                });
            }
     }

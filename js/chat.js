@@ -1,6 +1,6 @@
 var wsUri;
 var chatuser = Math.random().toString(36).substring(7);
-var chan = "#" + chatuser;
+var chan = chatuser;
 var general = "";
 var nick = Math.random().toString(36).substring(7);
 var invite = "";
@@ -21,7 +21,7 @@ function init() {
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
     if (document.querySelector('#yoctu-chat').dataset.chan) {
         chatuser = document.querySelector('#yoctu-chat').dataset.chan;
-        chan = "#" + chatuser;
+        chan = chatuser;
     }
     if (document.querySelector('#yoctu-chat').dataset.general) {
         general = document.querySelector('#yoctu-chat').dataset.general;

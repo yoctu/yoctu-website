@@ -3,6 +3,7 @@ var chatuser = Math.random().toString(36).substring(7);
 var chan = "#" + chatuser;
 var nick = Math.random().toString(36).substring(7);
 var invite = "";
+var notice = "";
 var msgnum = 0;
 
 document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113891182-2"></script>');
@@ -26,6 +27,9 @@ function init() {
     }
     if (document.querySelector('#yoctu-chat').dataset.invite) {
         invite = document.querySelector('#yoctu-chat').dataset.invite;
+    }
+    if (document.querySelector('#yoctu-chat').dataset.notice) {
+        notice = document.querySelector('#yoctu-chat').dataset.notice;
     }
     color = document.querySelector('#yoctu-chat').dataset.color;
     document.querySelector(':root').style.setProperty('--main-color', color);
@@ -130,6 +134,11 @@ function writeToScreen(message) {
            if ((invite != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
                sleep(500).then(() => {
                    doSend("INVITE " + invite + " " + chan);
+               });
+           }
+           if ((notice != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
+               sleep(500).then(() => {
+                   doSend("NOTICE " + chan + " " + chatuser + " join " + chan);
                });
            }
     }

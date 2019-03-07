@@ -24,7 +24,7 @@ function init() {
     if (document.querySelector('#yoctu-chat').dataset.nick) {
         nick = document.querySelector('#yoctu-chat').dataset.nick;
     }
-    if (document.querySelector('#yoctu-chat').dataset.nick) {
+    if (document.querySelector('#yoctu-chat').dataset.invite) {
         invite = document.querySelector('#yoctu-chat').dataset.invite;
     }
     color = document.querySelector('#yoctu-chat').dataset.color;
@@ -127,7 +127,7 @@ function writeToScreen(message) {
                    doSend("JOIN " + chan);
                });
            }
-           if ((privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
+           if ((invite != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
                sleep(500).then(() => {
                    doSend("INVITE " + invite);
                });

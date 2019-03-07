@@ -1,6 +1,8 @@
 var wsUri;
-var chan;
+var chatuser = Math.random().toString(36).substring(7);
+var chan = "#" + chatuser;
 var nick = Math.random().toString(36).substring(7);
+var invite = "";
 var msgnum = 0;
 
 document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113891182-2"></script>');
@@ -15,8 +17,16 @@ function sleep (time) {
 
 function init() {   
     wsUri = document.querySelector('#yoctu-chat').dataset.url;
-    chatuser = document.querySelector('#yoctu-chat').dataset.chan;
-    chan = "#" + chatuser;
+    if (document.querySelector('#yoctu-chat').dataset.chan) {
+        chatuser = document.querySelector('#yoctu-chat').dataset.chan;
+        chan = "#" + chatuser;
+    }
+    if (document.querySelector('#yoctu-chat').dataset.nick) {
+        nick = document.querySelector('#yoctu-chat').dataset.nick;
+    }
+    if (document.querySelector('#yoctu-chat').dataset.nick) {
+        invite = document.querySelector('#yoctu-chat').dataset.invite;
+    }
     color = document.querySelector('#yoctu-chat').dataset.color;
     document.querySelector(':root').style.setProperty('--main-color', color);
     websocket = new WebSocket(wsUri);
@@ -86,11 +96,7 @@ function cleanMessage() {
 function sendPRVMSG() {
     input = document.getElementById("prvmsg");
     output = document.getElementById("chat-messages-container");
-    if (chan.startsWith('#')) {
-        doSend("NOTICE " + chan + " " + chatuser + "_" + nick + " " + input.value);
-    } else {
-        doSend("PRIVMSG " + chan + " " + input.value);
-    }
+    doSend("PRIVMSG " + chan + " " + input.value);
     var pre = document.createElement("p");
     pre.innerHTML = '<div class="chat-container"><font color="#444">' + msgdate.getHours() + ':' + msgdate.getMinutes()  + ' : ' + input.value + '</font></div>';
     output.appendChild(pre);
@@ -116,7 +122,6 @@ function writeToScreen(message) {
         cleanMessage();
         document.getElementById("chat-popup-form").style.display = "block";
     } else {
-           //console.log(privmsg);
            if (privmsg[3] == "JOIN") {
                sleep(500).then(() => {
                    doSend("JOIN " + chan);

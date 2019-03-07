@@ -129,7 +129,7 @@ function writeToScreen(message) {
            }
            if ((privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
                sleep(500).then(() => {
-                   doSend("INVITE " + nick);
+                   doSend("INVITE " + invite);
                });
            }
     }

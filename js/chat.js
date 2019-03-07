@@ -1,6 +1,7 @@
 var wsUri;
 var chatuser = Math.random().toString(36).substring(7);
 var chan = "#" + chatuser;
+var general = "";
 var nick = Math.random().toString(36).substring(7);
 var invite = "";
 var notice = "";
@@ -22,6 +23,9 @@ function init() {
         chatuser = document.querySelector('#yoctu-chat').dataset.chan;
         chan = "#" + chatuser;
     }
+    if (document.querySelector('#yoctu-chat').dataset.general) {
+        general = document.querySelector('#yoctu-chat').dataset.general;
+    }
     if (document.querySelector('#yoctu-chat').dataset.nick) {
         nick = document.querySelector('#yoctu-chat').dataset.nick;
     }
@@ -31,8 +35,10 @@ function init() {
     if (document.querySelector('#yoctu-chat').dataset.notice) {
         notice = document.querySelector('#yoctu-chat').dataset.notice;
     }
-    color = document.querySelector('#yoctu-chat').dataset.color;
-    document.querySelector(':root').style.setProperty('--main-color', color);
+    if (document.querySelector('#yoctu-chat').dataset.color) {
+        color = document.querySelector('#yoctu-chat').dataset.color;
+        document.querySelector(':root').style.setProperty('--main-color', color);
+    }
     websocket = new WebSocket(wsUri);
     websocket.onopen = function(evt) { onOpen(evt) };
     websocket.onclose = function(evt) { onClose(evt) };
@@ -48,6 +54,7 @@ function onOpen(evt) {
     });
     sleep(500).then(() => {
             doSend("JOIN " + chan);
+            if (general != "") doSend("JOIN " + general);
             document.getElementById("yoctu-chat").innerHTML = '<button class="open-button" onclick="openForm()">Chat</button>\
 <div class="chat-popup" id="chat-popup-form">\
     <a href="#" onclick="closeForm()"><div class="chat-header">Help</div></a>\
@@ -129,6 +136,7 @@ function writeToScreen(message) {
            if (privmsg[3] == "JOIN") {
                sleep(500).then(() => {
                    doSend("JOIN " + chan);
+                   if (general != "") doSend("JOIN " + general);
                });
            }
            if ((invite != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
@@ -138,7 +146,7 @@ function writeToScreen(message) {
            }
            if ((notice != "") && (privmsg[1] == "JOIN") && privmsg[2].startsWith(':#')) {
                sleep(500).then(() => {
-                   doSend("NOTICE " + notice + " " + chatuser + " join " + chan);
+                   doSend("NOTICE " + chatuser + "_" + nick + " " + chatuser + " join " + chan);
                });
            }
     }

@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #df5c2a;
+    line-height: 30px;
+}
+
+#logo {
+        content:url("https://logos.yoctu.com/logo/upela.png-64");
+}
+
+.header-content {
+    background-image: url(https://upela.yoctu.com/img/slideshow.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar.navbar-no-bg {
+    background: none;
+}
+
+.panel-default>.panel-heading {
+    color: #df5c2a;
+    background-color: #ffffff;
+    border-color: #df5c2a;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #df5c2a;
+}
+
+.dropdown-menu>li>a {
+    color: #df5c2a;
+}

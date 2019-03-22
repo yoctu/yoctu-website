@@ -14,10 +14,10 @@ table.dataTable tbody tr.odd {
 
 input, select {
     color: #40598B;
-    border: 1px solid #adbcd9;
+    border: 1px solid #7080A0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 6px;
     padding: .375rem .75rem;
     font-size: 1.5rem;
     background-color: #fff;

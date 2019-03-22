@@ -1,3 +1,38 @@
+body {
+    background-color: #F5F6F8;
+    color: #40598B;
+}
+
+.well {
+    background-color: #F5F6F8;
+    border: 0px;
+}
+
+table.dataTable tbody tr.odd {
+    background-color: #EDEFF4;
+}
+
+input, select {
+    color: #40598B;
+    border: 1px solid #adbcd9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: .375rem .75rem;
+    font-size: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
 #logo {
         content:url("https://logos.yoctu.com/logo/skoreway-64.png");
+}
+
+#shaqContainer {
+    width: 80%;
+    margin: auto;
+}
+
+#shaqList_info {
+    color: #40598B;
 }

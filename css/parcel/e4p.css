@@ -1,0 +1,22 @@
+:root {
+    --main-upela-color: #ADB4C4;
+    --secondary-upela-color: #40598B;
+}
+
+.navbar-brand {
+    background-image: url(https://logos.yoctu.com/logo/skoreway-64.png) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;
+    width: 123px;
+    text-indent: -99999px;
+}
+
+#logo {
+    content:url("https://logos.yoctu.com/logo/skoreway-64.png");
+}
+
+#logo-box1, #logo-box2, #logo-box3 {
+    content:url("https://logos.yoctu.com/logo/skoreway-64.png");
+}
+
+.buttonOrange {
+    background-color: var(--main-upela-color);
+}

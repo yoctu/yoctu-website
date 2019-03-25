@@ -105,8 +105,9 @@ var parseGoogleAdresse = function (googleAdresse, target) {
                 target.address1 = googleAdresse.address_components[i].short_name;
                 break;
             case 'locality':
+                target.city = googleAdresse.address_components[i].short_name;
                 break;
-            case '"country"':
+            case 'country':
                 target.country_code = googleAdresse.address_components[i].short_name;
                 break;
             default:

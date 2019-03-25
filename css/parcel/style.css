@@ -16,8 +16,8 @@ body {
     font-size: 12px;
 }
 
-.icon-form {
-	color: #df5c2a;
+.icon-form path{
+	fill: #df5c2a;
 }
 
 .rowtop

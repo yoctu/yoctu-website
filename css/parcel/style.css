@@ -16,8 +16,8 @@ body {
     font-size: 12px;
 }
 
-.icon-form path{
-	fill: #df5c2a;
+.icon-form svg path{
+	fill: #df5c2a !important;
 }
 
 .rowtop

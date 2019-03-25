@@ -97,7 +97,7 @@ LdapTool.prototype.getList = function () {
 
 var parseGoogleAdresse = function (googleAdresse, target) {
     for (var i = 0; i < googleAdresse.address_components.length; i++) {
-        switch (googleAdresse.address_components[i].type[0]) {
+        switch (googleAdresse.address_components[i].types[0]) {
             case 'postal_code':
                 target.postcode = googleAdresse.address_components[i].short_name;
                 break;

@@ -109,7 +109,7 @@ ul.navbar-nav {
 }
 
 .header-content {
-	background-image: url(/UPELA/img/slideshow.jpg);
+	background-image: url(../img/slideshow.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -205,7 +205,7 @@ form .form-bottom button.btn {
 }
 
 form .form-bottom .input-error {
-	border-color: var(--main-upela-color);
+	border-color: red !important;
 }
 
 form.registration-form fieldset {

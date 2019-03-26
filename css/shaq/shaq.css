@@ -85,6 +85,10 @@ input, select {
     border: none;
 }
 
+#amount {
+    font-size: 20px;
+}
+
 .segment {
     font-weight: bold;
     line-height: 1.5;

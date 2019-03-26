@@ -35,7 +35,7 @@ function init() {
     }
     if (document.querySelector('#yoctu-chat').dataset.color) {
         color = document.querySelector('#yoctu-chat').dataset.color;
-        document.querySelector(':root').style.setProperty('--main-color', color);
+        document.querySelector(':root').style.setProperty('--main-chat-color', color);
     }
     websocket = new WebSocket(wsUri);
     websocket.onopen = function(evt) { onOpen(evt) };

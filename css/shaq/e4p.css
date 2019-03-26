@@ -12,7 +12,7 @@ input::placeholder {
     opacity: 0.6;
 }
 
-.form-control[readonly] {
+.form-control[readonly], .form-control {
     color: #40598B;
     background-color: #F5F6F8;
 }

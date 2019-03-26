@@ -3,6 +3,14 @@
     --secondary-upela-color: #40598B;
 }
 
+.header-content {
+	background-image: url(https://www.easy4pro.com/wp-content/uploads/2018/02/slider-homepage-mobile-2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 150px;
+}
+
 .navbar-brand {
     background-image: url(https://logos.yoctu.com/logo/skoreway-64.png) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;
     width: 123px;

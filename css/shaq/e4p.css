@@ -3,13 +3,121 @@ body {
     color: #40598B;
 }
 
+hr {
+    background-color: #40598B;
+}
+
+input::placeholder { 
+    color: #40598B; 
+    opacity: 0.6;
+}
+
+.form-control[readonly] {
+    color: #40598B;
+    background-color: #F5F6F8;
+}
+
+#shaq-valid-from-btn {
+    color: #40598B;
+    background-color: #fff;
+}
+
+.btn-room>.badge.badge-danger {
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.btn-room>.badge {
+    background-color: #40598B;
+}
+
+.btn-room {
+    font-weight: bold;
+    border: none;
+    color: #40598B;
+}
+
+.btn-glyphicon {
+    background-color: #EAEDF3;
+    color: #40598B;
+}
+
 .well {
     background-color: #F5F6F8;
     border: 0px;
+    -webkit-box-shadow: none;
+}
+
+.well-success { background-color: #F5F6F8; opacity: 1;}
+.well-warning { background-color: #F5F6F8; opacity: 0.9;}
+.well-danger { background-color: #F5F6F8; opacity: 0.6; }
+
+.table>tbody>tr>td {
+    border-top: none;
 }
 
 table.dataTable tbody tr.odd {
     background-color: #EDEFF4;
+}
+
+a {
+    color: #4981F1;
+    font-weight: bold;
+}
+
+th {
+    color: #ADB4C4;
+}
+
+.panel-default>.panel-heading {
+    color: #40598B;
+}
+
+.chat-container.alert {
+    border-radius: 8px;
+    color: #40598B;
+}
+
+.chat-container.alert.alert-danger {
+    border: none;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.chat-container.alert.alert-success {
+    border: none;
+    background-color: rgba(105, 121, 248, 0.4);
+}
+
+.chat-container.alert.alert-info {
+    border: none;
+    color: #40598B;
+    background-color: #F5F6F8;
+}
+
+.btn-room.btn-danger:focus,
+.btn-room.btn-danger:hover,
+.btn-room.btn-danger {
+    color: #40598B;
+    background-color: #F5F6F8;
+}
+
+.btn-primary {
+    background-color: #40598B;
+}
+
+.panel-shipment-background {
+    background-color: #EAEDF3;
+}
+
+.label-primary {
+    background-color: #4981F1;
+}
+
+label {
+    color: #40598B;
+    font-weight: normal;
+    border-radius: 16px;
 }
 
 input, select {
@@ -21,11 +129,14 @@ input, select {
     padding: .375rem .75rem;
     font-size: 1.5rem;
     background-color: #fff;
-    border: 1px solid #ced4da;
 }
 
 #logo {
         content:url("https://logos.yoctu.com/logo/skoreway-64.png");
+}
+
+#navbar-username {
+    color: #40598b;
 }
 
 #shaqContainer {
@@ -35,4 +146,9 @@ input, select {
 
 #shaqList_info {
     color: #40598B;
+}
+
+.btn-bid-extend {
+    color: #fff;
+    background-color: #40598B;
 }

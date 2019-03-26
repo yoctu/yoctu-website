@@ -3,6 +3,14 @@
     --secondary-upela-color: #df5c2a;
 }
 
+.header-content {
+	background-image: url(https://logos.yoctu.com/images/parcel/slideshow.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 150px;
+}
+
 .navbar-brand {
     background-image: url(/UPELA/img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;
     width: 123px;

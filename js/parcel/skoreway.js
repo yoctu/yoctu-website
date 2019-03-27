@@ -23,7 +23,7 @@ $('#skoreway-shaq').on('click', function() {
             xhr.setRequestHeader("Authorization", "Basic ZGVtbzpkZW1v");
         },
         complete: function (shaq) {
-            window.open("https://shaq.dev.skoreway.com/"+usercode+"/display/"+key,'_blank');
+            window.open(shaqurl + "/" + usercode + "/display/" + key,'_blank');
         }
     });
 });

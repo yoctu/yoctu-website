@@ -42,7 +42,7 @@ jQuery(document).ready(function() {
                 
         if ($(this).attr("id") == "launchUpelaNext") {
             getInfo();
-            initWidget(info,onRateResult,onShipResult);
+            initWidget(info,onRateResult,onShipResult,upelacolor);
             }
     });
 
@@ -50,6 +50,8 @@ jQuery(document).ready(function() {
 	$(this).parents('fieldset').fadeOut(400, function() {
             $(this).prev().fadeIn();
 	});
+        $('#filters').addClass("hide");
+        $('#skoreway-widget').addClass("hide");
     });
 
     if (username) {
@@ -61,5 +63,4 @@ jQuery(document).ready(function() {
         $('.login').show();
         $('.logout').hide();
     }
-
 });

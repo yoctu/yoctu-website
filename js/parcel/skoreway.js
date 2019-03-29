@@ -20,7 +20,7 @@ $('#skoreway-shaq').on('click', function() {
         method: "POST",
         data: JSON.stringify([ data ]),
         beforeSend: function(xhr){
-            xhr.setRequestHeader("Authorization", "Basic ZGVtbzpkZW1v");
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + apikey));
         },
         complete: function (shaq) {
             window.open(shaqurl + "/" + usercode + "/display/" + key,'_blank');

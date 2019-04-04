@@ -48,9 +48,9 @@ input::placeholder {
     -webkit-box-shadow: none;
 }
 
-.well-success { background-color: #F5F6F8; opacity: 1;}
-.well-warning { background-color: #F5F6F8; opacity: 0.9;}
-.well-danger { background-color: #F5F6F8; opacity: 0.6; }
+.well-success { background-color: #F5F6F8; opacity: 1; border: 2px solid #5cb85c;}
+.well-warning { background-color: #F5F6F8; opacity: 0.9; border: 2px solid #eea236;}
+.well-danger { background-color: #F5F6F8; opacity: 0.6; border: 2px solid #d9534f; }
 
 .table>tbody>tr>td {
     border-top: none;
@@ -139,11 +139,6 @@ input, select {
     color: #40598b;
 }
 
-#shaqContainer {
-    width: 80%;
-    margin: auto;
-}
-
 #shaqList_info {
     color: #40598B;
 }
@@ -151,4 +146,8 @@ input, select {
 .btn-bid-extend {
     color: #fff;
     background-color: #40598B;
+}
+
+.img-ico {
+    color: #40598B;
 }

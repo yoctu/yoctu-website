@@ -1,10 +1,10 @@
 body {
-    line-height: 30px;
+    line-height: 20px;
     font-family: Montserrat;
 }
 
 input, select {
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 .form-control[readonly] {
@@ -35,7 +35,7 @@ input, select {
 }
 
 .footer {
-    bottom: 0;
+    bottom: 10px;
     width: 100%;
     position: fixed;
     height: 20px;
@@ -60,7 +60,7 @@ input, select {
 }
 
 .panel-footer, .panel-heading, .panel-body {
-    border: none; 
+    border: none;
 }
 
 .panel-default>.panel-footer {
@@ -85,6 +85,11 @@ input, select {
     border: none;
 }
 
+#shaqContainer {
+    width: 90%;
+    margin: auto;
+}
+
 #amount {
     font-size: 20px;
 }
@@ -106,4 +111,34 @@ input, select {
 .input-group-btn {
     vertical-align: top;
     padding-right: 20px;
+}
+
+table.dataTable {
+  -webkit-border-vertical-spacing: 10px;
+}
+
+.table>tbody>tr>td:not(.child):first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.lastVisibleChild {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.table>tbody>tr>td:not(.child):last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+table.dataTable thead th {
+  border-bottom: 0;
+}
+table.dataTable.no-footer {
+  border-bottom: 0;
+}
+
+#shaqContainer {
+    margin-bottom: 50px;
 }

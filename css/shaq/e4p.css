@@ -48,6 +48,7 @@ th, label {
 
 #solrtarget {
   background-color: #fff;
+  border: 1px solid #7080A0;
 }
 
 .btn-room>.badge.badge-danger {

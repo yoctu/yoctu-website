@@ -55,6 +55,7 @@ th, label {
 
 #solrtarget {
   background-color: #fff;
+  border: 1px solid #d9534f;
 }
 
 .btn-room>.badge.badge-danger {
@@ -171,7 +172,7 @@ label {
 
 input, select {
   color: #df5c2a;
-  border: 1px solid #7080A0;
+  border: 1px solid #df5c2a;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 6px;

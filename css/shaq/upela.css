@@ -34,3 +34,8 @@ body {
 .dropdown-menu>li>a {
     color: #df5c2a;
 }
+
+#shaqContainer {
+  background-color: none;
+  border: none;
+}

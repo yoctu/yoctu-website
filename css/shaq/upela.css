@@ -3,6 +3,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     color: #df5c2a;
+    background-color: rgba(223, 92, 42, 1);
     line-height: 30px;
 }
 
@@ -28,19 +29,19 @@ th, label {
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
   color: #ffffff !important;
   border: none;
-  background: linear-gradient(to bottom, #4981F1 0%, #4981F1 100%);
+  background: linear-gradient(to bottom, #df5c2a 0%, #df5c2a 100%);
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
   color: #ffffff !important;
   border: none;
-  background: linear-gradient(to bottom, #40598B 0%, #40598B 100%);
+  background: linear-gradient(to bottom, #df5c2a 0%, #df5c2a 100%);
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
   color: #ffffff !important;
   border: none;
-  background: linear-gradient(to bottom, #4981F1 0%, #4981F1 100%);
+  background: linear-gradient(to bottom, #df5c2a 0%, #df5c2a 100%);
 }
 
 .form-control[readonly], .form-control {

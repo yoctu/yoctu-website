@@ -7,8 +7,12 @@ body {
   color: var(--main-bg-color) !important;
 }
 
-.glyphicon {
+.glyphicon-bell {
   color: #FFFFFF;
+}
+
+.glyphicon {
+  color: var(--main-bg-color);
 }
 
 hr {

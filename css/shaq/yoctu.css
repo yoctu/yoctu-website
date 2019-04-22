@@ -112,9 +112,15 @@ th, label {
   border-top: none;
 }
 
+.odd a {
+    color: white;
+    font-weight: bold;
+}
+
 table.dataTable tbody tr.odd {
+  color: #FFFFFF;
   background-color: var(--main-bg-color);
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 a {

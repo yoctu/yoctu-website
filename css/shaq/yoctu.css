@@ -4,7 +4,11 @@
 
 body {
   background-color: #FFFFFF;
-  color: #var(--main-bg-color);
+  color: #var(--main-bg-color) !important;
+}
+
+.glyphicon {
+  color: #FFFFFF;
 }
 
 hr {

@@ -8,11 +8,11 @@ body {
 }
 
 .glyphicon {
-  color: var(--main-bg-color);
+  color: #FFFFFF;
 }
 
-.glyphicon .glyphicon-bell {
-  color: #FFFFFF;
+.glyphicon-off {
+  color: var(--main-bg-color);
 }
 
 hr {

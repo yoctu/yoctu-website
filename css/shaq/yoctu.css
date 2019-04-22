@@ -81,7 +81,7 @@ th, label {
 .btn-glyphicon {
   background-color: var(--main-bg-color);
   opacity: 0.3;
-  color: var(--main-bg-color);
+  color: #FFFFFF;
 }
 
 .well {
@@ -172,7 +172,7 @@ th {
 
 .panel-shipment-background {
   background-color: var(--main-bg-color);
-  opacity: 0.3;
+  opacity: 0.9;
 }
 
 .label-primary {

@@ -179,6 +179,13 @@ th {
   background-color: #4981F1;
 }
 
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: var(--main-bg-color);
+  }
+
 .dropdown-menu>li>a {
   color: var(--main-bg-color);
 }
@@ -228,7 +235,7 @@ input, select {
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
     color: #FFF;
-    background-color: #transparent;
+    background-color: #transparent !important;
 }
 
 #shaqList_info {

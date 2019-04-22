@@ -7,12 +7,12 @@ body {
   color: var(--main-bg-color) !important;
 }
 
-.glyphicon-bell {
-  color: #FFFFFF;
-}
-
 .glyphicon {
   color: var(--main-bg-color);
+}
+
+.glyphicon .glyphicon-bell {
+  color: #FFFFFF;
 }
 
 hr {
@@ -179,19 +179,23 @@ th {
   background-color: #4981F1;
 }
 
+.dropdown-menu>li>a {
+  color: var(--main-bg-color);
+}
+
 .table>tbody>tr>td:not(.child):first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
 }
 
 .lastVisibleChild {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .table>tbody>tr>td:not(.child):last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 label {
@@ -202,7 +206,7 @@ label {
 
 input, select {
   color: var(--main-bg-color);
-  border: 1px solid #7080A0;
+  border: 1px solid var(--main-bg-color);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 6px;

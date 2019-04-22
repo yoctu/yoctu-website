@@ -243,7 +243,7 @@ input, select {
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
     color: #FFF;
-    background-color: #transparent !important;
+    background-color: #none !important;
 }
 
 #shaqList_info {

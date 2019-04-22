@@ -4,7 +4,7 @@
 
 body {
   background-color: #FFFFFF;
-  color: #var(--main-bg-color) !important;
+  color: var(--main-bg-color) !important;
 }
 
 .glyphicon {
@@ -12,18 +12,18 @@ body {
 }
 
 hr {
-  background-color: #var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
 
 input::placeholder {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   opacity: 0.6;
 }
 
 .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate .paginate_button,
 th, label {
-  color: #var(--main-bg-color) !important;
+  color: var(--main-bg-color) !important;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
@@ -35,7 +35,7 @@ th, label {
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
   color: #ffffff !important;
   border: none;
-  background: linear-gradient(to bottom, #var(--main-bg-color) 0%, #var(--main-bg-color) 100%);
+  background: linear-gradient(to bottom, var(--main-bg-color) 0%, var(--main-bg-color) 100%);
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
@@ -45,12 +45,12 @@ th, label {
 }
 
 .form-control[readonly], .form-control {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   background-color: #FFFFFF;
 }
 
 #shaq-valid-from-btn {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   background-color: #fff;
 }
 
@@ -65,22 +65,22 @@ th, label {
 }
 
 .btn-room>.badge {
-  background-color: #var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
 
 .btn-room {
   font-weight: bold;
   border: none;
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
 }
 
 .btn-glyphicon {
   background-color: #EAEDF3;
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
 }
 
 .well {
-  background-color: #F5F6F8;
+  background-color: #FFFFFF;
   border: 0px;
   -webkit-box-shadow: none;
 }
@@ -108,7 +108,7 @@ th, label {
 }
 
 table.dataTable tbody tr.odd {
-  background-color: #EDEFF4;
+  background-color: var(--main-bg-color);
 }
 
 a {
@@ -121,12 +121,12 @@ th {
 }
 
 .panel-default>.panel-heading {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
 }
 
 .chat-container.alert {
   border-radius: 8px;
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
 }
 
 .chat-container.alert.alert-danger {
@@ -142,19 +142,19 @@ th {
 
 .chat-container.alert.alert-info {
   border: none;
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   background-color: #F5F6F8;
 }
 
 .btn-room.btn-danger:focus,
 .btn-room.btn-danger:hover,
 .btn-room.btn-danger {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   background-color: #F5F6F8;
 }
 
 .btn-primary {
-  background-color: #var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
 
 .panel-shipment-background {
@@ -166,13 +166,13 @@ th {
 }
 
 label {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   font-weight: normal;
   border-radius: 16px;
 }
 
 input, select {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
   border: 1px solid #7080A0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -199,14 +199,14 @@ input, select {
 }
 
 #shaqList_info {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
 }
 
 .btn-bid-extend {
   color: #fff;
-  background-color: #var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
 
 .img-ico {
-  color: #var(--main-bg-color);
+  color: var(--main-bg-color);
 }

@@ -1,9 +1,9 @@
 :root {
-  --main-bg-color: #337ab7;
+  --main-bg-color: #4993E3;
 }
 
 body {
-  background-color: #808DA7;
+  background-color: #FFFFFF;
   color: #var(--main-bg-color);
 }
 
@@ -179,7 +179,11 @@ input, select {
 }
 
 #logo {
-  content: url("https://logos.yoctu.com/logo/skoreway-64.png");
+  content: url("https://logos.yoctu.com/logo/yoctu-64.png");
+}
+
+.navbar-default {
+    background: url('https://images.yoctu.com/navbar_gradient.png');
 }
 
 #navbar-username {

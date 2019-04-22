@@ -110,6 +110,7 @@ th, label {
 
 .table>tbody>tr>td {
   border-top: none;
+  padding: 25px 10px;
 }
 
 .odd a {
@@ -120,7 +121,7 @@ th, label {
 table.dataTable tbody tr.odd {
   color: #FFFFFF;
   background-color: var(--main-bg-color);
-  opacity: 0.5;
+  opacity: 0.9;
 }
 
 a {
@@ -176,6 +177,21 @@ th {
 
 .label-primary {
   background-color: #4981F1;
+}
+
+.table>tbody>tr>td:not(.child):first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.lastVisibleChild {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.table>tbody>tr>td:not(.child):last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 label {

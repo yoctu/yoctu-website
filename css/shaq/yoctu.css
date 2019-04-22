@@ -42,7 +42,7 @@ th, label {
 
 .form-control[readonly], .form-control {
   color: #var(--main-bg-color);
-  background-color: #F5F6F8;
+  background-color: #FFFFFF;
 }
 
 #shaq-valid-from-btn {
@@ -179,15 +179,19 @@ input, select {
 }
 
 #logo {
-  content: url("https://logos.yoctu.com/logo/yoctu-64.png");
+  content: url("https://logos.yoctu.com/images/YOCTU_LOGO.svg");
 }
 
 .navbar-default {
     background: url('https://logos.yoctu.com/images/navbar_gradient.png');
 }
 
-#navbar-username {
-  color: #var(--main-bg-color);
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #FFF;
+    background-color: #transparent;
 }
 
 #shaqList_info {

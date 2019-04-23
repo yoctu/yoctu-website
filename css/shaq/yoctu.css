@@ -235,7 +235,7 @@ input, select {
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
-    color: #FFF;
+    color: var(--main-bg-color);
     background-color: none !important;
 }
 

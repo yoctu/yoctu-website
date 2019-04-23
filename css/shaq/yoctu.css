@@ -11,7 +11,7 @@ body {
   color: #FFFFFF;
 }
 
-.glyphicon-off {
+.glyphicon-off, .glyphicon-bell {
   color: var(--main-bg-color);
 }
 

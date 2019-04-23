@@ -142,3 +142,10 @@ table.dataTable.no-footer {
 #shaqContainer {
     margin-bottom: 50px;
 }
+
+#bid-add {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 32px;
+}

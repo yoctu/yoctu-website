@@ -183,9 +183,8 @@ th {
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-    color: #FFFFFF;
+    color: var(--main-bg-color);
     text-decoration: none;
-    background-color: var(--main-bg-color);
   }
 
 .dropdown-menu>li>a {

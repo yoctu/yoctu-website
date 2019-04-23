@@ -60,7 +60,7 @@ th, label {
 
 #solrtarget {
   background-color: #fff;
-  border: 1px solid #d9534f;
+  border: 1px solid var(--main-bg-color);
 }
 
 .btn-room>.badge.badge-danger {

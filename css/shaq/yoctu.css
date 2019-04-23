@@ -228,10 +228,6 @@ input, select {
   content: url("https://logos.yoctu.com/images/YOCTU_LOGO.svg");
 }
 
-.navbar-default {
-    background: url('https://logos.yoctu.com/images/navbar_gradient.png');
-}
-
 .navbar-default .navbar-nav>li>a,
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:focus,

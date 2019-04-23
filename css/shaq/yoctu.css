@@ -177,10 +177,6 @@ th {
   background-color: var(--main-bg-color);
 }
 
-.panel-shipment-background {
-  background-color: rgba(73, 147, 227, 0.6);
-}
-
 .label-primary {
   background-color: #4981F1;
 }
@@ -255,8 +251,4 @@ input, select {
 
 .img-ico {
   color: var(--main-bg-color);
-}
-
-#bid-add {
-  background-color: rgba(73, 147, 227, 0.6);
 }

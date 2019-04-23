@@ -260,5 +260,5 @@ input, select {
 }
 
 #bid-add {
-  background-color: fade(var(--main-bg-color), 50%);
+  background-color: rgba(73, 147, 227, 0.6);
 }

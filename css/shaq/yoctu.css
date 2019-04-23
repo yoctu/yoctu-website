@@ -258,3 +258,7 @@ input, select {
 .img-ico {
   color: var(--main-bg-color);
 }
+
+#bid-add {
+  background-color: fade(var(--main-bg-color), 50%);
+}

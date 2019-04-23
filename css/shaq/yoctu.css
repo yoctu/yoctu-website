@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: rgba(73, 147, 227, 0.6);
   color: var(--main-bg-color) !important;
 }
 
@@ -128,8 +128,7 @@ table.dataTable tbody tr {
 
 table.dataTable tbody tr.odd {
   color: #FFFFFF;
-  background-color: var(--main-bg-color);
-  opacity: 0.9;
+  background-color: rgba(73, 147, 227, 0.6);
 }
 
 a {

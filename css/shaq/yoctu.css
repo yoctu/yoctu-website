@@ -181,6 +181,10 @@ th {
   background-color: #4981F1;
 }
 
+#navbar-username{
+  color: var(--main-bg-color);
+}
+
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
     color: var(--main-bg-color);
@@ -232,7 +236,7 @@ input, select {
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
     color: #FFF;
-    background-color: #none !important;
+    background-color: none !important;
 }
 
 #shaqList_info {

@@ -84,19 +84,19 @@ th, label {
 .well-success {
   background-color: #F5F6F8;
   opacity: 1;
-  border: 3px solid #5cb85c;
+  border: 4px solid #4FD844;
 }
 
 .well-warning {
   background-color: #F5F6F8;
   opacity: 0.9;
-  border: 3px solid #eea236;
+  border: 4px solid #FFC266;
 }
 
 .well-danger {
   background-color: #F5F6F8;
   opacity: 0.6;
-  border: 3px solid #d9534f;
+  border: 4px solid #FF5C16;
 }
 
 .table>tbody>tr>td {

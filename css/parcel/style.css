@@ -108,15 +108,6 @@ ul.navbar-nav {
 	color: black;
 }
 
-.header-content {
-	background-image: url(https://logos.yoctu.com/images/parcel/slideshow.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-bottom: 150px;
-}
-
-
 .navbar-inverse ul.navbar-nav li { padding-top: 8px; padding-bottom: 8px; }
 
 .navbar-inverse ul.navbar-nav li .li-text { opacity: 0.8; }

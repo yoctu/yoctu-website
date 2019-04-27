@@ -108,6 +108,15 @@ ul.navbar-nav {
 	color: black;
 }
 
+.header-content {
+	background-image: url(https://logos.yoctu.com/images/parcel/slideshow.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 150px;
+}
+
+
 .navbar-inverse ul.navbar-nav li { padding-top: 8px; padding-bottom: 8px; }
 
 .navbar-inverse ul.navbar-nav li .li-text { opacity: 0.8; }
@@ -151,7 +160,7 @@ ul.navbar-nav {
 }
 
 .form-box {
-	padding-top: 40px;
+	padding-top: 20px;
 }
 
 .form-top {
@@ -196,7 +205,7 @@ form .form-bottom button.btn {
 }
 
 form .form-bottom .input-error {
-	border-color: red !important;
+	border-color: var(--main-upela-color);
 }
 
 form.registration-form fieldset {
@@ -220,4 +229,59 @@ only screen and (     -o-min-device-pixel-ratio: 2/1),
 only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
+}
 
+.cc-selector input{
+    margin:0;
+    padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+#air-transport-img {
+	-webkit-mask: url("https://logos.yoctu.com/images/parcel/svg/air-transport.svg") no-repeat 100% 100%;
+	mask: url("https://logos.yoctu.com/images/parcel/svg/air-transport.svg") no-repeat 100% 100%;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	filter: brightness(1) ;
+	background-color: var(--main-upela-color);
+}
+
+#ocean-transport-img {
+	-webkit-mask: url("https://logos.yoctu.com/images/parcel/svg/ocean-transportation.svg") no-repeat 100% 100%;
+	mask: url("https://logos.yoctu.com/images/parcel/svg/ocean-transportation.svg") no-repeat 100% 100%;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	filter: brightness(1) ;
+	background-color: rgba(0, 0, 0, 0.3);;
+}
+
+#truck-transport-img {
+	-webkit-mask: url("https://logos.yoctu.com/images/parcel/svg/logistics-delivery-truck-in-movement.svg") no-repeat 100% 100%;
+	mask: url("https://logos.yoctu.com/images/parcel/svg/logistics-delivery-truck-in-movement.svg") no-repeat 100% 100%;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	filter: brightness(1) ;
+	background-color: rgba(0, 0, 0, 0.3);;
+}
+
+#international-transport-img {
+	-webkit-mask: url("https://logos.yoctu.com/images/parcel/svg/international-delivery.svg") no-repeat 100% 100%;
+	mask: url("https://logos.yoctu.com/images/parcel/svg/international-delivery.svg") no-repeat 100% 100%;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	filter: brightness(1) ;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#ocean-transport-img:hover,#air-transport-img:hover,#truck-transport-img:hover, #international-transport-img:hover{
+	background-color: var(--main-upela-color);
+}
+
+.transport {
+    cursor:pointer;
+    display:inline-block;
+    max-height: 32px;
+    width: 32px; height: 32px;
+}

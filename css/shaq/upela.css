@@ -222,6 +222,6 @@ input, select {
 }
 
 .btn-send-message {
-  background-color: color: var(--main-bg-color);
+  background-color: var(--main-bg-color);
   color: #FFF;
 }

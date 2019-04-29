@@ -7,6 +7,10 @@ body {
   color: var(--main-bg-color);
 }
 
+.dropdown-menu .divider {
+  background-color: var(--main-bg-color);
+}
+
 hr {
   background-color: var(--main-bg-color);
 }
@@ -182,7 +186,7 @@ input, select {
   content: url("https://logos.yoctu.com/logo/skoreway-64.png");
 }
 
-#navbar-username {
+#navbar-username, #solrReload, #solrRefresh {
   color: var(--main-bg-color);
 }
 

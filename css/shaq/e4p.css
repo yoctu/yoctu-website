@@ -206,3 +206,11 @@ input, select {
 #bid-add {
   background-color: #fff;
 }
+
+.dropdown-menu>li>a,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+    color: var(--main-bg-color);
+    backgound-color: none;
+    text-decoration: none;
+}

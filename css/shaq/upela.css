@@ -195,7 +195,7 @@ input, select {
   background-color: #fff;
 }
 
-#navbar-username {
+#navbar-username, #solrReload, #solrRefresh {
   color: var(--main-bg-color);
 }
 

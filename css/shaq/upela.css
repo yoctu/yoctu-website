@@ -15,6 +15,15 @@ body {
         content:url("https://logos.yoctu.com/logo/upela-64.png");
 }
 
+#navbar-usercode {
+  background-color: var(--main-bg-color);
+  color: #fff;
+}
+
+.divider {
+  color: var(--main-bg-color);
+}
+
 hr {
   background-color: var(--main-bg-color);
 }

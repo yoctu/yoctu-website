@@ -220,3 +220,8 @@ input, select {
 .dropdown-menu>li>a {
   color: var(--main-bg-color);
 }
+
+.btn-send-message {
+  background-color: color: var(--main-bg-color);
+  color: #FFF;
+}

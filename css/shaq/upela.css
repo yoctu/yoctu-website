@@ -211,9 +211,11 @@ input, select {
   background-color: rgba(223, 92, 42, 0.6);
 }
 
+.dropdown-menu>li>a,
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
     color: var(--main-bg-color);
+    backgound-color: none;
     text-decoration: none;
   }
 

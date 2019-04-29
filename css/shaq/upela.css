@@ -221,7 +221,8 @@ input, select {
   color: var(--main-bg-color);
 }
 
-.btn-send-message, #saveSettingsBtn {
+.btn-send-message, .btn-send-message:hover,
+#saveSettingsBtn, #saveSettingsBtn:hover {
   background-color: var(--main-bg-color);
   color: #FFF;
 }

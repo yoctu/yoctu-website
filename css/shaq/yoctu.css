@@ -181,7 +181,7 @@ th {
   background-color: #4981F1;
 }
 
-#navbar-username{
+#navbar-username, #solrReload, #solrRefresh{
   color: var(--main-bg-color);
 }
 

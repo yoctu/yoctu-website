@@ -49,7 +49,7 @@ th, label {
   background-color: #F5F6F8;
 }
 
-#shaq-valid-from-btn {
+#shaq-valid-from-btn, #shaq-valid {
   color: var(--main-bg-color);
   background-color: #fff;
 }

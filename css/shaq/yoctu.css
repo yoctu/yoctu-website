@@ -159,6 +159,12 @@ th {
   background-color: #d9534f;
 }
 
+.chat-container-notification.alert.alert-danger {
+  border: none;
+  color: #fff;
+  background-color: #d9534f;
+}
+
 .chat-container.alert.alert-success {
   border: none;
   background-color: rgba(105, 121, 248, 0.4);

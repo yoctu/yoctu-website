@@ -8,7 +8,7 @@
 		var defaults = {
 			//Set Your own Pricing if want use in whmcs pricing should be must same as per whmcs configuration option pricing
 			PriceBase	: '3.00',		// base price should be as per this calcution (1 SHAQS Core + 256MB PLANTS + 50GB USERS)
-			PriceSHAQS	: '1.00',		// per month per unit
+			PriceSHAQS	: '0.01',		// per month per unit
 			PricePLANTS	: '1.00',		// per month per 1024 MB
 			PriceUSERS 	: '1.00',		// per month per 10 GB
 			

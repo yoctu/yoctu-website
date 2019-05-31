@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$('#qsSlider').qsSlider({
 		PriceBase :	'1',
-		PriceSHAQS :	'1.00',
+		PriceSHAQS :	'0.01',
 		PricePLANTS :	'1.00',
 		PriceUSERS :	'1.00',
 		MaxSHAQS	: '5000',

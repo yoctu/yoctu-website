@@ -16,7 +16,7 @@ $(document).ready(function () {
 		cpYesID : '905',
 		cpNoID : '904',
 		discount	: '0.25',
-		defaultPreset : 'XS',
+		defaultPreset : 's',
 		TipsXS	: 'XS',
 		TipsS	: 'S',
 		TipsM	: 'M',

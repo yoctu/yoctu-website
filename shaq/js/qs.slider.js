@@ -244,14 +244,8 @@
 					// And the Text box. Now there's a little specialness here, as we want
 					// bump the first 2 steps to a named value, then subtract 2 from the
 					// rest. Ie. 256 / 512 / 1 / 2 ...
-					var value = sliderStep - 2;
-					if (value == -1) {
-						value = 1;
-					} else if (value == 0) {
-						value = 1;
-					}
 					var units = 'PLANT(s)';		
-					var sTotal = value + " " + units;
+					var sTotal = sliderStep + " " + units;
 		
 					// And the indicator text.
 					$("div.values div#ramvalue").text(sTotal);

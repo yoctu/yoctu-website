@@ -7,16 +7,16 @@
 		
 		var defaults = {
 			//Set Your own Pricing if want use in whmcs pricing should be must same as per whmcs configuration option pricing
-			PriceBase	: '45.12',		// base price should be as per this calcution (1 CPU Core + 256MB RAM + 50GB HDD)
-			PriceCPU	: '15.00',		// per month per unit
-			PriceRAM	: '20.48',		// per month per 1024 MB
-			PriceHDD 	: '5.00',		// per month per 10 GB
+			PriceBase	: '45.12',		// base price should be as per this calcution (1 SHAQS Core + 256MB PLANTS + 50GB USERS)
+			PriceSHAQS	: '15.00',		// per month per unit
+			PricePLANTS	: '20.48',		// per month per 1024 MB
+			PriceUSERS 	: '5.00',		// per month per 10 GB
 			
 			
 			//Maximum Slider values
-			MaxCPU	: '16',		// Maximum CPU
-			MaxRAM	: '14',		// Maximum RAM //It should be + 2 like if you want maximum RAM 16 GB then make it 18 etc..		
-			MaxHDD	: '50',		// Maximum HDD //Its for 500 GB HDD Storage maximum, if want to change it make 100 for 1000 GB, 150 For 1500GB and so on..
+			MaxSHAQS	: '16',		// Maximum SHAQS
+			MaxPLANTS	: '14',		// Maximum PLANTS //It should be + 2 like if you want maximum PLANTS 16 GB then make it 18 etc..		
+			MaxUSERS	: '50',		// Maximum USERS //Its for 500 GB USERS Storage maximum, if want to change it make 100 for 1000 GB, 150 For 1500GB and so on..
 			
 			//Set BuyNow Link
 			BuyNowLink	: '',
@@ -69,13 +69,13 @@
 							slide: function(event, ui) {
 						
 								if (id == 'cpu') {
-									ISpec.setCPU( ui.value );
+									ISpec.setSHAQS( ui.value );
 								
 								} else if (id == 'ram') {
-									ISpec.setRAM( ui.value );
+									ISpec.setPLANTS( ui.value );
 								
 								} else if (id == 'hdd') {
-									ISpec.setHDD( ui.value );
+									ISpec.setUSERS( ui.value );
 								}
 								ISpec.updatePrice();
 							}
@@ -181,19 +181,19 @@
 				// Tweak slider steps
 				var cpuslider = {
 					min:     1,                     // Slider min value
-					max:     o.MaxCPU,              // Slider max value
+					max:     o.MaxSHAQS,              // Slider max value
 					step:    1                      // Slider increments
 				};
 
 				var ramslider = {
 					min:     1,                     // Slider min value
-					max:     o.MaxRAM,              // Slider max value 
+					max:     o.MaxPLANTS,              // Slider max value 
 					step:    1                      // Slider increments
 				};
 
 				var hddslider = {
 					min:     1,                     // Slider min value
-					max:     o.MaxHDD,              // Slider max value
+					max:     o.MaxUSERS,              // Slider max value
 					step:    1                      // Slider increments
 				};
 
@@ -216,18 +216,18 @@
 				// Getting priceing
 				var pricespec = {
 					baseprice:  o.PriceBase,
-					cpu_ghz_mo: o.PriceCPU,
-					ram_gb_mo:  o.PriceRAM,
-					hdd_gb_mo:  o.PriceHDD
+					cpu_ghz_mo: o.PriceSHAQS,
+					ram_gb_mo:  o.PricePLANTS,
+					hdd_gb_mo:  o.PriceUSERS
 				};
 
 
 				// Functions //
 
-				// Sets the number of CPU.
-				this.setCPU = function(sliderStep) {
+				// Sets the number of SHAQS.
+				this.setSHAQS = function(sliderStep) {
 	
-					var units ='CORE';
+					var units ='SHAQS';
 					var sTotal = sliderStep + " " + units;
 		
 					// And the Text box.
@@ -238,8 +238,8 @@
 				}
 
 
-				// Sets the number of RAM.   
-				this.setRAM = function(sliderStep) {
+				// Sets the number of PLANTS.   
+				this.setPLANTS = function(sliderStep) {
 
 					// And the Text box. Now there's a little specialness here, as we want
 					// bump the first 2 steps to a named value, then subtract 2 from the
@@ -250,7 +250,7 @@
 					} else if (value == 0) {
 						value = 512;
 					}
-					var units = (value < 256) ? 'GB' : 'MB';		
+					var units = 'PLANT(s)';		
 					var sTotal = value + " " + units;
 		
 					// And the indicator text.
@@ -260,10 +260,10 @@
 					$("div#qsSlider div#QsControls div#ram").slider("value", sliderStep);
 				}
 
-				// Sets the number of GB HDD Storage. 
-				this.setHDD = function(sliderStep) {
+				// Sets the number of GB USERS Storage. 
+				this.setUSERS = function(sliderStep) {
 	
-					var units ='GB';
+					var units ='USER(s)';
 		
 					// And the Text box.
 					var value = (sliderStep * 10) + 0;
@@ -278,9 +278,9 @@
    
 				this.selectPreset = function(presetName) {
 					var presetData = $(presetspec).attr(presetName);
-					this.setCPU(presetData.cpu);
-					this.setRAM(presetData.ram);
-					this.setHDD(presetData.hdd);
+					this.setSHAQS(presetData.cpu);
+					this.setPLANTS(presetData.ram);
+					this.setUSERS(presetData.hdd);
 					this.updatePrice();
 				};
 
@@ -313,7 +313,7 @@
 					var panel_is_nocp = parseInt( $("div#panelselector div#panel").slider("value") );
 					var period_is_year = parseInt( $("div#periodselector div#period").slider("value") );
 
-					// Calculate the CPU extra cost - CPU - the inital 1GB
+					// Calculate the SHAQS extra cost - SHAQS - the inital 1GB
 					var price1GHz = parseFloat(pricespec.cpu_ghz_mo); 
 					if (cpu == 1) {
 						price += 0;
@@ -321,7 +321,7 @@
 						price += ( price1GHz * cpu ) - price1GHz;
 					}
 
-					// Calculate the RAM extra cost - RAM - the initial 256MB
+					// Calculate the PLANTS extra cost - PLANTS - the initial 256MB
 					var price256 = parseFloat(pricespec.ram_gb_mo) / 4;
 					if (ram == 256) {
 						price += 0;
@@ -331,7 +331,7 @@
 						price += ( parseFloat(pricespec.ram_gb_mo) * ram ) - price256;
 					}
 
-					// Calculate the HDD - disc space minus the inital 50GB
+					// Calculate the USERS - disc space minus the inital 50GB
 					var price10GB = parseFloat(pricespec.hdd_gb_mo);  
 					if (hdd == 50) {
 						price += 0;
@@ -368,17 +368,17 @@
 				// Let's work for buy now url values
 				var buyURL = function() {
 		
-					// Getting RAM value numaric only
+					// Getting PLANTS value numaric only
 					var ramAmount = $("div.values div#ramvalue").text().replace(/[^0-9]/gi, '');
 		
-					// Calculation for RAM to convert GB to MB for > then 512MB
+					// Calculation for PLANTS to convert GB to MB for > then 512MB
 					if (ramAmount < 256) {
 					ramAmount *= 1024;
 					} else {
 						ramAmount
 					}
 		
-					// Getting CPU and HDD values numaric only 
+					// Getting SHAQS and USERS values numaric only 
 					var cpuAmount = $("div.values div#cpuvalue").text().replace(/[^0-9]/gi, '');
 					var hddSize = $("div.values div#hddvalue").text().replace(/[^0-9]/gi, '');
 		
@@ -406,12 +406,12 @@
 					// If one is a preset... make it selected.
 					for (i in presetspec) {
 						var presetData = presetspec[i];
-						var sliderCPU  = $("div#QsControls div#cpu").slider("value");
-						var sliderRAM  = $("div#QsControls div#ram").slider("value");
-						var sliderHDD  = $("div#QsControls div#hdd").slider("value");
-						if ( presetData.cpu == sliderCPU
-							&& presetData.ram == sliderRAM
-							&& presetData.hdd == sliderHDD ) {
+						var sliderSHAQS  = $("div#QsControls div#cpu").slider("value");
+						var sliderPLANTS  = $("div#QsControls div#ram").slider("value");
+						var sliderUSERS  = $("div#QsControls div#hdd").slider("value");
+						if ( presetData.cpu == sliderSHAQS
+							&& presetData.ram == sliderPLANTS
+							&& presetData.hdd == sliderUSERS ) {
 							var presetClass = "preset" + i.toLowerCase();
 							$("div#presets div.product .btn").removeClass('btn-primary');           
 							$("div#presets div."+presetClass+" .btn").addClass('btn-primary');

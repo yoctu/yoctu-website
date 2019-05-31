@@ -7,7 +7,7 @@
 		
 		var defaults = {
 			//Set Your own Pricing if want use in whmcs pricing should be must same as per whmcs configuration option pricing
-			PriceBase	: '3.00',		// base price should be as per this calcution (1 SHAQS Core + 256MB PLANTS + 50GB USERS)
+			PriceBase	: '1.00',		// base price should be as per this calcution (1 SHAQS Core + 256MB PLANTS + 50GB USERS)
 			PriceSHAQS	: '0.01',		// per month per unit
 			PricePLANTS	: '1.00',		// per month per 1024 MB
 			PriceUSERS 	: '1.00',		// per month per 10 GB
@@ -301,42 +301,13 @@
 
 				var calculatePrice = function() {
 					var price = parseFloat(pricespec.baseprice);
-					var cpu = parseInt( $("div.values div#cpuvalue").text() );
-					var ram = parseInt( $("div.values div#ramvalue").text() );
-					var hdd = parseInt( $("div.values div#hddvalue").text() );
+					var cpu = parseFloat( $("div.values div#cpuvalue").text() );
+					var ram = parseFloat( $("div.values div#ramvalue").text() );
+					var hdd = parseFloat( $("div.values div#hddvalue").text() );
 					var panel_is_nocp = parseInt( $("div#panelselector div#panel").slider("value") );
 					var period_is_year = parseInt( $("div#periodselector div#period").slider("value") );
 
-					// Calculate the SHAQS extra cost - SHAQS - the inital 1GB
-					var price1GHz = parseFloat(pricespec.cpu_ghz_mo); 
-					if (cpu == 1) {
-						price += 0;
-					} else {
-						price += ( price1GHz * cpu ) - price1GHz;
-					}
-
-					// Calculate the PLANTS extra cost - PLANTS - the initial 256MB
-					var price256 = parseFloat(pricespec.ram_gb_mo) / 4;
-					if (ram == 256) {
-						price += 0;
-					} else if (ram == 512) {
-						price += ( parseFloat(pricespec.ram_gb_mo) / 2 ) - price256;
-					} else {
-						price += ( parseFloat(pricespec.ram_gb_mo) * ram ) - price256;
-					}
-
-					// Calculate the USERS - disc space minus the inital 50GB
-					var price10GB = parseFloat(pricespec.hdd_gb_mo);  
-					if (hdd == 50) {
-						price += 0;
-					} else {
-						price += ( price10GB * (hdd / 10) ) - (price10GB * 5);
-					}
-		
-					// Check the price, if its a cpanel selected
-					if (panel_is_nocp) {
-						price -= o.cPanelPrice; 
-					}
+					price = price + (cpu / 100) + ram + hdd;
 
 					// Check the period, if its a year then multiply by 12
 					if (period_is_year) {

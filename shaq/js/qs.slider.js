@@ -8,9 +8,9 @@
 		var defaults = {
 			//Set Your own Pricing if want use in whmcs pricing should be must same as per whmcs configuration option pricing
 			PriceBase	: '3.00',		// base price should be as per this calcution (1 SHAQS Core + 256MB PLANTS + 50GB USERS)
-			PriceSHAQS	: '15.00',		// per month per unit
-			PricePLANTS	: '20.48',		// per month per 1024 MB
-			PriceUSERS 	: '5.00',		// per month per 10 GB
+			PriceSHAQS	: '1.00',		// per month per unit
+			PricePLANTS	: '1.00',		// per month per 1024 MB
+			PriceUSERS 	: '1.00',		// per month per 10 GB
 			
 			
 			//Maximum Slider values
@@ -199,11 +199,11 @@
 
 				// Presets buttons - numbers reference the number of slider steps.
 				var presetspec = {
-					xs:  { cpu: "1",  ram: "1",  hdd: "1"   },
-					s:   { cpu: "1",  ram: "2",  hdd: "1"   },
-					m:   { cpu: "4",  ram: "4",  hdd: "30"  }, 
-					l:   { cpu: "12",  ram: "6", hdd: "10"  },
-					xl:  { cpu: "8",  ram: "14",  hdd: "30" }
+					xs:  { cpu: "100",  ram: "1",  hdd: "1"   },
+					s:   { cpu: "200",  ram: "2",  hdd: "5"   },
+					m:   { cpu: "500",  ram: "3",  hdd: "10"  }, 
+					l:   { cpu: "1000",  ram: "5", hdd: "50"  },
+					xl:  { cpu: "3000",  ram: "10",  hdd: "100" }
 				};
    
 				// Exported spec.

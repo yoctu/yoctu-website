@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: rgba(73, 147, 227, 0.6);
+  background-color: rgba(73, 147, 227, 1);
   color: var(--main-bg-color) !important;
 }
 
@@ -25,7 +25,7 @@ hr {
 
 input::placeholder {
   color: var(--main-bg-color);
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .dataTables_wrapper .dataTables_info,
@@ -132,7 +132,7 @@ table.dataTable tbody tr {
 
 table.dataTable tbody tr.odd {
   color: #FFFFFF;
-  background-color: rgba(73, 147, 227, 0.6);
+  background-color: rgba(73, 147, 227, 1);
 }
 
 a {
@@ -167,7 +167,8 @@ th {
 
 .chat-container.alert.alert-success {
   border: none;
-  background-color: rgba(105, 121, 248, 0.4);
+  background-color: 
+    (105, 121, 248, 0.4);
 }
 
 .chat-container.alert.alert-info {

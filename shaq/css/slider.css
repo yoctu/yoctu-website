@@ -180,8 +180,8 @@
 #qsSlider .ui-slider-primary .ui-slider-handle:hover,
 #qsSlider .ui-slider-primary .ui-slider-handle:focus,
 #qsSlider .ui-slider-primary .ui-slider-handle:active {
-    border-color: #337ab7;
-    color: #337ab7
+    border-color: #2eca6a;
+    color: #2eca6a;
 }
 
 #qsSlider .ui-slider-primary .ui-slider-range {

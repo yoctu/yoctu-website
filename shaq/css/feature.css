@@ -30,6 +30,7 @@
 
 .entry-title>h3 {
   background: #2eca6a;
+  color: white;
   font-size: 20px;
   padding: 5px 0;
   text-transform: uppercase;
@@ -117,6 +118,7 @@
 
 .basic .entry-title > h3 {
   background: #2eca6a;
+  color: white;
 }
 
 .basic .price {
@@ -129,6 +131,7 @@
 
 .standard .entry-title > h3 {
   background: #2eca6a;
+  color: white;
 }
 
 .standard .price {
@@ -137,6 +140,7 @@
 
 .ultimite .entry-title > h3 {
   background: #2eca6a;
+  color: white;
 }
 
 .ultimite .entry-title {

@@ -29,7 +29,7 @@
 }
 
 .entry-title>h3 {
-  background: #20BADA;
+  background: #2eca6a;
   font-size: 20px;
   padding: 5px 0;
   text-transform: uppercase;
@@ -116,7 +116,7 @@
 }
 
 .basic .entry-title > h3 {
-  background: #44CBC6;
+  background: #2eca6a;
 }
 
 .basic .price {
@@ -128,7 +128,7 @@
 }
 
 .standard .entry-title > h3 {
-  background: #3772aa;
+  background: #2eca6a;
 }
 
 .standard .price {
@@ -136,13 +136,13 @@
 }
 
 .ultimite .entry-title > h3 {
-  background: #DD4B5E;
+  background: #2eca6a;
 }
 
 .ultimite .entry-title {
-  background: #F75C70;
+  background: #2eca6a;
 }
 
 .ultimite .price {
-  background: #DD4B5E;
+  background: #2eca6a;
 }

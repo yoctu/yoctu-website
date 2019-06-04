@@ -87,6 +87,10 @@ body {
   border: none;
 }
 
+.btn.selectplan {
+  padding: 3em 0;
+}
+
 .btn {
   text-align: center;
 }

@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.plan-inner-selected {
+  border: 5px solid blue;
+}
+
 .plan {
   display: inline-block;
   margin: 10px 1%;

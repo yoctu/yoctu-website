@@ -7,8 +7,8 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: var(--body-bg-color);
-    background-color: #F47219;
+    color: var(--main-bg-color);
+    background-color: var(--body-bg-color);
     line-height: 30px;
 }
 

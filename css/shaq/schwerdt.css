@@ -27,12 +27,6 @@ input::placeholder {
   opacity: 0.6;
 }
 
-.dataTables_wrapper .dataTables_info,
-.dataTables_wrapper .dataTables_paginate .paginate_button,
-th, label {
-  color: var(--main-bg-color) !important;
-}
-
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
   color: #ffffff !important;
   border: none;
@@ -51,16 +45,6 @@ th, label {
   background: linear-gradient(to bottom, var(--main-bg-color) 0%, var(--main-bg-color) 100%);
 }
 
-.form-control[readonly], .form-control {
-  color: var(--main-bg-color);
-  background-color: #F5F6F8;
-}
-
-#shaq-valid-from-btn {
-  color: var(--main-bg-color);
-  background-color: #fff;
-}
-
 #solrtarget {
   background-color: #fff;
   border: 1px solid var(--main-bg-color);
@@ -71,19 +55,10 @@ th, label {
   background-color: #d9534f;
 }
 
-.btn-room>.badge {
-  background-color: var(--main-bg-color);
-}
 
 .btn-room {
   font-weight: bold;
   border: none;
-  color: var(--main-bg-color);
-}
-
-.btn-glyphicon {
-  background-color: #EAEDF3;
-  color: var(--main-bg-color);
 }
 
 .well {
@@ -133,7 +108,6 @@ th {
 
 .chat-container.alert {
   border-radius: 8px;
-  color: var(--main-bg-color);
 }
 
 .chat-container.alert.alert-danger {
@@ -155,7 +129,6 @@ th {
 
 .chat-container.alert.alert-info {
   border: none;
-  color: var(--main-bg-color);
   background-color: #F5F6F8;
 }
 
@@ -179,13 +152,11 @@ th {
 }
 
 label {
-  color: var(--main-bg-color);
   font-weight: normal;
   border-radius: 16px;
 }
 
 input, select {
-  color: var(--main-bg-color);
   border: 1px solid var(--main-bg-color);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -193,14 +164,6 @@ input, select {
   padding: .375rem .75rem;
   font-size: 1.5rem;
   background-color: #fff;
-}
-
-#navbar-username, #solrReload, #solrRefresh {
-  color: var(--main-bg-color);
-}
-
-#shaqList_info {
-  color: var(--main-bg-color);
 }
 
 .btn-bid-extend {
@@ -219,13 +182,8 @@ input, select {
 .dropdown-menu>li>a,
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-    color: var(--main-bg-color);
     text-decoration: none;
   }
-
-.dropdown-menu>li>a {
-  color: var(--main-bg-color);
-}
 
 .btn-send-message, .btn-send-message:hover,
 #saveSettingsBtn, #saveSettingsBtn:hover {

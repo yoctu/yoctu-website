@@ -97,7 +97,11 @@ jQuery(document).ready(function($) {
         method: 'POST',
         body: params,
     })
-    .then(function(res) {});
+    .then(function(res) {
+          $("#sendmessage").addClass("show");
+          $("#errormessage").removeClass("show");
+          $('.contactForm').find("input, textarea").val("");
+    });
 
     return false;
   });

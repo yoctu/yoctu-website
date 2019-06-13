@@ -90,28 +90,15 @@ jQuery(document).ready(function($) {
     });
     if (ferror) return false;
     else var str = $(this).serialize();
-    var action = $(this).attr('action');
-    if( ! action ) {
-      action = 'contactform/contactform.php';
-    }
-    $.ajax({
-      type: "POST",
-      url: action,
-      data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
+    const params = new URLSearchParams();
+    var mail = {"subject":"shaq contact","sender":"hello@yoctu.com","recipients":"lav@yoctu.com","text_body": str}
+    params.append('mail', JSON.stringify(mail));
+    fetch("https://mailer.test.flash.global/api/mails", {
+        method: 'POST',
+        body: params,
+    })
+    .then(function(res) {});
 
-      }
-    });
     return false;
   });
 

@@ -98,11 +98,10 @@ jQuery(document).ready(function($) {
         body: params,
     })
     .then(function(res) {
+    });
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
-    });
-
     return false;
   });
 

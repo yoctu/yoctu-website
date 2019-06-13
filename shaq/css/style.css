@@ -890,6 +890,10 @@ a:hover {
   background-attachment: scroll;
 }
 
+.intro .carousel-item-b.bg-image {
+  background-attachment: fixed;
+}
+
 .intro .intro-content {
   position: absolute;
 }

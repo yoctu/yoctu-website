@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
     })
     .then(function(res) {});
 
-    return true;
+    return false;
   });
 
 });

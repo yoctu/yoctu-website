@@ -89,9 +89,9 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
+
     const params = new URLSearchParams();
-    var mail = {"subject":"shaq contact","sender":"hello@yoctu.com","recipients":"lav@yoctu.com","text_body": str}
+    var mail = {"subject":"shaq contact","sender":"hello@yoctu.com","recipients":"lav@yoctu.com","text_body": $(this)}
     params.append('mail', JSON.stringify(mail));
     fetch("https://mailer.test.flash.global/api/mails", {
         method: 'POST',
@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
     })
     .then(function(res) {});
 
-    return false;
+    return true;
   });
 
 });

@@ -91,7 +91,8 @@ jQuery(document).ready(function($) {
     if (ferror) return false;
 
     const params = new URLSearchParams();
-    var mail = {"subject":"shaq contact","sender":"hello@yoctu.com","recipients":"lav@yoctu.com","text_body": $(this)}
+    var inputmail = $(this).serializeArray();
+    var mail = {"subject":inputmail["subject"],"sender":"hello@yoctu.com","recipients":"lav@yoctu.com","text_body": inputmail["message"]}
     params.append('mail', JSON.stringify(mail));
     fetch("https://mailer.test.flash.global/api/mails", {
         method: 'POST',

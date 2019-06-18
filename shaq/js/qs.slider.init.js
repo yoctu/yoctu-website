@@ -7,10 +7,8 @@ var configPricing = {
 	discount	: '0.25',
 }
 var presetspec = {
-	default: {
 		shaqs: "200",
 		users: "5"
-	}
 };
 
 $(document).ready(function () {

@@ -55,7 +55,7 @@
               ISpec.updatePrice();
             }
           });
-          
+
           ISpec.selectPreset();
 
         });
@@ -96,8 +96,8 @@
             $("div#qsSlider div#QsControls div#users").slider("value", parseFloat(sliderStep));
           }
           this.selectPreset = function() {
-            this.setSHAQS($(presetspec).shaqs);
-            this.setUSERS($(presetspec).users);
+            this.setSHAQS(presetspec.shaqs);
+            this.setUSERS(presetspec.users);
             this.updatePrice();
           };
 

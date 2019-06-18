@@ -1,4 +1,5 @@
 var configPricing = {
+	PriceBase :	'0',
 	PriceSHAQS :	'0.01',
 	PriceUSERS :	'1.10',
 	MaxSHAQS	: '5000',

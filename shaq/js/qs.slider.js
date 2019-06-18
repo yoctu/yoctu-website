@@ -74,7 +74,7 @@
             users: usersslider
           };
           var pricespec = {
-            baseprice: o.PriceBaseS,
+            baseprice: o.PriceBase,
             shaqsSpec: o.PriceSHAQS,
             usersSpec: o.PriceUSERS
           };

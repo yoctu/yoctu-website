@@ -55,6 +55,9 @@
               ISpec.updatePrice();
             }
           });
+          
+          ISpec.selectPreset();
+
         });
 
         var qsSlider = function() {
@@ -92,10 +95,9 @@
             $("div.values div#usersvalue").text(sTotal);
             $("div#qsSlider div#QsControls div#users").slider("value", parseFloat(sliderStep));
           }
-          this.selectPreset = function(presetName) {
-            var presetData = $(presetspec).attr(presetName);
-            this.setSHAQS(presetData.shaqs);
-            this.setUSERS(presetData.users);
+          this.selectPreset = function() {
+            this.setSHAQS($(presetspec).shaqs);
+            this.setUSERS($(presetspec).users);
             this.updatePrice();
           };
 

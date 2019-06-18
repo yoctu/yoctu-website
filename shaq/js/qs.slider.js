@@ -112,7 +112,6 @@
             var users = parseFloat($("div.values div#usersvalue").text());
             var period_is_year = parseInt($("div#periodselector div#period").slider("value"));
 						price = price + (shaqs / 100) users;
- 					  $("#selectPricing").show();
             if (period_is_year) {
               price *= 12;
               price = price - (price * o.discount);

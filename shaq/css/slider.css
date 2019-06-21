@@ -37,6 +37,7 @@
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  border: 1px solid #2eca6a;
 }
 
 input:checked + .sliderBtn {

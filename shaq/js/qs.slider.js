@@ -28,7 +28,6 @@
                   ISpec.updatePrice();
                 }
               });
-
             }
           );
           $("#archiveBtn").on('change', function() {
@@ -144,7 +143,8 @@
             var price = calculatePrice();
             $("div#QsPrice span#dollar").text(price.dollar);
             $("div#QsPrice span#cents").text("." + price.cents);
-            $("#navprice").html('<span class="color-b">' + price.dollar + "." + price.cents + '</span>')
+            $("#navpricedollar").text(price.dollar);
+            $("#navpricecent").text(price.cents)
           };
 
           var calculatePrice = function() {

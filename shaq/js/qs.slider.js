@@ -31,7 +31,7 @@
           );
           $("#archiveBtn").on('change', function(){    // 2nd (A)
           });
-          $("#plants").on('change', function(){    // 2nd (A)
+          $("#plantsBtn").on('change', function(){    // 2nd (A)
               if ($("#plantsBtn").is(":checked"))  {
                 $("#plantsSlide").css('display','block');
                 $("#plantsBR").css('display','none');

@@ -162,6 +162,7 @@
                 if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE5Y;
                 else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE5Y;
                 break;
+              default: break;
             }
             var price = (shaqs * configPricing.PriceSHAQS) + (users * configPricing.PriceUSERS) +
               (plants * configPricing.PricePLANTS);

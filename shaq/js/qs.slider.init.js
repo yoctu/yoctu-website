@@ -2,6 +2,7 @@ var configPricing = {
 	PriceBase :	1,
 	PriceSHAQS :	0.10,
 	PriceUSERS :	1.10,
+	PricePLANTS: 5,
 	PriceRATING: 0.05,
 	PriceNOTIF: 0.01,
 	PriceARCHIVE1W: 0,

@@ -80,26 +80,22 @@ input:checked + .sliderBtn:before {
     margin: 15px 0 45px
 }
 
-#qsSlider #panelselector,
 #qsSlider #periodselector {
     padding: 15px 0;
     margin-bottom: 15px
 }
 
-#qsSlider #panelselector #panel,
 #qsSlider #periodselector #period {
     width: 7px;
     height: 27px
 }
 
-#qsSlider #panelselector #panel #panelbackdrop,
 #qsSlider #periodselector #period #periodbackdrop {
     width: 10px;
     height: 10px
 }
 
-#qsSlider #month,
-#qsSlider #pincluded {
+#qsSlider #month {
     position: absolute;
     width: 170px;
     left: 20px;
@@ -107,8 +103,7 @@ input:checked + .sliderBtn:before {
     cursor: pointer
 }
 
-#qsSlider #year,
-#qsSlider #nopanel {
+#qsSlider #year {
     position: absolute;
     width: 170px;
     left: 20px;
@@ -120,10 +115,6 @@ input:checked + .sliderBtn:before {
     border: 1px solid #d5d7d8;
     border-width: 0 0 0 1px;
     padding-left: 15px
-}
-
-#qsSlider #buyvps {
-    margin: 15px auto 0 0
 }
 
 #qsSlider #pricetext {
@@ -158,17 +149,6 @@ input:checked + .sliderBtn:before {
 
 #qsSlider #presets {
     position: relative
-}
-
-#qsSlider #presets .btn {
-    text-transform: uppercase;
-    margin-left: 2px;
-    border-radius: 0
-}
-
-#qsSlider #presets div.product {
-    float: left;
-    display: block
 }
 
 #qsSlider .ui-slider {

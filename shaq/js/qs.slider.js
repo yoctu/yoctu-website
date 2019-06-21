@@ -29,38 +29,38 @@
 
             }
           );
-          $("#archiveBtn").on('change', function(){
-            if ($("#archiveBtn").is(":checked"))  {
-              $("#archiveSlide").css('display','block');
-              $("#archiveBR").css('display','none');
-            } else  {
-              $("#archiveSlide").css('display','none');
-              $("#archiveBR").css('display','block');
+          $("#archiveBtn").on('change', function() {
+            if ($("#archiveBtn").is(":checked")) {
+              $("#archiveSlide").css('display', 'block');
+              $("#archiveBR").css('display', 'none');
+            } else {
+              $("#archiveSlide").css('display', 'none');
+              $("#archiveBR").css('display', 'block');
             }
           });
-          $("#plantsBtn").on('change', function(){
-              if ($("#plantsBtn").is(":checked"))  {
-                $("#plantsSlide").css('display','block');
-                $("#plantsBR").css('display','none');
-              } else  {
-                $("#plantsSlide").css('display','none');
-                $("#plantsBR").css('display','block');
-              }
+          $("#plantsBtn").on('change', function() {
+            if ($("#plantsBtn").is(":checked")) {
+              $("#plantsSlide").css('display', 'block');
+              $("#plantsBR").css('display', 'none');
+            } else {
+              $("#plantsSlide").css('display', 'none');
+              $("#plantsBR").css('display', 'block');
+            }
           });
-          $("#ratingBtn").on('change', function(){
-              if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;
-              else configPricing.PriceSHAQS -= configPricing.PriceRATING;
-              ISpec.updatePrice();
+          $("#ratingBtn").on('change', function() {
+            if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;
+            else configPricing.PriceSHAQS -= configPricing.PriceRATING;
+            ISpec.updatePrice();
           });
-          $("#notifsBtn").on('change', function(){
-              if ($("#notifsBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceNOTIF;
-              else configPricing.PriceSHAQS -= configPricing.PriceNOTIF;
-              ISpec.updatePrice();
+          $("#notifsBtn").on('change', function() {
+            if ($("#notifsBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceNOTIF;
+            else configPricing.PriceSHAQS -= configPricing.PriceNOTIF;
+            ISpec.updatePrice();
           });
-          $("#brandingBtn").on('change', function(){
-              if ($("#brandingBtn").is(":checked")) configPricing.PriceUSERS += configPricing.PriceBRAND;
-              else configPricing.PriceUSERS -= configPricing.PriceBRAND;
-              ISpec.updatePrice();
+          $("#brandingBtn").on('change', function() {
+            if ($("#brandingBtn").is(":checked")) configPricing.PriceUSERS += configPricing.PriceBRAND;
+            else configPricing.PriceUSERS -= configPricing.PriceBRAND;
+            ISpec.updatePrice();
           });
           $("div#qsSlider #period").slider({
             orientation: "vertical",
@@ -143,8 +143,20 @@
           var calculatePrice = function() {
             var shaqs = parseFloat($("#shaqsvalue").text());
             var users = parseFloat($("#usersvalue").text());
+            var plants = parseFloat($("#plantsvalue").text());
             var period_is_year = parseInt($("#period").slider("value"));
-						var price = (shaqs * configPricing.PriceSHAQS ) + (users * configPricing.PriceUSERS);
+            switch parseInt($("#archivevalue")) {
+              case 1 : if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1W;
+              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1W; break;
+              case 2 : if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1M;
+              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1M; break;
+              case 3 : if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1Y;
+              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1Y; break;
+              case 4 : if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE5Y;
+              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE5Y; break;
+            }
+            var price = (shaqs * configPricing.PriceSHAQS) + (users * configPricing.PriceUSERS) +
+              (plants * configPricing.PricePLANTS);
             if (period_is_year) {
               price *= 12;
               price = price - (price * o.discount);

@@ -146,14 +146,22 @@
             var plants = parseFloat($("#plantsvalue").text());
             var period_is_year = parseInt($("#period").slider("value"));
             switch (parseInt($("#archivevalue").text())) {
-              case 1: if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1W;
-              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1W; break;
-              case 2: if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1M;
-              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1M; break;
-              case 3: if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1Y;
-              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1Y; break;
-              case 4: if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE5Y;
-              else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE5Y; break;
+              case 1:
+                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1W;
+                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1W;
+                break;
+              case 2:
+                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1M;
+                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1M;
+                break;
+              case 3:
+                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1Y;
+                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1Y;
+                break;
+              case 4:
+                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE5Y;
+                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE5Y;
+                break;
             }
             var price = (shaqs * configPricing.PriceSHAQS) + (users * configPricing.PriceUSERS) +
               (plants * configPricing.PricePLANTS);

@@ -22,6 +22,8 @@
                     ISpec.setUSERS(ui.value);
                   } else if (id == 'plants') {
                     ISpec.setPLANTS(ui.value);
+                  } else if (id == 'archive') {
+                    ISpec.setARCHIVE(ui.value);
                   }
                   ISpec.updatePrice();
                 }
@@ -148,7 +150,7 @@
             var users = parseFloat($("#usersvalue").text());
             var plants = parseFloat($("#plantsvalue").text());
             var period_is_year = parseInt($("#period").slider("value"));
-            switch (parseInt($("#archivevalue").text())) {
+            switch (parseInt($("#archivevalue").text().substring(0,1))) {
               case 1:
                 if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1W;
                 else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1W;

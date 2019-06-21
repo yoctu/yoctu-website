@@ -70,6 +70,11 @@
             max: o.MaxUSERS,
             step: 1
           };
+          var plantsslider = {
+            min: 1,
+            max: o.MaxPLANTS,
+            step: 1
+          };
 
           this.specification = {
             shaqs: shaqsslider,

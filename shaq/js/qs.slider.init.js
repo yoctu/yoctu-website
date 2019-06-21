@@ -7,6 +7,7 @@ var configPricing = {
 	PriceBRAND: 1.00,
 	MaxSHAQS	: 5000,
 	MaxUSERS	: 500,
+	MaxPLANTS	: 50,
 	discount	: 0.25,
 }
 var presetspec = {

@@ -98,7 +98,8 @@
           this.specification = {
             shaqs: shaqsslider,
             users: usersslider,
-            plants: plantsslider
+            plants: plantsslider,
+            archive: archiveslider
           };
 
           this.setSHAQS = function(sliderStep) {

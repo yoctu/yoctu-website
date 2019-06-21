@@ -12,12 +12,14 @@ var configPricing = {
 	MaxSHAQS	: 5000,
 	MaxUSERS	: 500,
 	MaxPLANTS	: 50,
+	MaxARCHIVE	: 4,
 	discount	: 0.25,
 }
 var presetspec = {
 		shaqs: 200,
 		users: 5,
-		plants: 1
+		plants: 1,
+		archive: 0
 };
 
 $(document).ready(function () {

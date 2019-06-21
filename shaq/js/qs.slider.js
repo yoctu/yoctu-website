@@ -90,7 +90,11 @@
             max: o.MaxPLANTS,
             step: 1
           };
-
+          var archiveslider = {
+            min: 1,
+            max: o.MaxARCHIVE,
+            step: 1
+          };
           this.specification = {
             shaqs: shaqsslider,
             users: usersslider,

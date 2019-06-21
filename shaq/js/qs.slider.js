@@ -30,10 +30,9 @@
             }
           );
           $("#archiveBtn").on('change', function(){    // 2nd (A)
-              console.log($("#archiveBtn").is(":checked"));
           });
           $("#plants").on('change', function(){    // 2nd (A)
-              if ($("#ratingBtn").is(":checked")) $("#plantsSlide").css('display','block');
+              if ($("#plantsBtn").is(":checked")) $("#plantsSlide").css('display','block');
               else $("#plantsSlide").css('display','none');
           });
           $("#ratingBtn").on('change', function(){    // 2nd (A)

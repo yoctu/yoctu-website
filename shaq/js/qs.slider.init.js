@@ -11,8 +11,9 @@ var configPricing = {
 	discount	: 0.25,
 }
 var presetspec = {
-		shaqs: "200",
-		users: "5"
+		shaqs: 200,
+		users: 5,
+		plants: 1
 };
 
 $(document).ready(function () {

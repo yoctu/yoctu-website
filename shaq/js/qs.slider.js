@@ -38,6 +38,8 @@
             } else {
               $("#archiveSlide").css('display', 'none');
               $("#archiveBR").css('display', 'block');
+              ISpec.setPLANTS(presetspec.archive);
+              ISpec.updatePrice();
             }
           });
           $("#plantsBtn").on('change', function() {

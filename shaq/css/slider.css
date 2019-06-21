@@ -67,35 +67,35 @@ input:checked + .sliderBtn:before {
     margin-bottom: 0
 }
 
-#qsSlider .sdecs {
+.sdecs {
     padding: 15px 0;
     color: #999
 }
 
-#qsSlider .slabels {
+.slabels {
     float: right
 }
 
-#qsSlider .slider {
+.slider {
     margin: 15px 0 45px
 }
 
-#qsSlider #periodselector {
+#periodselector {
     padding: 15px 0;
     margin-bottom: 15px
 }
 
-#qsSlider #periodselector #period {
+#periodselector #period {
     width: 7px;
     height: 27px
 }
 
-#qsSlider #periodselector #period #periodbackdrop {
+#periodselector #period #periodbackdrop {
     width: 10px;
     height: 10px
 }
 
-#qsSlider #month {
+#month {
     position: absolute;
     width: 170px;
     left: 20px;
@@ -103,7 +103,7 @@ input:checked + .sliderBtn:before {
     cursor: pointer
 }
 
-#qsSlider #year {
+#year {
     position: absolute;
     width: 170px;
     left: 20px;
@@ -111,64 +111,64 @@ input:checked + .sliderBtn:before {
     cursor: pointer
 }
 
-#qsSlider #QsPrice {
+#QsPrice {
     border: 1px solid #d5d7d8;
     border-width: 0 0 0 1px;
     padding-left: 15px
 }
 
-#qsSlider #pricetext {
+#pricetext {
     border-bottom: 3px double #e5e5e5;
     display: inline-block
 }
 
-#qsSlider #pricetext #btext,
-#qsSlider #pricetext .fa,
-#qsSlider #pricetext .glyphicon {
+#pricetext #btext,
+#pricetext .fa,
+#pricetext .glyphicon {
     font-size: 18px
 }
 
-#qsSlider #pricetext h4,
-#qsSlider #pricetext h5 {
+#pricetext h4,
+#pricetext h5 {
     text-transform: uppercase;
     margin-bottom: 0
 }
 
-#qsSlider #dollar {
+#dollar {
     font-size: 37px;
     font-weight: 700;
     color: #000;
     letter-spacing: -2px
 }
 
-#qsSlider #cents {
+#cents {
     font-size: 18px;
     font-weight: 700;
     color: #000
 }
 
-#qsSlider #presets {
+#presets {
     position: relative
 }
 
-#qsSlider .ui-slider {
+.ui-slider {
     background-color: #e0e2e2
 }
 
-#qsSlider .ui-slider .ui-slider-handle:focus,
-#qsSlider .ui-slider .ui-slider-handle:active {
+.ui-slider .ui-slider-handle:focus,
+.ui-slider .ui-slider-handle:active {
     outline: 0;
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .3);
     text-decoration: none
 }
 
-#qsSlider .ui-slider .ui-slider-handle:hover:before,
-#qsSlider .ui-slider .ui-slider-handle:focus:before,
-#qsSlider .ui-slider .ui-slider-handle:active:before {
+.ui-slider .ui-slider-handle:hover:before,
+.ui-slider .ui-slider-handle:focus:before,
+.ui-slider .ui-slider-handle:active:before {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .3)
 }
 
-#qsSlider .ui-slider .ui-slider-handle {
+.ui-slider .ui-slider-handle {
     border-radius: 0;
     width: .9em;
     height: 1.45em;
@@ -177,108 +177,108 @@ input:checked + .sliderBtn:before {
     border: 1px solid
 }
 
-#qsSlider .ui-slider .ui-slider-handle:before {
+.ui-slider .ui-slider-handle:before {
     display: inline-block
 }
 
-#qsSlider .ui-slider .ui-slider-handle:hover {
+.ui-slider .ui-slider-handle:hover {
     background-color: #fff;
     outline: 0;
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .3);
     text-decoration: none
 }
 
-#qsSlider .ui-slider-horizontal {
+.ui-slider-horizontal {
     height: 10px
 }
 
-#qsSlider .ui-slider-horizontal .ui-slider-handle {
+.ui-slider-horizontal .ui-slider-handle {
     margin-left: -.725em;
     top: -.4em
 }
 
-#qsSlider .ui-slider-vertical {
+.ui-slider-vertical {
     width: 10px
 }
 
-#qsSlider .ui-slider-vertical .ui-slider-handle {
+.ui-slider-vertical .ui-slider-handle {
     left: -.35em;
     margin-bottom: -.65em;
     width: 1.45em;
     height: .9em
 }
 
-#qsSlider .ui-slider-range {
+.ui-slider-range {
     background-color: #414141
 }
 
-#qsSlider .ui-slider-handle {
+.ui-slider-handle {
     outline: 0!important;
     border-color: #414141;
     color: #414141
 }
 
-#qsSlider .ui-slider-primary .ui-slider-handle,
-#qsSlider .ui-slider-primary .ui-slider-handle:hover,
-#qsSlider .ui-slider-primary .ui-slider-handle:focus,
-#qsSlider .ui-slider-primary .ui-slider-handle:active {
+.ui-slider-primary .ui-slider-handle,
+.ui-slider-primary .ui-slider-handle:hover,
+.ui-slider-primary .ui-slider-handle:focus,
+.ui-slider-primary .ui-slider-handle:active {
     border-color: #2eca6a;
     color: #2eca6a;
 }
 
-#qsSlider .ui-slider-primary .ui-slider-range {
+.ui-slider-primary .ui-slider-range {
     background-color: #2eca6a
 }
 
-#qsSlider .ui-slider-success .ui-slider-handle,
-#qsSlider .ui-slider-success .ui-slider-handle:hover,
-#qsSlider .ui-slider-success .ui-slider-handle:focus,
-#qsSlider .ui-slider-success .ui-slider-handle:active {
+.ui-slider-success .ui-slider-handle,
+.ui-slider-success .ui-slider-handle:hover,
+.ui-slider-success .ui-slider-handle:focus,
+.ui-slider-success .ui-slider-handle:active {
     border-color: #5cb85c;
     color: #5cb85c
 }
 
-#qsSlider .ui-slider-success .ui-slider-range {
+.ui-slider-success .ui-slider-range {
     background-color: #2eca6a
 }
 
-#qsSlider .ui-slider-danger .ui-slider-handle,
-#qsSlider .ui-slider-danger .ui-slider-handle:hover,
-#qsSlider .ui-slider-danger .ui-slider-handle:focus,
-#qsSlider .ui-slider-danger .ui-slider-handle:active {
+.ui-slider-danger .ui-slider-handle,
+.ui-slider-danger .ui-slider-handle:hover,
+.ui-slider-danger .ui-slider-handle:focus,
+.ui-slider-danger .ui-slider-handle:active {
     border-color: #2eca6a;
     color: #d9534f
 }
 
-#qsSlider .ui-slider-danger .ui-slider-range {
+.ui-slider-danger .ui-slider-range {
     background-color: #2eca6a;
 }
 
-#qsSlider .ui-slider-info .ui-slider-handle,
-#qsSlider .ui-slider-info .ui-slider-handle:hover,
-#qsSlider .ui-slider-info .ui-slider-handle:focus,
-#qsSlider .ui-slider-info .ui-slider-handle:active {
+.ui-slider-info .ui-slider-handle,
+.ui-slider-info .ui-slider-handle:hover,
+.ui-slider-info .ui-slider-handle:focus,
+.ui-slider-info .ui-slider-handle:active {
     border-color: #5bc0de;
     color: #5bc0de
 }
 
-#qsSlider .ui-slider-info .ui-slider-range {
+.ui-slider-info .ui-slider-range {
     background-color: #5bc0de
 }
 
-#qsSlider .ui-slider-warning .ui-slider-handle,
-#qsSlider .ui-slider-warning .ui-slider-handle:hover,
-#qsSlider .ui-slider-warning .ui-slider-handle:focus,
-#qsSlider .ui-slider-warning .ui-slider-handle:active {
+.ui-slider-warning .ui-slider-handle,
+.ui-slider-warning .ui-slider-handle:hover,
+.ui-slider-warning .ui-slider-handle:focus,
+.ui-slider-warning .ui-slider-handle:active {
     border-color: #f0ad4e;
     color: #f0ad4e
 }
 
-#qsSlider .ui-slider-warning .ui-slider-range {
+.ui-slider-warning .ui-slider-range {
     background-color: #f0ad4e
 }
 
-#qsSlider #tooltip {
+#tooltip {
     display: none;
     position: absolute;
     max-width: 200px;
@@ -286,7 +286,7 @@ input:checked + .sliderBtn:before {
     top: -75px
 }
 
-#qsSlider #tooltip .text {
+#tooltip .text {
     padding: 10px 5px;
     display: block;
     background: #000;

@@ -32,6 +32,10 @@
           $("#archiveBtn").on('change', function(){    // 2nd (A)
               console.log($("#archiveBtn").is(":checked"));
           });
+          $("#plants").on('change', function(){    // 2nd (A)
+              if ($("#ratingBtn").is(":checked")) $("#plantsSlide").removeClass("hide");
+              else $("#plantsSlide").addClass("hide");
+          });
           $("#ratingBtn").on('change', function(){    // 2nd (A)
               if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;
               else configPricing.PriceSHAQS -= configPricing.PriceRATING;

@@ -6,7 +6,7 @@
       this.each(function() {
         $(function() {
           var ISpec = new qsSlider;
-          $("div#qsSlider #QsControls div.slider").each(
+          $("div.slider").each(
             function(i, control) {
               var id = $(control).attr('id');
               $(control).slider({
@@ -20,6 +20,8 @@
                     ISpec.setSHAQS(ui.value);
                   } else if (id == 'users') {
                     ISpec.setUSERS(ui.value);
+                  } else if (id == 'plants') {
+                    ISpec.setPLANTS(ui.value);
                   }
                   ISpec.updatePrice();
                 }
@@ -71,7 +73,8 @@
 
           this.specification = {
             shaqs: shaqsslider,
-            users: usersslider
+            users: usersslider,
+            plants: plantsslider
           };
 
           this.setSHAQS = function(sliderStep) {
@@ -86,9 +89,16 @@
             $("#usersvalue").text(sTotal);
             $("#users").slider("value", parseFloat(sliderStep));
           }
+          this.setPLANTS = function(sliderStep) {
+            var units = 'Extra Location(s)';
+            var sTotal = sliderStep + " " + units;
+            $("#plantsvalue").text(sTotal);
+            $("#plants").slider("value", parseFloat(sliderStep));
+          }
           this.selectPreset = function() {
             this.setSHAQS(presetspec.shaqs);
             this.setUSERS(presetspec.users);
+            this.setPLANTS(presetspec.plants);
             this.updatePrice();
           };
 

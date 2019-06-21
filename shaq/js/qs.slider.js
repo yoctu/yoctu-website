@@ -77,14 +77,14 @@
           this.setSHAQS = function(sliderStep) {
             var units = 'SHAQ(s)';
             var sTotal = sliderStep + " " + units;
-            $("div.values div#shaqsvalue").text(sTotal);
-            $("div#qsSlider div#QsControls div#shaqs").slider("value", sliderStep);
+            $("#shaqsvalue").text(sTotal);
+            $("#shaqs").slider("value", sliderStep);
           }
           this.setUSERS = function(sliderStep) {
             var units = 'USER(s)';
             var sTotal = sliderStep + " " + units;
-            $("div.values div#usersvalue").text(sTotal);
-            $("div#qsSlider div#QsControls div#users").slider("value", parseFloat(sliderStep));
+            $("#usersvalue").text(sTotal);
+            $("#users").slider("value", parseFloat(sliderStep));
           }
           this.selectPreset = function() {
             this.setSHAQS(presetspec.shaqs);
@@ -99,9 +99,9 @@
           };
 
           var calculatePrice = function() {
-            var shaqs = parseFloat($("div.values div#shaqsvalue").text());
-            var users = parseFloat($("div.values div#usersvalue").text());
-            var period_is_year = parseInt($("div#periodselector div#period").slider("value"));
+            var shaqs = parseFloat($("#shaqsvalue").text());
+            var users = parseFloat($("#usersvalue").text());
+            var period_is_year = parseInt($("#period").slider("value"));
 						var price = (shaqs * configPricing.PriceSHAQS ) + (users * configPricing.PriceUSERS);
             if (period_is_year) {
               price *= 12;

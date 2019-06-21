@@ -62,7 +62,7 @@ input:checked + .sliderBtn:before {
   border-radius: 50%;
 }
 
-#qsSlider .title {
+.title {
     font-size: 16px;
     margin-bottom: 0
 }

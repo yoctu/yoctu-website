@@ -29,9 +29,16 @@
 
             }
           );
-          $("#archiveBtn").on('change', function(){    // 2nd (A)
+          $("#archiveBtn").on('change', function(){
+            if ($("#archiveBtn").is(":checked"))  {
+              $("#archiveSlide").css('display','block');
+              $("#archiveBR").css('display','none');
+            } else  {
+              $("#archiveSlide").css('display','none');
+              $("#archiveBR").css('display','block');
+            }
           });
-          $("#plantsBtn").on('change', function(){    // 2nd (A)
+          $("#plantsBtn").on('change', function(){
               if ($("#plantsBtn").is(":checked"))  {
                 $("#plantsSlide").css('display','block');
                 $("#plantsBR").css('display','none');
@@ -40,17 +47,17 @@
                 $("#plantsBR").css('display','block');
               }
           });
-          $("#ratingBtn").on('change', function(){    // 2nd (A)
+          $("#ratingBtn").on('change', function(){
               if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;
               else configPricing.PriceSHAQS -= configPricing.PriceRATING;
               ISpec.updatePrice();
           });
-          $("#notifsBtn").on('change', function(){    // 2nd (A)
+          $("#notifsBtn").on('change', function(){
               if ($("#notifsBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceNOTIF;
               else configPricing.PriceSHAQS -= configPricing.PriceNOTIF;
               ISpec.updatePrice();
           });
-          $("#brandingBtn").on('change', function(){    // 2nd (A)
+          $("#brandingBtn").on('change', function(){
               if ($("#brandingBtn").is(":checked")) configPricing.PriceUSERS += configPricing.PriceBRAND;
               else configPricing.PriceUSERS -= configPricing.PriceBRAND;
               ISpec.updatePrice();

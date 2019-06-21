@@ -145,7 +145,7 @@
             var users = parseFloat($("#usersvalue").text());
             var plants = parseFloat($("#plantsvalue").text());
             var period_is_year = parseInt($("#period").slider("value"));
-            switch parseInt($("#archivevalue")) {
+            switch parseInt($("#archivevalue").text()) {
               case 1 : if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1W;
               else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1W; break;
               case 2 : if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1M;

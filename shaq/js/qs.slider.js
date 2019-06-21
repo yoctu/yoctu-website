@@ -34,7 +34,7 @@
           });
           $("#plants").on('change', function(){    // 2nd (A)
               if ($("#ratingBtn").is(":checked")) $("#plantsSlide").css('display','block');;
-              else $("#plantsSlide").css('display','none');;
+              else $("#plantsSlide").css('display','none');
           });
           $("#ratingBtn").on('change', function(){    // 2nd (A)
               if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;

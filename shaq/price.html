@@ -147,7 +147,16 @@
                 <input id="archiveBtn" type="checkbox">
                 <span class="sliderBtn"></span>
               </label> Archiving
-              <br><br><label class="switch">
+              <div id="archiveSlide" style="display:none;">
+                <div class="slabels">
+                  <div class="values">
+                    <div id="archivevalue" class="label label-primary"></div>
+                  </div>
+                </div>
+                <h6 class="title">Archive time</h6>
+                <div id="archive" class="slider ui-slider-primary"></div>
+              </div>
+              <div id="archiveBR"><br><br></div><label class="switch">
                 <input id="plantsBtn" type="checkbox">
                 <span class="sliderBtn"></span>
               </label> Extra Locations
@@ -160,7 +169,7 @@
                 <h6 class="title">Number of Plants</h6>
                 <div id="plants" class="slider ui-slider-primary"></div>
               </div>
-              <div id="plantsBR"><br><br><div><label class="switch">
+              <div id="plantsBR"><br><br></div><label class="switch">
                 <input id="notifsBtn" type="checkbox">
                 <span class="sliderBtn"></span>
               </label> Notifications

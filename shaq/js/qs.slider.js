@@ -140,6 +140,7 @@
             var price = calculatePrice();
             $("div#QsPrice span#dollar").text(price.dollar);
             $("div#QsPrice span#cents").text("." + price.cents);
+            $("navprice").text(price.dollar + "." + price.cents)
           };
 
           var calculatePrice = function() {

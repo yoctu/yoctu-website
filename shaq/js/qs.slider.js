@@ -120,10 +120,17 @@
             $("#plantsvalue").text(sTotal);
             $("#plants").slider("value", parseFloat(sliderStep));
           }
+          this.setARCHIVE = function(sliderStep) {
+            var units = 'Archive Time';
+            var sTotal = sliderStep + " " + units;
+            $("#archivevalue").text(sTotal);
+            $("#archive").slider("value", parseFloat(sliderStep));
+          }
           this.selectPreset = function() {
             this.setSHAQS(presetspec.shaqs);
             this.setUSERS(presetspec.users);
             this.setPLANTS(presetspec.plants);
+            this.setARCHIVE(presetspec.archive);
             this.updatePrice();
           };
 

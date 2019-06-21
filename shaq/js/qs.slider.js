@@ -45,6 +45,8 @@
             } else {
               $("#plantsSlide").css('display', 'none');
               $("#plantsBR").css('display', 'block');
+              this.setPLANTS(presetspec.plants);
+              ISpec.updatePrice();
             }
           });
           $("#ratingBtn").on('change', function() {

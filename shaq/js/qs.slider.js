@@ -27,25 +27,24 @@
 
             }
           );
-          $("div#qsSlider #panelstext").on('click', function(e) {
-            e.preventDefault();
-            $("div#qsSlider #panel").slider("option", "value", "1");
+          $("#archiveBtn").on('change', function(){    // 2nd (A)
+              console.log($("#archiveBtn").is(":checked"));
           });
-          $("div#qsSlider #panel").slider({
-            orientation: "vertical",
-            min: parseFloat(0),
-            max: parseFloat(1),
-            step: parseFloat(1),
-            change: function(event, ui) {
+          $("#ratingBtn").on('change', function(){    // 2nd (A)
+              if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;
+              else configPricing.PriceSHAQS -= configPricing.PriceRATING;
               ISpec.updatePrice();
-            }
           });
-
-          $("div#qsSlider #offerstext").on('click', function(e) {
-            e.preventDefault();
-            $("div#qsSlider #period").slider("option", "value", "1");
+          $("#notifsBtn").on('change', function(){    // 2nd (A)
+              if ($("#notifsBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceNOTIF;
+              else configPricing.PriceSHAQS -= configPricing.PriceNOTIF;
+              ISpec.updatePrice();
           });
-
+          $("#brandingBtn").on('change', function(){    // 2nd (A)
+              if ($("#brandingBtn").is(":checked")) configPricing.PriceUSERS += configPricing.PriceBRAND;
+              else configPricing.PriceUSERS -= configPricing.PriceBRAND;
+              ISpec.updatePrice();
+          });
           $("div#qsSlider #period").slider({
             orientation: "vertical",
             min: parseFloat(0),
@@ -55,9 +54,7 @@
               ISpec.updatePrice();
             }
           });
-
           ISpec.selectPreset();
-
         });
 
         var qsSlider = function() {
@@ -76,11 +73,6 @@
             shaqs: shaqsslider,
             users: usersslider
           };
-          var pricespec = {
-            baseprice: o.PriceBase,
-            shaqsSpec: o.PriceSHAQS,
-            usersSpec: o.PriceUSERS
-          };
 
           this.setSHAQS = function(sliderStep) {
             var units = 'SHAQ(s)';
@@ -90,8 +82,7 @@
           }
           this.setUSERS = function(sliderStep) {
             var units = 'USER(s)';
-            var value = sliderStep;
-            var sTotal = value + " " + units;
+            var sTotal = sliderStep + " " + units;
             $("div.values div#usersvalue").text(sTotal);
             $("div#qsSlider div#QsControls div#users").slider("value", parseFloat(sliderStep));
           }
@@ -105,14 +96,13 @@
             var price = calculatePrice();
             $("div#QsPrice span#dollar").text(price.dollar);
             $("div#QsPrice span#cents").text("." + price.cents);
-            checkValueForPreset();
           };
 
           var calculatePrice = function() {
             var shaqs = parseFloat($("div.values div#shaqsvalue").text());
             var users = parseFloat($("div.values div#usersvalue").text());
             var period_is_year = parseInt($("div#periodselector div#period").slider("value"));
-						var price = (shaqs / 100) + users;
+						var price = (shaqs * configPricing.PriceSHAQS ) + (users * configPricing.PriceUSERS);
             if (period_is_year) {
               price *= 12;
               price = price - (price * o.discount);
@@ -124,21 +114,6 @@
               "dollar": priceParts[0],
               "cents": priceParts[1],
               "price": price
-            }
-          };
-
-          var checkValueForPreset = function() {
-            $("div#presets div.product .btn").removeClass('btn-primary');
-            for (i in presetspec) {
-              var presetData = presetspec[i];
-              var sliderSHAQS = $("div#QsControls div#shaqs").slider("value");
-              var sliderUSERS = $("div#QsControls div#users").slider("value");
-              if (presetData.shaqs == sliderSHAQS &&
-                presetData.users == sliderUSERS) {
-                var presetClass = "preset" + i.toLowerCase();
-                $("div#presets div.product .btn").removeClass('btn-primary');
-                $("div#presets div." + presetClass + " .btn").addClass('btn-primary');
-              }
             }
           };
         };

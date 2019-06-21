@@ -32,8 +32,13 @@
           $("#archiveBtn").on('change', function(){    // 2nd (A)
           });
           $("#plants").on('change', function(){    // 2nd (A)
-              if ($("#plantsBtn").is(":checked")) $("#plantsSlide").css('display','block');
-              else $("#plantsSlide").css('display','none');
+              if ($("#plantsBtn").is(":checked"))  {
+                $("#plantsSlide").css('display','block');
+                $("#plantsBR").css('display','none');
+              } else  {
+                $("#plantsSlide").css('display','none');
+                $("#plantsBR").css('display','block');
+              }
           });
           $("#ratingBtn").on('change', function(){    // 2nd (A)
               if ($("#ratingBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceRATING;

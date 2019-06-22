@@ -131,6 +131,7 @@
               case 1: sTotal = sliderStep + " - 1 month"; break;
               case 2: sTotal = sliderStep + " - 1 year"; break;
               case 3: sTotal = sliderStep + " - 5 years"; break;
+            }
             $("#archivevalue").text(sTotal);
             $("#archive").slider("value", parseFloat(sliderStep));
           }

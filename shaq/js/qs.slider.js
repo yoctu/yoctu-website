@@ -2,7 +2,7 @@
   $.fn.extend({
     qsSlider: function(options) {
       var defaults = {};
-      var archiveOld = PriceARCHIVE1W;
+      var archiveOld = configPricing.PriceARCHIVE1W;
       var o = $.extend(defaults, options);
       this.each(function() {
         $(function() {

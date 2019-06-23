@@ -2,6 +2,7 @@
   $.fn.extend({
     qsSlider: function(options) {
       var defaults = {};
+      var archiveOld = PriceARCHIVE1W;
       var o = $.extend(defaults, options);
       this.each(function() {
         $(function() {
@@ -128,10 +129,17 @@
           this.setARCHIVE = function(sliderStep) {
             var sTotal = sliderStep + " - 1 week";
             switch (sliderStep) {
-              case 2: sTotal = sliderStep + ". 1 month"; break;
-              case 3: sTotal = sliderStep + ". 1 year"; break;
-              case 4: sTotal = sliderStep + " . 5 years"; break;
-              default: break;
+              case 2:
+                sTotal = sliderStep + ". 1 month";
+                break;
+              case 3:
+                sTotal = sliderStep + ". 1 year";
+                break;
+              case 4:
+                sTotal = sliderStep + " . 5 years";
+                break;
+              default:
+                break;
             }
             $("#archivevalue").text(sTotal);
             $("#archive").slider("value", parseFloat(sliderStep));
@@ -157,24 +165,28 @@
             var users = parseFloat($("#usersvalue").text());
             var plants = parseFloat($("#plantsvalue").text());
             var period_is_year = parseInt($("#period").slider("value"));
-            switch (parseInt($("#archivevalue").text().substring(0,1))) {
-              case 1:
-                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1W;
-                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1W;
+            configPricing.PriceSHAQS -= archiveOld;
+            if ($("#archiveBtn").is(":checked")) {
+              switch (parseInt($("#archivevalue").text().substring(0, 1))) {
+                case 1:
+                  archiveOld = configPricing.PriceARCHIVE1W;
+                  configPricing.PriceSHAQS += archiveOld;
+                  break;
+                case 2:
+                archiveOld = configPricing.PriceARCHIVE1M;
+                configPricing.PriceSHAQS += archiveOld;
                 break;
-              case 2:
-                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1M;
-                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1M;
+                case 3:
+                archiveOld = configPricing.PriceARCHIVE1Y;
+                configPricing.PriceSHAQS += archiveOld;
                 break;
-              case 3:
-                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE1Y;
-                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE1Y;
+                case 4:
+                archiveOld = configPricing.PriceARCHIVE5Y;
+                configPricing.PriceSHAQS += archiveOld;
                 break;
-              case 4:
-                if ($("#archiveBtn").is(":checked")) configPricing.PriceSHAQS += configPricing.PriceARCHIVE5Y;
-                else configPricing.PriceSHAQS -= configPricing.PriceARCHIVE5Y;
-                break;
-              default: break;
+                default:
+                  break;
+              }
             }
             var price = (shaqs * configPricing.PriceSHAQS) + (users * configPricing.PriceUSERS) +
               (plants * configPricing.PricePLANTS);

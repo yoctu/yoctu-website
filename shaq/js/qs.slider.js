@@ -127,20 +127,21 @@
             $("#plants").slider("value", parseFloat(sliderStep));
           }
           this.setARCHIVE = function(sliderStep) {
-            var sTotal = sliderStep + " - 1 week";
+            var sTotal = "1 week";
             switch (sliderStep) {
               case 2:
-                sTotal = sliderStep + ". 1 month";
+                sTotal = "1 month";
                 break;
               case 3:
-                sTotal = sliderStep + ". 1 year";
+                sTotal = "1 year";
                 break;
               case 4:
-                sTotal = sliderStep + " . 5 years";
+                sTotal = "5 years";
                 break;
               default:
                 break;
             }
+            $("#archivevalue").data("archive",sliderStep)
             $("#archivevalue").text(sTotal);
             $("#archive").slider("value", parseFloat(sliderStep));
           }
@@ -167,7 +168,7 @@
             var period_is_year = parseInt($("#period").slider("value"));
             configPricing.PriceSHAQS -= archiveOld;
             if ($("#archiveBtn").is(":checked")) {
-              switch (parseInt($("#archivevalue").text().substring(0, 1))) {
+              switch (parseInt($("#archivevalue").data("archive"))) {
                 case 1:
                   archiveOld = configPricing.PriceARCHIVE1W;
                   configPricing.PriceSHAQS += archiveOld;

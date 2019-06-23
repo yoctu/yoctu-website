@@ -128,9 +128,9 @@
           this.setARCHIVE = function(sliderStep) {
             var sTotal = sliderStep + " - 1 week";
             switch (sliderStep) {
-              case 2: sTotal = sliderStep + " - 1 month"; break;
-              case 3: sTotal = sliderStep + " - 1 year"; break;
-              case 4: sTotal = sliderStep + " - 5 years"; break;
+              case 2: sTotal = sliderStep + ". 1 month"; break;
+              case 3: sTotal = sliderStep + ". 1 year"; break;
+              case 4: sTotal = sliderStep + " . 5 years"; break;
               default: break;
             }
             $("#archivevalue").text(sTotal);

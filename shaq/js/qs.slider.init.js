@@ -14,7 +14,7 @@ var configPricing = {
 	MaxUSERS	: 500,
 	MaxPLANTS	: 50,
 	MaxARCHIVE	: 4,
-	discount	: 0.25,
+	discount	: 0.15,
 }
 var presetspec = {
 		shaqs: 200,

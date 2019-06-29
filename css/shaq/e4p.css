@@ -94,13 +94,13 @@ th, label {
 .well-warning {
   background-color: #F5F6F8;
   opacity: 0.9;
-  border: 8px solid #FFC266;
+  border: 6px solid #FFC266;
 }
 
 .well-danger {
   background-color: #F5F6F8;
   opacity: 0.6;
-  border: 8px solid #FF5C16;
+  border: 6px solid #FF5C16;
 }
 
 .table>tbody>tr>td {

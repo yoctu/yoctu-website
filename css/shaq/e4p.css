@@ -188,7 +188,7 @@ input, select {
   background-color: #fff;
 }
 
-#logo, #shaq-navbar-url {
+#shaq-navbar-url {
   content: url("https://logos.yoctu.com/logo/skoreway-64.png");
 }
 

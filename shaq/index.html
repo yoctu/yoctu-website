@@ -27,9 +27,27 @@
   </script>
   <script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
 </head>
-
 <body>
-  <!-- Top Bar Menu-->
+  <div class="modal fade" id="ShaqDemoLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="click-closed"></div>
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
@@ -72,7 +90,7 @@
                       <span class="color-b">BID </span> on
                       <br>Sea Freight</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="https://shaq.demo.yoctu.com/SKOREWAY" target="_blank"><span class="price-a">Try Shaq</span></a>
+                      <a data-toggle="modal" data-target="#ShaqDemoLogin"><span class="price-a">Try Shaq</span></a>
                     </p>
                   </div>
                 </div>

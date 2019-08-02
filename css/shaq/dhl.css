@@ -189,7 +189,7 @@ input, select {
 }
 
 #shaq-navbar-url {
-  content: url("https://logos.yoctu.com/logo/ShaQ.png");
+  content: url("https://logos.yoctu.com/logo/DHLlogo.png");
 }
 
 #navbar-username, #solrReload, #solrRefresh {
@@ -204,6 +204,11 @@ input, select {
   color: #fff;
   background-color: var(--main-bg-color);
 }
+
+.navbar{
+background-color: #FDCE01
+}
+
 
 .img-ico {
   color: var(--main-bg-color);

@@ -25,6 +25,11 @@
     };
   </script>
   <script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism.css">
+    <link href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-json.min.js"></script>
+
 </head>
 
 <body>
@@ -80,25 +85,97 @@
       </div>
       <div class="property-description">
         <p class="description color-text-a">
-          <p>Shaq can be used in many ways by your TMS or ERP.</p>
-          <p>It is a full open bidding system where you can define your own rules. There is almost no limit on the possibilities you have.</p>
+          <p>Shaq can be used in many ways by your TMS or ERP.
+          It is a full open bidding system where you can define your own rules. There is almost no limit on the possibilities you have.</p>
           <p>It is composed of 3 major components : an API, a Websocket and a Web Application.</p>
-          <p>The minimum you can get is the only API version. You can then create or query your shaqs, bids, chats or any other information the way you like/need it. But you need to understand there is a restriction : a rate limiting has been setup on the Api: As default you have 20 requests/min for 1000 shaqs/month and below. You get an extra 1 requests/min every 100 shaqs/months.</p>
-          <p>That is why we also recommend to use the websocket service. There is no limit, you get realtime event and you can easily connect your application to it.</p>
+          <div class="row">
+          <div class="col-md-6" style="padding-top:5%">
+          <h5> API:</h5>
+          <p>The minimum you can get is the only API version. You can then create or query your shaqs, bids, chats or any other information the way you like/need it. But you need to understand there is a restriction : a rate limiting has been setup on the Api: As default you have 20 requests/min for 1000 shaqs/month and below. You get an extra 1 requests/min every 100 shaqs/months.
+          That is why we also recommend to use the websocket service.</p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid pull-right" src="img/api-icon-9.png" width="70%" style="padding-top:10%">
+        </div>
+        <div class="col-md-6 text-center" style="padding-top:5%">
+          <img class="img-fluid" src="img/websocket.svg" >
+        </div>
+        <div class="col-md-6" style="padding-top:5%">
+          <h5>WEBSOCKET:</h5>
+          With the Websocket there is no limit, you get realtime event and you can easily connect your application to it.</p>
+        </div>
+        <div class="col-md-6" style="padding-top:5%">
+          <h5>WEB APPLICATION:</h5>
           <p>if you do not have an application, you can then use the default web application provided by shaq. You can start shaqqing from tomorrow. It has all the features and can be customized. But customization has also some limits. If you need a complete different look and fell or want to define your own rules you need then to create yours !</p>
+        </div>
+        <div class="col-md-6 text-center" style="padding-top:5%">
+            <img class="img-fluid" src="img/webapp.png" >
+          </div>
         </p>
+      </div>
       </div><br><br>
     </div>
+  </div>
+</div>
   </section>
 
-  <section>
+  <section class="intro-single" style="padding-top:5%">
+    <div class="title-single-box">
     <div class="container" style="padding-bottom:10%">
+      <div class="title-single-box">
+      <a class="title-single" style="color:black">Sha<span class="color-b">Q</span> Entity Lifecycle</a>
+    </div>
+<br>
+<br>
       <img class="img-fluid" src="img/shaq_entity_lifecycle.png">
     </div>
-    
+  </div>
+
+  <section class="intro-single" style="padding-top:5%">
+    <div class="title-single-box">
+    <div class="container" style="padding-bottom:10%">
+      <div class="title-single-box">
+      <a class="title-single" style="color:black">Sha<span class="color-b">Q</span> first creation</a>
+    </div>
+    <br>
+
+      <pre><code class="language-json">
+
+  curl -s -i -X POST \
+ 'http://shaq.easy4pro.com/DHL/api/shaq/SKOREWAY'\
+ -H 'content-type:application/json' \
+ -d '[{
+ "id": "'$(cat /proc/sys/kernel/random/uuid)'",
+ "creator": "DEMO",
+ "name" : "'$name'",
+ "valid_from": "'$(date --date "1 minute" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+ "valid_until": "'$(date --date "2 minutes" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+ "key": "'$Shaq'",
+ "source": [ "ALPHABET" ],
+ "target": [ "DHL", "UGO" ],
+ "targetName": [ "D.H.L.", "Ugo" ],
+ "puPlace": [ "630 rue salvadore allende", "57390", "audin-le-tiche", "France", "FR" ],
+ "puContact": [ "Doom Center", "Laurent", "lav@yoctu.com", "+333333333" ],
+ "puDate": "'$(date --date "1 day" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+ "dePlace": [ "8 rue de surene" , "75008", "Paris" , "France" ,"FR" ],
+ "deContact": [ "Sara home", "Bertrand", "bertrand@yoctu.com", "+333333333" ],
+ "deDate": "'$(date --date "2 days" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+ "dimension": [ "1", "100","120", "120", "5", "no"],
+ "distance": "500",
+ "notes": "Nothing",
+ "stackable": "No",
+ "transport": [ "AIR", "CAR" ],
+ "currency": "EUR",
+ "visible": "private"
+ }]'
+
+</code></pre>
+</div>
+</div>
+    </div>
   </section>
 
-
+  </section>
   <section class="section-footer">
     <div class="container">
       <div class="row">

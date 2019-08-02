@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #808DA7;
+  background-color: #000000;
   color: var(--main-bg-color);
 }
 
@@ -193,7 +193,7 @@ input, select {
 }
 
 #navbar-username, #solrReload, #solrRefresh {
-  color: var(--main-bg-color);
+  color: #E10009;
 }
 
 #shaqList_info {
@@ -206,7 +206,7 @@ input, select {
 }
 
 .navbar{
-background-color: #FDCE01
+background-c: #FDCE01
 }
 
 

@@ -1,9 +1,9 @@
 :root {
-  --main-bg-color: #E10009;
+  --main-bg-color: black;
 }
 
 body {
-  background-color: #FFFACD	;
+  background-color: #ffffff	;
   color: var(--main-bg-color);
 }
 
@@ -24,6 +24,7 @@ body {
 
 .glyphicon-bell:before {
     content: "\e123";
+    color: #E10009;
 }
 
 .glyphicon-print:before {

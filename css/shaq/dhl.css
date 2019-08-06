@@ -181,7 +181,7 @@ th {
 }
 
 label {
-  color: var(--main-bg-color);
+  color: #E10009;
   font-weight: normal;
   border-radius: 16px;
 }

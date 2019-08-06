@@ -111,21 +111,21 @@ th, label {
 }
 
 .well {
-  background-color: #FFFACD;
+  background-color: #ffffff;
   border: 0px;
   -webkit-box-shadow: none;
 }
 
 .well-success {
-  background-color: #FFFACD	;
+  background-color: #ffffff	;
   opacity: 1;
   border: 8px solid #4FD844;
 }
 
 .well-warning {
-  background-color: #FFFACD;
+  background-color: #ffffff;
   opacity: 0.9;
-  border: 6px solid #FFC266;
+  border: 6px solid #ffffff;
 }
 
 .well-danger {

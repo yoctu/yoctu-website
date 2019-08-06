@@ -75,8 +75,13 @@ th, label {
 }
 
 #shaq-valid-from-btn, #shaq-valid-btn {
-  color: var(--main-bg-color);
+  color: black;
   background-color: #fff;
+}
+
+#shaq-valid-from-btn, #shaq-valid-btn {
+  color: black;
+    background-color: #fff;
 }
 
 #solrtarget {
@@ -154,6 +159,20 @@ th {
   color: var(--main-bg-color);
 }
 
+.glyphicon-off:before {
+    content: "\e017";
+    color: #F9E1DC;
+}
+
+.glyphicon-time:before {
+    content: "\e023";
+    color: #F9E1DC;
+}
+
+.label-danger {
+    background-color: #F9E1DC;
+}
+
 .chat-container-notification.alert.alert-danger {
   border: none;
   color: #fff;
@@ -193,7 +212,7 @@ th {
 }
 
 .label-primary {
-  background-color: #FFFACD;
+  background-color: #F9E1DC;
 }
 
 label {

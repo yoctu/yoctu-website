@@ -11,10 +11,27 @@ body {
     color: #E10009;
 }
 
+.glyphicon-play:before {
+    content: "\e072";
+    color: black;
+}
+
+.glyphicon-triangle-top:before {
+    content: "\e253";
+    color: black;
+}
+
+
 .glyphicon-bell:before {
     content: "\e123";
-    color: #E10009;
+    color: black;
 }
+
+.glyphicon-print:before {
+    content: "\e045";
+    color: black;
+}
+
 
 .dropdown-menu .divider {
   background-color: var(--main-bg-color);

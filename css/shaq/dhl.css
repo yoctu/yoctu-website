@@ -11,6 +11,11 @@ body {
     color: #E10009;
 }
 
+.glyphicon-bell:before {
+    content: "\e123";
+    color: #E10009;
+}
+
 .dropdown-menu .divider {
   background-color: var(--main-bg-color);
 }

@@ -156,7 +156,7 @@ th {
 .btn-room.btn-danger:hover,
 .btn-room.btn-danger {
   color: var(--main-bg-color);
-  background-color: #F5F6F8;
+  background-color: #EAEDF3;
 }
 
 .btn-primary {

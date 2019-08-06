@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: black;
+  --main-bg-color: #413F3F;
 }
 
 body {
@@ -13,14 +13,18 @@ body {
 
 .glyphicon-play:before {
     content: "\e072";
-    color: black;
+    color: #413F3F;
 }
 
 .glyphicon-triangle-top:before {
     content: "\e253";
-    color: black;
+    color: #413F3F;
 }
 
+.shaqlabel {
+    font-size: 12px;
+    height: 20px;
+}
 
 .glyphicon-bell:before {
     content: "\e123";
@@ -29,7 +33,7 @@ body {
 
 .glyphicon-print:before {
     content: "\e045";
-    color: black;
+    color: #413F3F;
 }
 
 
@@ -76,12 +80,12 @@ th, label {
 }
 
 #shaq-valid-from-btn, #shaq-valid-btn {
-  color: black;
+  color: #413F3F;
   background-color: #fff;
 }
 
 #shaq-valid-from-btn, #shaq-valid-btn {
-  color: black;
+  color: #413F3F;
     background-color: #fff;
 }
 

@@ -116,7 +116,7 @@ th, label {
 
 .well {
   background-color: #ffffff;
-  border: 0px;
+  border: 1px;
   border-color: #C8A49D;
   -webkit-box-shadow: none;
 }

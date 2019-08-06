@@ -7,6 +7,10 @@ body {
   color: var(--main-bg-color);
 }
 
+.text-success {
+    color: #E10009;
+}
+
 .dropdown-menu .divider {
   background-color: var(--main-bg-color);
 }

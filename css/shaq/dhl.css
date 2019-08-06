@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: #40598B;
+  --main-bg-color: #E10009;
 }
 
 body {
@@ -32,7 +32,7 @@ input::placeholder {
 .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate .paginate_button,
 th, label {
-  color: var(--main-bg-color) !important;
+  color: #E !important;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
@@ -181,7 +181,7 @@ th {
 }
 
 label {
-  color: #E10009;
+  color: var(--main-bg-color);
   font-weight: normal;
   border-radius: 16px;
 }

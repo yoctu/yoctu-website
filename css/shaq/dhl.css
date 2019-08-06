@@ -7,6 +7,11 @@ body {
   color: var(--main-bg-color);
 }
 
+.shaqList_wrapper {
+color: #FFFFE0;
+
+}
+
 .text-success {
     color: #E10009;
 }

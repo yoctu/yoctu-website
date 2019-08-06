@@ -24,7 +24,6 @@ body {
 
 .glyphicon-bell:before {
     content: "\e123";
-    color: black;
 }
 
 .glyphicon-print:before {
@@ -186,7 +185,7 @@ th {
 }
 
 .btn-primary {
-  background-color: #FFFACD;
+  background-color: #F9E1DC;
 }
 
 .panel-shipment-background {

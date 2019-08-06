@@ -169,15 +169,15 @@ th {
 }
 
 .btn-primary {
-  background-color: var(--main-bg-color);
+  background-color: #FFFACD;
 }
 
 .panel-shipment-background {
-  background-color: #EAEDF3;
+  background-color: #ffffff;
 }
 
 .label-primary {
-  background-color: #4981F1;
+  background-color: #FFFACD;
 }
 
 label {

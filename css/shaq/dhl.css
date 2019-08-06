@@ -7,11 +7,6 @@ body {
   color: var(--main-bg-color);
 }
 
-.shaqList_wrapper {
-color: #FFFFE0;
-
-}
-
 .text-success {
     color: #E10009;
 }
@@ -100,7 +95,7 @@ th, label {
 }
 
 .well-success {
-  background-color: #F5F6F8;
+  background-color: #FFFACD	;
   opacity: 1;
   border: 8px solid #4FD844;
 }

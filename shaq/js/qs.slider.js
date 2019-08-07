@@ -115,7 +115,7 @@
             $("#shaqs").slider("value", sliderStep);
           }
           this.setUSERS = function(sliderStep) {
-            var units = 'USER(s)';
+            var units = 'Account(s)';
             var sTotal = sliderStep + " " + units;
             $("#usersvalue").text(sTotal);
             $("#users").slider("value", parseFloat(sliderStep));

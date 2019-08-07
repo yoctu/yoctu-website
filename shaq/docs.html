@@ -132,18 +132,6 @@
     </div>
   </div>
 
-  <section class="intro-single">
-    <div class="title-single-box">
-    <div class="container" >
-      <div class="title-single-box">
-      <a class="title-single" style="color:black"><span class="color-b">Bid</span> Entity Lifecycle</a>
-    </div>
-  <br>
-  <br>
-      <img class="img-fluid" src="img/shaqbidentity.png">
-    </div>
-  </div>
-
   <section class="intro-single" style="padding-top:5%">
     <div class="title-single-box">
     <div class="container" style="padding-bottom:10%">
@@ -187,6 +175,58 @@
 </div>
     </div>
   </section>
+
+  <section class="intro-single">
+    <div class="title-single-box">
+    <div class="container" >
+      <div class="title-single-box">
+      <a class="title-single" style="color:black"><span class="color-b">Bid</span> Entity Lifecycle</a>
+    </div>
+  <br>
+  <br>
+      <img class="img-fluid" src="img/shaqbidentity.png">
+    </div>
+  </div>
+
+  <section class="intro-single" style="padding-top:5%">
+    <div class="title-single-box">
+    <div class="container" style="padding-bottom:10%">
+      <div class="title-single-box">
+      <a class="title-single" style="color:black"><span class="color-b">Bid</span> first creation</a>
+    </div>
+    <br>
+
+      <pre><code class="language-json">
+
+        curl -s -i  -X POST \
+        'https://shaq.easy4pro.com/api/bid/DHL/'$Shaq\
+        -H 'content-type:application/json' \
+        -d '[{
+        "id": "'$(cat /proc/sys/kernel/random/uuid)'",
+        "key": "'$Shaq'",
+        "target": [ "SKOREWAY"],
+        "source": [ "82SKOREX" ],
+        "type": "bid",
+        "from": "nico",
+        "status": "created",
+        "auction": "AAAAAA",
+        "valid_until": "'$(date --date "30 minutes" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+        "vehicule": "FRG1",
+        "loaded": "Yes",
+        "price" : "30",
+        "puDate": "'$(date --date "1 day" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+        "deDate": "'$(date --date "2 days" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+        "lang":"GB",
+        "currency": "EUR",
+        "driver": "1"
+        }]'
+
+</code></pre>
+</div>
+</div>
+    </div>
+  </section>
+
 
   </section>
   <section class="section-footer">

@@ -19,16 +19,16 @@
   <script src="js/googleanalytics.js"></script>
   <script>
     window.pipedriveLeadboosterConfig = {
-      base: 'leadbooster-chat.pipedrive.com',
+      base: "leadbooster-chat.pipedrive.com",
       companyId: 851927,
       playbookId: 1052
     };
   </script>
   <script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism.css">
-    <link href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-json.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-json.min.js"></script>
 
 </head>
 
@@ -62,49 +62,206 @@
 
   <section class="intro-single">
     <div class="title-single-box">
-    <div class="container">
-      <div class="title-single-box">
-      <a class="title-single" style="color:black"><span class="color-b">Bid</span> first creation</a>
+      <div class="container" style="padding-bottom:3%">
+        <div class="title-single-box">
+          <a class="title-single" style="color:black">API</a>
+        </div>
+      </div>
+      </div>
+
+
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Get <span class="color-b">ShaQ</span> based on a key</a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -s -i \
+          -H "content-type:application/json" \
+          -H "Authorization: Basic XXXXXXX" \
+          http://localhost:3007/api/shaq/SKOREWAY/$ShaqKey
+
+</code></pre>
+      </div>
     </div>
-    <br>
 
-      <pre><code class="language-json">
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Get <span class="color-b">Chat</span> based on a key</a>
+        <br>
 
-        curl -s -i  -X POST \
-        'https://shaq.easy4pro.com/api/bid/DHL/'$Shaq\
-        -H 'content-type:application/json' \
-        -d '[{
-        "id": "'$(cat /proc/sys/kernel/random/uuid)'",
-        "key": "'$Shaq'",
+        <pre><code class="language-json">
+
+          curl -s -i
+          -H "content-type:application/json" \
+          -H "Authorization: Basic XXXXXXX" \
+          http://localhost:3007/api/chat/SKOREWAY/$ShaqKey
+
+</code></pre>
+      </div>
+    </div>
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Extended <span class="color-b">Validity</span></a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -s -i -X POST
+          -H "content-type:application/json"
+          -H "Authorization: Basic XXXXXXX"
+          -d "{ "valid_until": ""$date"", "type": "notification", "action": "extendvalidity" }"
+          "http://localhost:3007/api/shaq/SKOREWAY/extendvalidity/"$ShaqKey
+
+</code></pre>
+      </div>
+    </div>
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Extended <span class="color-b">Decision</span></a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -s -i -X POST
+          -H "content-type:application/json"
+          -H "Authorization: Basic XXXXXXX"
+          -d "{ "valid_until": ""$date"", "type": "notification", "action": "extenddecision" }"
+          "http://localhost:3007/api/shaq/SKOREWAY/extenddecision/"$ShaqKey
+
+</code></pre>
+      </div>
+    </div>
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Public <span class="color-b">ShaQ </span>Subscribe</a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -X POST
+          -H "Authorization: Basic XXXXXXX" \
+          -H "content-type:application/json" \
+          -d "{ "usercode": "XXXXXX", "usercodeemail": "example@example.com", "usercodename": "XXXXXX", "type": "notification", "action": "subscribe" }"
+           "http://localhost:3007/api/shaq-public/SKOREWAY/subscribe/"$ShaqKey
+
+</code></pre>
+      </div>
+    </div>
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Invite <span class="color-b">Target</span></a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -s -i  -X POST
+          -H "content-type:application/json"
+          -H "Authorization: Basic XXXXXXX" \
+          -d "{"usercode":"10HAR"}" -s -i
+          http://localhost:3007/api/invite/SKOREWAY/10HAR/$Shaq
+
+</code></pre>
+      </div>
+    </div>
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Disable <span class="color-b">Target </span>Test</a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -s -i  -X POST
+          -H "content-type:application/json"
+          -H "Authorization: Basic XXXXXXX"
+          -d "{ "target": "XXXXXX", "type": "notification", "action": "remove" }"
+           "http://localhost:3007/api/shaq/SKOREWAY/remove/"$ShaqKey
+
+</code></pre>
+      </div>
+    </div>
+
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Enable <span class="color-b">Target </span>Test</a>
+        <br>
+
+        <pre><code class="language-json">
+
+          curl -s -i  -X POST
+          -H "content-type:application/json"
+          -H "Authorization: Basic XXXXXXX"
+          -d "{ "target": "XXXXXXX", "type": "notification", "action": "remove" }"
+           "http://localhost:3007/api/shaq/SKOREWAY/remove/"$ShaqKey
+
+</code></pre>
+      </div>
+    </div>
+
+  </section>
+  <section class="intro-single">
+    <div class="title-single-box">
+      <div class="container" style="padding-bottom:3%">
+        <div class="title-single-box">
+          <a class="title-single" style="color:black">Bid</a>
+        </div>
+      </div>
+      <div class="container" style="padding-bottom:3%">
+        <a class="title-single" style="color:black"><span class="color-b">Bid</span> creation</a>
+        <br>
+
+        <pre><code class="language-json">
+
+        curl -s -i  -X POST
+        "https://shaq.easy4pro.com/api/bid/DHL/"$Shaq\
+        -H "content-type:application/json"
+        -d "[{
+        "id": ""$(cat /proc/sys/kernel/random/uuid)"",
+        "key": ""$Shaq"",
         "target": [ "SKOREWAY"],
         "source": [ "82SKOREX" ],
         "type": "bid",
         "from": "nico",
         "status": "created",
         "auction": "AAAAAA",
-        "valid_until": "'$(date --date "30 minutes" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+        "valid_until": ""$(date --date "30 minutes" -u +"%Y-%m-%dT%H:%M:%S.000Z")"",
         "vehicule": "FRG1",
         "loaded": "Yes",
         "price" : "30",
-        "puDate": "'$(date --date "1 day" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
-        "deDate": "'$(date --date "2 days" -u +"%Y-%m-%dT%H:%M:%S.000Z")'",
+        "puDate": ""$(date --date "1 day" -u +"%Y-%m-%dT%H:%M:%S.000Z")"",
+        "deDate": ""$(date --date "2 days" -u +"%Y-%m-%dT%H:%M:%S.000Z")"",
         "lang":"GB",
         "currency": "EUR",
         "driver": "1"
-        }]'
+        }]"
 
 </code></pre>
-</div>
-</div>
-<div class="container text-right">
-  <a href="examples.html">View All
-    <span class="ion-ios-arrow-forward"></span>
-  </a>
-</div>
+      </div>
     </div>
-  </section>
+    <div class="title-single-box">
+      <div class="container">
+        <a class="title-single" style="color:black">Get <span class="color-b">Bid</span> based on a key</a>
+        <br>
 
-  
+        <pre><code class="language-json">
+
+        curl -s -i
+        -H "content-type:application/json"
+        -H "Authorization: Basic XXXXXXX"
+        "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey"
+
+  </code></pre>
+      </div>
+    </div>
+</section>
+
   <section class="section-footer">
     <div class="container">
       <div class="row">

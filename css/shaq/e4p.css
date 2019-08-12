@@ -192,7 +192,7 @@ input, select {
   content: url("https://logos.yoctu.com/logo/ShaQ.png");
 }
 
-#navbar-username, #solrReload, #solrRefresh {
+#navbar-usercode, #solrReload, #solrRefresh {
   color: var(--main-bg-color);
 }
 

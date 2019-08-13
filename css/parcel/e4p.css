@@ -12,17 +12,17 @@
 }
 
 .navbar-brand {
-    background-image: url(shaq/img/wave2.png) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;
+    background-image: url(https://www.yoctu.ovh/wp-content/uploads/2019/08/wave2-copy.jpg) !important; background-repeat: no-repeat !important; background-size: 123px 49px !important;
     width: 123px;
     text-indent: -99999px;
 }
 
 #logo {
-    content:url("https://logos.yoctu.com/logo/skoreway-64.png");
+    content:url("https://www.yoctu.ovh/wp-content/uploads/2019/08/shaqlogo.png");
 }
 
 #logo-box1, #logo-box2, #logo-box3 {
-    content:url("https://logos.yoctu.com/logo/skoreway-64.png");
+    content:url("https://www.yoctu.ovh/wp-content/uploads/2019/08/shaqlogo.png");
 }
 
 .buttonOrange {

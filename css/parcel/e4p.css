@@ -30,7 +30,7 @@
     background-color: var(--main-upela-color);
 }
 
-.progressbar {
+#progressbar {
 color: black;
 
 }

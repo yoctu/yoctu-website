@@ -43,9 +43,9 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
 
 #progressbar li {
         list-style-type: none;
-        color: white;
+        color: black;
         text-transform: uppercase;
-        font-size: 9px;
+        font-size: 12px;
         width: 33.33%;
         float: left;
         position: relative;

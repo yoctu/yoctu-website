@@ -21,11 +21,6 @@
     width: 10%;
 }
 
-#logo-box1, #logo-box2, #logo-box3 {
-    content:url("https://www.yoctu.ovh/wp-content/uploads/2019/08/shaqlogo.png");
-    width: 10%;
-}
-
 .buttonOrange {
     background-color: var(--main-upela-color);
 }

@@ -45,7 +45,7 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
         list-style-type: none;
         color: black;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 14px;
         width: 33.33%;
         float: left;
         position: relative;

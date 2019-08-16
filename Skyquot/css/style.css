@@ -1,0 +1,48 @@
+html {
+    background: url("../img/bg_yoctu.png") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 2.33333rem;
+    line-height: 3rem;
+    font-weight: 700;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+}
+
+#wrap .left{
+    float: left;
+    width: 50%;
+}
+
+#wrap .punch-img {
+    padding-top: 20px;
+}
+
+#wrap .punch-img img {
+    width: 100%;
+}
+
+#wrap .right {
+    padding-top: 50px;
+}
+
+#wrap .right .content{
+    text-align: center;
+    padding:0 100px 0 0;
+}
+
+#wrap .right .content .punch{
+    margin-top:20px;
+    color: blue;
+}

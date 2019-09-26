@@ -80,7 +80,7 @@
           curl -s -i \
           -H "content-type:application/json" \
           -H "Authorization: Basic XXXXXXX" \
-          http://localhost:3007/api/shaq/SKOREWAY/$ShaqKey
+          http://shaq_auctioneer/api/shaq/SHAQDEMO/$ShaqKey
 
 </code></pre>
       </div>
@@ -96,7 +96,7 @@
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
           -d "{ "valid_until": ""$date"", "type": "notification", "action": "extendvalidity" }"
-          "http://localhost:3007/api/shaq/SKOREWAY/extendvalidity/"$ShaqKey
+          "http://shaq_auctioneer/api/shaq/SHAQDEMO/extendvalidity/"$ShaqKey
 
 </code></pre>
       </div>
@@ -112,7 +112,7 @@
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
           -d "{ "valid_until": ""$date"", "type": "notification", "action": "extenddecision" }"
-          "http://localhost:3007/api/shaq/SKOREWAY/extenddecision/"$ShaqKey
+          "http://shaq_auctioneer/api/shaq/SHAQDEMO/extenddecision/"$ShaqKey
 
 </code></pre>
       </div>
@@ -128,7 +128,7 @@
           -H "Authorization: Basic XXXXXXX" \
           -H "content-type:application/json" \
           -d "{ "usercode": "XXXXXX", "usercodeemail": "example@example.com", "usercodename": "XXXXXX", "type": "notification", "action": "subscribe" }"
-           "http://localhost:3007/api/shaq-public/SKOREWAY/subscribe/"$ShaqKey
+           "http://shaq_auctioneer/api/shaq-public/SHAQDEMO/subscribe/"$ShaqKey
 
 </code></pre>
       </div>
@@ -144,7 +144,7 @@
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX" \
           -d "{"usercode":"10HAR"}" -s -i
-          "http://localhost:3007/api/invite/SKOREWAY/10HAR/""$Shaq
+          "http://shaq_auctioneer/api/invite/SHAQDEMO/10HAR/""$Shaq
 
 </code></pre>
       </div>
@@ -160,7 +160,7 @@
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
           -d "{ "target": "XXXXXX", "type": "notification", "action": "remove" }"
-           "http://localhost:3007/api/shaq/SKOREWAY/remove/"$ShaqKey
+           "http://shaq_auctioneer/api/shaq/SHAQDEMO/remove/"$ShaqKey
 
 </code></pre>
       </div>
@@ -176,7 +176,7 @@
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
           -d "{ "target": "XXXXXXX", "type": "notification", "action": "remove" }"
-           "http://localhost:3007/api/shaq/SKOREWAY/remove/"$ShaqKey
+           "http://shaq_auctioneer/api/shaq/SHAQDEMO/remove/"$ShaqKey
 
 </code></pre>
       </div>
@@ -191,7 +191,7 @@
          curl -s -i  -X POST
          -H "content-type:application/json"
          -d "{ "type": "notification", "action": "removeall" }" | grep HTTP | awk "{ print $2 }"
-         "http://localhost:3007/api/shaq/SKOREWAY/removeall/"$ShaqKey
+         "http://shaq_auctioneer/api/shaq/SHAQDEMO/removeall/"$ShaqKey
 
 </code></pre>
       </div>
@@ -206,7 +206,7 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -d "{ "type": "notification", "action": "readdall" }" | grep HTTP | awk "{ print $2 }"
-          "http://localhost:3007/api/shaq/SKOREWAY/readdall/"$ShaqKey
+          "http://shaq_auctioneer/api/shaq/SHAQDEMO/readdall/"$ShaqKey
 
 </code></pre>
       </div>
@@ -221,8 +221,8 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "{ "target": "82SKOREX", "type": "notification", "action": "giveup" }"
-          "http://localhost:3005/api/shaq/82SKOREX/giveup/"$ShaqKey
+          -d "{ "target": "SHAQDEMOEX", "type": "notification", "action": "giveup" }"
+          "http://shaq_bidder/api/shaq/SHAQDEMOEX/giveup/"$ShaqKey
 
 
 </code></pre>
@@ -238,7 +238,7 @@
           curl -s -i
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          "http://localhost:3007/api/rate/SKOREWAY/shaq/$Rater/$ShaqKey"
+          "http://shaq_auctioneer/api/rate/SHAQDEMO/shaq/$Rater/$ShaqKey"
 
 
 </code></pre>
@@ -265,8 +265,8 @@
         -d "[{
         "id": ""$(cat /proc/sys/kernel/random/uuid)"",
         "key": ""$Shaq"",
-        "target": [ "SKOREWAY"],
-        "source": [ "82SKOREX" ],
+        "target": [ "SHAQDEMO"],
+        "source": [ "SHAQDEMOEX" ],
         "type": "bid",
         "from": "nico",
         "status": "created",
@@ -294,7 +294,7 @@
         curl -s -i
         -H "content-type:application/json"
         -H "Authorization: Basic XXXXXXX"
-        "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey"
+        "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey"
 
   </code></pre>
       </div>
@@ -308,7 +308,7 @@
         curl -s -i  -X POST
         -H "content-type:application/json"
         -d "[{ "id": $rand, "status": "cancelled" } ]"
-        "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey
+        "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
   </code></pre>
@@ -324,7 +324,7 @@
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
           -d "[{ "id": ""$rand"", "status": "declined" } ]"
-          "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey
+          "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
   </code></pre>
@@ -340,7 +340,7 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -d "[{ "id": ""$rand"", "status": "forwarded" } ]"
-          "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey
+          "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
   </code></pre>
@@ -357,7 +357,7 @@
            -H "content-type:application/json"
            -H "Authorization: Basic XXXXXXX"
            -d "[{ "id": "$rand, "status": "accepted" } ]"
-           "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey
+           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
   </code></pre>
@@ -374,7 +374,7 @@
           -H "content-type:application/json"
          -H "Authorization: Basic XXXXXXX"
           -d "[{ "id": ""$rand"", "status": "authorized" } ]"
-          "http://localhost:3005/api/bid/82SKOREX/"$ShaqKey
+          "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
   </code></pre>
@@ -400,7 +400,7 @@
               curl -s -i
               -H "content-type:application/json" \
               -H "Authorization: Basic XXXXXXX" \
-              http://localhost:3007/api/chat/SKOREWAY/$ShaqKey
+              http://shaq_auctioneer/api/chat/SHAQDEMO/$ShaqKey
 
     </code></pre>
           </div>
@@ -412,118 +412,163 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "[{ "id": ""$(cat /proc/sys/kernel/random/uuid)"", "date": "NOW", "subject" : "coucou", "message": "hello", "from": "user1", "channel": "client", "key": ""$Shaq"", "source": [ "82SKOREX" ], "target": [ "SKOREWAY" ], "type": "message",  "status": "sent" }]"
-          "http://localhost:3005/api/chat/82SKOREX/"$ShaqKey
+          -d "[{ "id": ""$(cat /proc/sys/kernel/random/uuid)"", "date": "NOW", "subject" : "coucou", "message": "hello", "from": "user1", "channel": "client", "key": ""$Shaq"", "source": [ "SHAQDEMOEX" ], "target": [ "SHAQDEMO" ], "type": "message",  "status": "sent" }]"
+          "http://shaq_bidder/api/chat/SHAQDEMOEX/"$ShaqKey
         </code></pre>
 
-</section>
+  </section>
 
-
-
-<section class="section-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-5">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <img src="img/shaqlogo.png" style="width:150px">
-            <p></p>
-          </div>
-          <div class="w-body-a">
-            <p class="w-text-a color-text-a">
-              Shaq certifies that no animals have been harmed during the development of our services.
-              Shaq is in fact a fur free company.
-            </p>
-          </div>
-          <div class="w-footer-a">
-            <ul class="list-unstyled">
-              <li class="color-a">
-                <span class="color-text-a">Email : </span> hello@yoctu.com</li>
-              <li class="color-a">
-                <span class="color-text-a">Phone : </span> +1(415) 917-9438</li>
-            </ul>
-          </div>
+  <section class="intro-single" style="padding-top:3%">
+    <div class="title-single-box">
+      <div class="container">
+        <div class="title-single-box">
+          <a class="title-single" style="color:black">Notification</a>
         </div>
       </div>
-      <div class="col-sm-12 col-md-3 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">The Company</h3>
+      <br>
+      <div class="container" style="padding-bottom:3%">
+        <div class="title-single-box">
+          <div class="container">
+            <h3 style="color:black">Get <span class="color-b">Notification</span> based on a key</h3>
+
+            <pre><code class="language-json">
+
+            curl -s -i
+            -H "content-type:application/json" \
+            -H "Authorization: Basic XXXXXXX" \
+            http://shaq_auctioneer/api/notif/SHAQDEMO/$ShaqKey
+
+  </code></pre>
           </div>
-          <br>
-          <div class="w-body-a">
+        </div>
+
+        <h3 style="color:black"><span class="color-b">Notification</span> creation</h3>
+
+        <pre><code class="language-json">
+        curl -s -i  -X POST
+        -H "content-type:application/json"
+        -H "Authorization: Basic XXXXXXX"
+        -d "[{ "id": ""$(cat /proc/sys/kernel/random/uuid)"", "date": "NOW", "subject" : "coucou", "message": "hello", "from": "user1", "channel": "client", "key": ""$Shaq"", "source": [ "SHAQDEMOEX" ], "target": [ "SHAQDEMO" ], "type": "message",  "status": "sent" }]"
+        "http://shaq_bidder/api/chat/SHAQDEMOEX/"$ShaqKey
+      </code></pre>
+
+  </section>
+
+  <section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-5">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <img src="img/shaqlogo.png" style="width:150px">
+              <p></p>
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                Shaq certifies that no animals have been harmed during the development of our services.
+                Shaq is in fact a fur free company.
+              </p>
+            </div>
+            <div class="w-footer-a">
+              <ul class="list-unstyled">
+                <li class="color-a">
+                  <span class="color-text-a">Email : </span> hello@yoctu.com</li>
+                <li class="color-a">
+                  <span class="color-text-a">Phone : </span> +1(415) 917-9438</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">The Company</h3>
+            </div>
+            <br>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="https://www.yoctu.com/">About us</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="team.html">Team</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="https://www.redspher.com/">Affiliate</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="contact.html">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">International sites</h3>
+            </div>
+            <br>
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="https://www.yoctu.com/">About us</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">New York</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="team.html">Team</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Luxembourg</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="https://www.redspher.com/">Affiliate</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="contact.html">Contact Us</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Paris</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">International sites</h3>
-          </div>
-          <br>
-          <div class="w-body-a">
-            <ul class="list-unstyled">
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#">New York</a>
-              </li>
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#">Luxembourg</a>
-              </li>
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#">Paris</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-<footer>
-  <div class="copyright-footer">
-    <p class="copyright color-text-a">
-      &copy; Copyright
-      <span class="color-a">Yoctu</span> All Rights Reserved.
-    </p>
-  </div>
-  <div class="credits">
-    Designed by <a href="https://yoctu.com/">Yoctu</a>
-  </div>
+  </section>
+  <footer>
+    <div class="copyright-footer">
+      <p class="copyright color-text-a">
+        &copy; Copyright
+        <span class="color-a">Yoctu</span> All Rights Reserved.
+      </p>
+    </div>
+    <div class="credits">
+      Designed by <a href="https://yoctu.com/">Yoctu</a>
+    </div>
 
-</footer>
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/popper/popper.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/scrollreveal/scrollreveal.min.js"></script>
-<script src="contactform/contactform.js"></script>
-<script src="js/main.js"></script>
-<script type="text/javascript">
-var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
-{widgetcode:"f8e6c56792406da3186145dfec1621da92497006f382a048adfe9da553a3dd8e", values:{},ready:function(){}};
-var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
-s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
-</script>
+  </footer>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/scrollreveal/scrollreveal.min.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript">
+    var $zoho = $zoho || {};
+    $zoho.salesiq = $zoho.salesiq || {
+      widgetcode: "f8e6c56792406da3186145dfec1621da92497006f382a048adfe9da553a3dd8e",
+      values: {},
+      ready: function() {}
+    };
+    var d = document;
+    s = d.createElement("script");
+    s.type = "text/javascript";
+    s.id = "zsiqscript";
+    s.defer = true;
+    s.src = "https://salesiq.zoho.com/widget";
+    t = d.getElementsByTagName("script")[0];
+    t.parentNode.insertBefore(s, t);
+    d.write("<div id='zsiqwidget'></div>");
+  </script>
 </body>
 
 </html>

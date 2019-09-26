@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <title>Shaq</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content=" name="keywords">
+  <meta content=" name="description">
   <link href="img/favicon.ico" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -95,7 +95,7 @@
           curl -s -i -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "{ "valid_until": ""$date"", "type": "notification", "action": "extendvalidity" }"
+          -d "{ "valid_until": "$(date --date "1 hour" -u +"%Y-%m-%dT%H:%M:%S.000Z")", "type": "notification", "action": "extendvalidity" }"
           "http://shaq_auctioneer/api/shaq/SHAQDEMO/extendvalidity/"$ShaqKey
 
 </code></pre>
@@ -111,7 +111,7 @@
           curl -s -i -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "{ "valid_until": ""$date"", "type": "notification", "action": "extenddecision" }"
+          -d "{ "valid_until": "$(date --date "1 hour" -u +"%Y-%m-%dT%H:%M:%S.000Z")", "type": "notification", "action": "extenddecision" }"
           "http://shaq_auctioneer/api/shaq/SHAQDEMO/extenddecision/"$ShaqKey
 
 </code></pre>
@@ -140,11 +140,11 @@
 
         <pre><code class="language-json">
 
-          curl -s -i  -X POST
+          curl -s -i -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX" \
-          -d "{"usercode":"10HAR"}" -s -i
-          "http://shaq_auctioneer/api/invite/SHAQDEMO/10HAR/""$Shaq
+          -d "{"usercode":"SHAQDEMOEX", "usercodename": "SHAQDEMOEX"}" -s -i
+          "http://shaq_auctioneer/api/invite/SHAQDEMO/SHAQDEMOEX/"$Shaq
 
 </code></pre>
       </div>
@@ -263,20 +263,20 @@
         "https://shaq.easy4pro.com/api/bid/DHL/"$Shaq
         -H "content-type:application/json"
         -d "[{
-        "id": ""$(cat /proc/sys/kernel/random/uuid)"",
-        "key": ""$Shaq"",
+        "id": "$(cat /proc/sys/kernel/random/uuid)",
+        "key": "$Shaq",
         "target": [ "SHAQDEMO"],
         "source": [ "SHAQDEMOEX" ],
         "type": "bid",
         "from": "nico",
         "status": "created",
         "auction": "AAAAAA",
-        "valid_until": ""$(date --date "30 minutes" -u +"%Y-%m-%dT%H:%M:%S.000Z")"",
+        "valid_until": "$(date --date "30 minutes" -u +"%Y-%m-%dT%H:%M:%S.000Z")",
         "vehicule": "FRG1",
         "loaded": "Yes",
         "price" : "30",
-        "puDate": ""$(date --date "1 day" -u +"%Y-%m-%dT%H:%M:%S.000Z")"",
-        "deDate": ""$(date --date "2 days" -u +"%Y-%m-%dT%H:%M:%S.000Z")"",
+        "puDate": "$(date --date "1 day" -u +"%Y-%m-%dT%H:%M:%S.000Z")",
+        "deDate": "$(date --date "2 days" -u +"%Y-%m-%dT%H:%M:%S.000Z")",
         "lang":"GB",
         "currency": "EUR",
         "driver": "1"
@@ -323,7 +323,7 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "[{ "id": ""$rand"", "status": "declined" } ]"
+          -d "[{ "id": "$rand", "status": "declined" } ]"
           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -339,7 +339,7 @@
 
           curl -s -i  -X POST
           -H "content-type:application/json"
-          -d "[{ "id": ""$rand"", "status": "forwarded" } ]"
+          -d "[{ "id": "$rand", "status": "forwarded" } ]"
           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -373,7 +373,7 @@
           curl -s -i  -X POST \
           -H "content-type:application/json"
          -H "Authorization: Basic XXXXXXX"
-          -d "[{ "id": ""$rand"", "status": "authorized" } ]"
+          -d "[{ "id": "$rand", "status": "authorized" } ]"
           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -389,13 +389,13 @@
           <a class="title-single" style="color:black">Chat</a>
         </div>
       </div>
-    <br>
-    <div class="container" style="padding-bottom:3%">
-      <div class="title-single-box">
-        <div class="container">
-          <h3 style="color:black">Get <span class="color-b">Chat</span> based on a key</h3>
+      <br>
+      <div class="container" style="padding-bottom:3%">
+        <div class="title-single-box">
+          <div class="container">
+            <h3 style="color:black">Get <span class="color-b">Chat</span> based on a key</h3>
 
-          <pre><code class="language-json">
+            <pre><code class="language-json">
 
               curl -s -i
               -H "content-type:application/json" \
@@ -403,29 +403,29 @@
               http://shaq_auctioneer/api/chat/SHAQDEMO/$ShaqKey
 
     </code></pre>
+          </div>
         </div>
-      </div>
 
-      <h3 style="color:black"><span class="color-b">Chat</span> creation</h3>
+        <h3 style="color:black"><span class="color-b">Chat</span> creation</h3>
 
-      <pre><code class="language-json">
+        <pre><code class="language-json">
           curl -s -i  -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
           -d "[{ "id": "$uuid",
-          "date": "NOW",
+          "date": "$(date -u +"%Y-%m-%dT%H:%M:%S.000Z")",
           "subject" : "hi",
           "message": "hello",
           "from": "user1",
           "channel": "client",
-          "key": ""$Shaq"",
+          "key": "$Shaq",
           "source": [ "SHAQDEMOEX" ],
           "target": [ "SHAQDEMO" ],
           "type": "message",
           "status": "sent" }]"
           http://shaq_bidder/api/chat/SHAQDEMOEX/$ShaqKey
         </code></pre>
-</div>
+      </div>
   </section>
 
   <section class="intro-single" style="padding-top:3%">
@@ -435,13 +435,13 @@
           <a class="title-single" style="color:black">Notification</a>
         </div>
       </div>
-    <br>
-    <div class="container" style="padding-bottom:3%">
-      <div class="title-single-box">
-        <div class="container">
-          <h3 style="color:black">Get <span class="color-b">Notification</span> based on a key</h3>
+      <br>
+      <div class="container" style="padding-bottom:3%">
+        <div class="title-single-box">
+          <div class="container">
+            <h3 style="color:black">Get <span class="color-b">Notification</span> based on a key</h3>
 
-          <pre><code class="language-json">
+            <pre><code class="language-json">
 
             curl -s -i
             -H "content-type:application/json" \
@@ -449,17 +449,17 @@
             http://shaq_auctioneer/api/notif/SHAQDEMO/$ShaqKey
 
   </code></pre>
+          </div>
         </div>
-      </div>
 
-      <h3 style="color:black"><span class="color-b">Notification</span> creation</h3>
+        <h3 style="color:black"><span class="color-b">Notification</span> creation</h3>
 
-      <pre><code class="language-json">
+        <pre><code class="language-json">
         curl -s -i  -X POST
         -H "content-type:application/json"
         -H "Authorization: Basic XXXXXXX"
         -d "[{ "id": "$uuid",
-        "date": "2019-01-01T00:00:00.000Z",
+        "date": "$(date -u +"%Y-%m-%dT%H:%M:%S.000Z")",
         "subject" : "hi",
         "message": "hello",
         "from": "user1",
@@ -471,7 +471,7 @@
         "status": "sent" }]"
         http://shaq_bidder/api/notif/SHAQDEMOEX/$ShaqKey
       </code></pre>
-</div>
+      </div>
   </section>
 
   <section class="section-footer">

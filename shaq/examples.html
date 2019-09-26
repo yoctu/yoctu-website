@@ -391,11 +391,12 @@
       </div>
     </div>
     <br>
-    <div class="title-single-box">
-      <div class="container">
-        <h3 style="color:black">Get <span class="color-b">Chat</span> based on a key</h3>
+    <div class="container" style="padding-bottom:3%">
+      <div class="title-single-box">
+        <div class="container">
+          <h3 style="color:black">Get <span class="color-b">Chat</span> based on a key</h3>
 
-        <pre><code class="language-json">
+          <pre><code class="language-json">
 
               curl -s -i
               -H "content-type:application/json" \
@@ -403,6 +404,7 @@
               http://shaq_auctioneer/api/chat/SHAQDEMO/$ShaqKey
 
     </code></pre>
+        </div>
       </div>
 
       <h3 style="color:black"><span class="color-b">Chat</span> creation</h3>
@@ -436,11 +438,12 @@
       </div>
     </div>
     <br>
-    <div class="title-single-box">
-      <div class="container">
-        <h3 style="color:black">Get <span class="color-b">Notification</span> based on a key</h3>
+    <div class="container" style="padding-bottom:3%">
+      <div class="title-single-box">
+        <div class="container">
+          <h3 style="color:black">Get <span class="color-b">Notification</span> based on a key</h3>
 
-        <pre><code class="language-json">
+          <pre><code class="language-json">
 
             curl -s -i
             -H "content-type:application/json" \
@@ -448,6 +451,7 @@
             http://shaq_auctioneer/api/notif/SHAQDEMO/$ShaqKey
 
   </code></pre>
+        </div>
       </div>
 
       <h3 style="color:black"><span class="color-b">Notification</span> creation</h3>
@@ -456,8 +460,18 @@
         curl -s -i  -X POST
         -H "content-type:application/json"
         -H "Authorization: Basic XXXXXXX"
-        -d "[{ "id": ""$(cat /proc/sys/kernel/random/uuid)"", "date": "NOW", "subject" : "coucou", "message": "hello", "from": "user1", "channel": "client", "key": ""$Shaq"", "source": [ "SHAQDEMOEX" ], "target": [ "SHAQDEMO" ], "type": "message",  "status": "sent" }]"
-        http://shaq_bidder/api/chat/SHAQDEMOEX/$ShaqKey
+        -d "[{ "id": "$uuid",
+        "date": "2019-01-01T00:00:00.000Z",
+        "subject" : "hi",
+        "message": "hello",
+        "from": "user1",
+        "channel": "client",
+        "key": "$Shaq",
+        "source": [ "SHAQDEMOEX" ],
+        "target": [ "SHAQDEMO" ],
+        "type": "notification",
+        "status": "sent" }]"
+        http://shaq_bidder/api/notif/SHAQDEMOEX/$ShaqKey
       </code></pre>
 
   </section>

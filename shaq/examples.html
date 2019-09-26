@@ -78,8 +78,8 @@
         <pre><code class="language-json">
 
           curl -s -i \
-          -H "content-type:application/json" \
-          -H "Authorization: Basic XXXXXXX" \
+          -H "content-type:application/json"
+          -H "Authorization: Basic XXXXXXX"
           http://shaq_auctioneer/api/shaq/SHAQDEMO/$ShaqKey
 
 </code></pre>
@@ -125,8 +125,8 @@
         <pre><code class="language-json">
 
           curl -X POST
-          -H "Authorization: Basic XXXXXXX" \
-          -H "content-type:application/json" \
+          -H "Authorization: Basic XXXXXXX"
+          -H "content-type:application/json"
           -d "{ "usercode": "XXXXXX", "usercodeemail": "example@example.com", "usercodename": "XXXXXX", "type": "notification", "action": "subscribe" }"
            "http://shaq_auctioneer/api/shaq-public/SHAQDEMO/subscribe/"$ShaqKey
 
@@ -260,7 +260,7 @@
         <pre><code class="language-json">
 
         curl -s -i  -X POST
-        "https://shaq.easy4pro.com/api/bid/DHL/"$Shaq\
+        "https://shaq.easy4pro.com/api/bid/DHL/"$Shaq
         -H "content-type:application/json"
         -d "[{
         "id": ""$(cat /proc/sys/kernel/random/uuid)"",
@@ -413,8 +413,18 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "[{ "id": ""$(cat /proc/sys/kernel/random/uuid)"", "date": "NOW", "subject" : "coucou", "message": "hello", "from": "user1", "channel": "client", "key": ""$Shaq"", "source": [ "SHAQDEMOEX" ], "target": [ "SHAQDEMO" ], "type": "message",  "status": "sent" }]"
-          "http://shaq_bidder/api/chat/SHAQDEMOEX/"$ShaqKey
+          -d "[{ "id": "$uuid",
+          "date": "NOW",
+          "subject" : "hi",
+          "message": "hello",
+          "from": "user1",
+          "channel": "client",
+          "key": ""$Shaq"",
+          "source": [ "SHAQDEMOEX" ],
+          "target": [ "SHAQDEMO" ],
+          "type": "message",
+          "status": "sent" }]"
+          http://shaq_bidder/api/chat/SHAQDEMOEX/$ShaqKey
         </code></pre>
 
   </section>
@@ -451,7 +461,7 @@
         -H "content-type:application/json"
         -H "Authorization: Basic XXXXXXX"
         -d "[{ "id": ""$(cat /proc/sys/kernel/random/uuid)"", "date": "NOW", "subject" : "coucou", "message": "hello", "from": "user1", "channel": "client", "key": ""$Shaq"", "source": [ "SHAQDEMOEX" ], "target": [ "SHAQDEMO" ], "type": "message",  "status": "sent" }]"
-        "http://shaq_bidder/api/chat/SHAQDEMOEX/"$ShaqKey
+        http://shaq_bidder/api/chat/SHAQDEMOEX/$ShaqKey
       </code></pre>
 
   </section>

@@ -316,7 +316,7 @@
 
         curl -s -i  -X POST
         -H "content-type:application/json"
-        -d "[{ "id": $rand, "status": "cancelled" } ]"
+        -d "[{ "id": $rand, "status": "cancelled", "decision_maker": "me" } ]"
         "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -332,7 +332,7 @@
           curl -s -i  -X POST
           -H "content-type:application/json"
           -H "Authorization: Basic XXXXXXX"
-          -d "[{ "id": "$rand", "status": "declined" } ]"
+          -d "[{ "id": "$rand", "status": "declined", "decision_maker": "me" } ]"
           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -348,7 +348,7 @@
 
           curl -s -i  -X POST
           -H "content-type:application/json"
-          -d "[{ "id": "$rand", "status": "forwarded" } ]"
+          -d "[{ "id": "$rand", "status": "forwarded", "forwarder": "me" } ]"
           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -365,7 +365,7 @@
           curl -s -i  -X POST
            -H "content-type:application/json"
            -H "Authorization: Basic XXXXXXX"
-           -d "[{ "id": "$rand, "status": "accepted" } ]"
+           -d "[{ "id": "$rand, "status": "accepted", "decision_maker": "me" } ]"
            "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 
@@ -382,7 +382,7 @@
           curl -s -i  -X POST \
           -H "content-type:application/json"
          -H "Authorization: Basic XXXXXXX"
-          -d "[{ "id": "$rand", "status": "authorized" } ]"
+          -d "[{ "id": "$rand", "status": "authorized", "decision_maker": "me" } ]"
           "http://shaq_bidder/api/bid/SHAQDEMOEX/"$ShaqKey
 
 

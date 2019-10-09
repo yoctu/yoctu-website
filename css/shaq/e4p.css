@@ -86,12 +86,16 @@ th, label {
 
 .well-success {
   background-color: #F5F6F8;
+  border-color: #F5F6F8;
   opacity: 1;
-  border: 8px solid #4FD844;
+  border-left-width: 10px;
+  border-left-color: #4FD844;
+  border-left-style: solid;
 }
 
 .well-warning {
   background-color: #F5F6F8;
+  border-color: #F5F6F8;
   opacity: 0.9;
   border-left-width: 10px;
   border-left-color: #FFC266;
@@ -100,8 +104,11 @@ th, label {
 
 .well-danger {
   background-color: #F5F6F8;
+  border-color: #F5F6F8;
   opacity: 0.6;
-  border: 6px solid #FF5C16;
+  border-left-width: 10px;
+  border-left-color: #FF5C16;
+  border-left-style: solid;
 }
 
 .table>tbody>tr>td {

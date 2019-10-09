@@ -94,7 +94,8 @@ th, label {
 .well-warning {
   background-color: #F5F6F8;
   opacity: 0.9;
-  border: 6px solid #FFC266;
+  border-left-width: 10px;
+  border-left-color: #FFC266;
 }
 
 .well-danger {

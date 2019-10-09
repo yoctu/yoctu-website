@@ -81,7 +81,6 @@ th, label {
 
 .well {
   background-color: #F5F6F8;
-  border: 0px;
   -webkit-box-shadow: none;
 }
 
@@ -96,6 +95,7 @@ th, label {
   opacity: 0.9;
   border-left-width: 10px;
   border-left-color: #FFC266;
+  border-left-style: solid;
 }
 
 .well-danger {

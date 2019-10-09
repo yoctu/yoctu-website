@@ -219,3 +219,13 @@ input, select {
     color: var(--main-bg-color);
     text-decoration: none;
 }
+
+.well-package-list {
+  background-color:#40598B;
+  color:white;
+}
+
+.well-package-total {
+  background-color:#444444;
+  color:white;
+}

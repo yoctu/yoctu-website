@@ -154,3 +154,21 @@ table.dataTable.no-footer {
   border-radius: 32px;
   padding-top: 20px;
 }
+
+.well-package-list {
+  width:70px;
+  background-color:#40598B;
+  color:white;
+  padding-top:5px;
+  padding-bottom:15px;
+  margin-bottom:15px;
+}
+
+.well-package-total {
+  width:70px;
+  background-color:#444444;
+  color:white;
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-bottom:0px; 
+}

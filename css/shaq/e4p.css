@@ -85,7 +85,7 @@ th, label {
 }
 
 .well-success {
-  background-color: #F5F6F8;
+  background-color: none;
   border-color: #F5F6F8;
   opacity: 1;
   border-left-width: 10px;
@@ -94,7 +94,7 @@ th, label {
 }
 
 .well-warning {
-  background-color: #F5F6F8;
+  background-color: none;
   border-color: #F5F6F8;
   opacity: 0.9;
   border-left-width: 10px;
@@ -103,7 +103,7 @@ th, label {
 }
 
 .well-danger {
-  background-color: #F5F6F8;
+  background-color: none;
   border-color: #F5F6F8;
   opacity: 0.6;
   border-left-width: 10px;

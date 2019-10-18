@@ -46,7 +46,6 @@ th, label {
 
 .form-control[readonly], .form-control {
   color: var(--main-bg-color);
-  background-color: #F5F6F8;
 }
 
 #shaq-valid-from-btn, #shaq-valid-btn {

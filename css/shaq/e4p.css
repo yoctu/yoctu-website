@@ -21,7 +21,7 @@ input::placeholder {
 }
 
 tr td:first-child {
-  border-left-color: var(--main-bg-color);
+  border-left-color: #808DA7;
 }
 
 .dataTables_wrapper .dataTables_info,

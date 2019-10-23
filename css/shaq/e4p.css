@@ -115,10 +115,6 @@ th, label {
   border-top: none;
 }
 
-table.dataTable tbody tr.odd {
-  background-color: #EDEFF4;
-}
-
 a {
   color: #4981F1;
   font-weight: bold;

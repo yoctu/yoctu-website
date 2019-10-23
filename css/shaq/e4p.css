@@ -20,6 +20,10 @@ input::placeholder {
   opacity: 0.6;
 }
 
+tr td:first-child {
+  border-left-color: var(--main-bg-color);
+}
+
 .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate .paginate_button,
 th, label {

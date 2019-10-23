@@ -237,3 +237,12 @@ input, select {
   background-color:#444444;
   color:white;
 }
+
+.modal-title {
+  color: #fff
+}
+
+.modal-header {
+  background-color: var(--main-bg-color);
+}
+

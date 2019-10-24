@@ -83,6 +83,10 @@ th, label {
   color: var(--main-bg-color);
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: var(--main-bg-color);
+}
+
 .well {
   background-color: #F5F6F8;
   -webkit-box-shadow: none;

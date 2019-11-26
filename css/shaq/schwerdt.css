@@ -11,12 +11,6 @@ body {
 }
 
 #shaq-navbar-url  {
-  margin: 15px 0 -15px 15px;
-  content: ' ';
-  display: block;
-  width: 90px;
-  background-size: 90px;
-  background-repeat: no-repeat;
   background-image: url("https://logos.yoctu.com/logo/82SCHWERDT.png");
 }
 

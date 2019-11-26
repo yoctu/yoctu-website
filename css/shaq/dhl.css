@@ -244,7 +244,13 @@ input, select {
 }
 
 #shaq-navbar-url {
-  content: url("https://logos.yoctu.com/logo/DHLlogo.png");
+  margin: 15px 0 -15px 15px;
+  content: ' ';
+  display: block;
+  width: 90px;
+  background-size: 90px;
+  background-repeat: no-repeat;
+  background-image: url("https://logos.yoctu.com/logo/DHLlogo.png");
 }
 
 #navbar-username, #solrReload, #solrRefresh {

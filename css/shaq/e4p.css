@@ -201,7 +201,13 @@ input, select {
 }
 
 #shaq-navbar-url {
-  content: url("https://shaq.yoctu.com/img/shaqlogo.png");
+  margin: 15px 0 -15px 15px;
+  content: ' ';
+  display: block;
+  width: 90px;
+  background-size: 90px;
+  background-repeat: no-repeat;
+  background-image: url("https://shaq.yoctu.com/img/shaqlogo.png");
 }
 
 #navbar-usercode, #solrReload, #solrRefresh {

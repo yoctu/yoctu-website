@@ -1,0 +1,141 @@
+<html>
+<header>
+	<link rel="icon" type="image/png"
+		href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png">
+	<link rel="shortcut icon" href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="/css/yoctu.css" rel="stylesheet">
+</header>
+
+<body>
+	<div id="all" class="hide">
+	<div class="modal fade" id="QuestionModal" role="dialog">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog" style="vertical-align: middle;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+						<h4 class="modal-title">confirm</h4>
+					</div>
+					<div class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="confirm-modal-yes">Yes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="InformationModal" role="dialog">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog" style="vertical-align: middle;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+						<h4 class="modal-title">info</h4>
+					</div>
+					<div class="modal-body">
+						<div id="InformationModalBody">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Yoctu</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li id="li_nodered"><a onclick='refresh("nodered");'>NODE-RED</a></li>
+				<li id="li_solr"><a onclick='refresh("solr");'>SOLR</a></li>
+				<li id="li_kafka"><a onclick='refresh("kafka");'>KAFKA</a></li>
+				<li id="li_couchdb"><a onclick='refresh("couchdb");'>COUCHDB</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> LaV</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div id="loader-container" class="loader-container hide">
+		<div id="loader" class="loader"></div>
+	</div>
+	<div class="container hide" id="nodered"></div>
+	<div class="container hide" id="solr">
+		<div class="costsolr container hide">
+			<div class="well">
+				<span class="text-left">Cost : <b><span id="solrcost"></span></b></span><span><button
+						id="createCollection" class="btn btn-default pull-right"><i
+							class="fas fa-database"></i></button>
+					<button id="deleteCollection" class="btn btn-default pull-right"><i
+							class="fa fa-trash-alt"></i></button></span>
+			</div>
+		</div>
+	</div>
+	<div class="container hide" id="kafka">
+		<div class="costkafka container hide">
+			<div class="well">
+				<span class="text-left">Cost : <b><span id="kafkacost"></span></b></span><span><button id="createTopic"
+						class="btn btn-default pull-right"><i class="fab fa-confluence"></i></button>
+					<button id="deleteTopic" class="btn btn-default pull-right"><i
+							class="fa fa-trash-alt"></i></button></span>
+			</div>
+		</div>
+	</div>
+	<div class="container hide" id="couchdb"></div>
+	<div class="container text-center" style="padding-top:20px;" id="welcome">
+		<h1>Welcome !</h1>
+		<hr>
+		<div>
+			<ul>Company Name: <br><b><span id="companyname"></span></b></ul>
+		</div>
+		<hr>
+		<div>
+			<ul>Number of collections : <b><span id="collections"></span></b></ul>
+			<ul>Number of topics : <b><span id="topics"></span></b></ul>
+		</div>
+		<hr>
+		<div>
+			<i>Cost : <b><span id="cost"></span></b></i>
+		</div>
+	</div>
+	<div class="container template-well-solr hide">
+		<div class="well">
+			<span class="fas fa-sliders-h"></span>
+			<span style="float:right;"><img src="https://lucene.apache.org/solr/assets/images/logo.svg"
+					width="64px;" /></span>
+			<hr>
+			<div class="url"></div>
+			<div class="user"></div>
+			<div class="type"></div>
+			<div class="collections"></div>
+			<div class="ui"></div>
+		</div>
+	</div>
+	<div class="container template-well-kafka hide">
+		<div class="well">
+			<span class="fas fa-sliders-h"></span>
+			<span style="float:right;"><img
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Apache_kafka.svg/154px-Apache_kafka.svg.png"
+					width="16px;" /></span>
+			<hr>
+			<div class="url"></div>
+			<div class="user"></div>
+			<div class="type"></div>
+			<div class="topics"></div>
+			<div class="ui"></div>
+		</div>
+	</div>
+    </div>
+	<script src="/js/yoctu.js" defer></script>
+</body>
+
+</html>

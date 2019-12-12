@@ -14,7 +14,7 @@ async function fetchProfile() {
 }
 
 function refresh(menuType) {
-    let menuList = ["solr", "nodered", "kafka", "couchdb", "welcome"];
+    let menuList = ["solr", "nodered", "kafka", "couchdb", "welcome", "profile"];
     let cpt = 0;
     for (menu in menuList) {
         $("#" + menuList[menu]).addClass("d-none");
@@ -34,7 +34,10 @@ function refresh(menuType) {
             fetchKafka();
             break;
         case menuList[3]:
-            fetchCoudhDB();
+            fetchCouchDB();
+            break;
+        case menuList[3]:
+            fetchProfileUser();
             break;
         default:
             break;
@@ -116,7 +119,7 @@ async function fetchKafka() {
     displaykafka(profile.kafka)
 }
 
-async function fetchCoudhDB() {
+async function fetchCouchDB() {
     profile = await fetchProfile();
     displaycouchdb(profile.couchdb)
 }

@@ -223,7 +223,7 @@ $("#createTopic").on("click", function () {
 });
 
 $(document).ready(function () {
-    /*$.ajax({
+    $.ajax({
         "url": "/account/" + id,
         "type": "GET",
         "success": function (data) {
@@ -233,5 +233,5 @@ $(document).ready(function () {
             $("#collections").text(Object.keys(profile.solr[0].collections).length);
             $("#cost").text((Object.keys(profile.kafka[0].topics).length * profile.price.shared.kafka + Object.keys(profile.solr[0].collections).length * profile.price.shared.solr).toFixed(2));
         }
-    });*/
+    });
 });

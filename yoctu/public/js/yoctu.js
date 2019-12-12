@@ -67,7 +67,7 @@ function displaykafka(kafkaProfile) {
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
         $(".costkafka").removeClass("d-none");
-        $(".well-kafka").removeClass("d-none");
+        $(".card-kafka").removeClass("d-none");
     }, 1000)
 }
 
@@ -97,8 +97,8 @@ function displaysolr(solrProfile) {
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
         $(".costsolr").removeClass("d-none");
-        $(".well-solr").removeClass("d-none");
-    }, 1000)
+        $(".card-solr").removeClass("d-none");
+    }, 500)
 }
 
 async function fetchSolr() {

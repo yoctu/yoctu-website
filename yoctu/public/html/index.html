@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Yoctu</title>
-  <link rel="icon" type="image/png" href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png"
+    href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png">
   <link rel="shortcut icon" href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
@@ -21,7 +22,8 @@
         <div class="modal-dialog" style="vertical-align: middle;">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
               <h4 class="modal-title">confirm</h4>
             </div>
             <div class="modal-body">
@@ -39,7 +41,8 @@
         <div class="modal-dialog" style="vertical-align: middle;">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
               <h4 class="modal-title">info</h4>
             </div>
             <div class="modal-body">
@@ -95,58 +98,77 @@
     <div class="container d-none" id="solr">
       <div class="costsolr container d-none">
         <div class="card">
-          <span class="text-left">Cost : <b><span id="solrcost"></span></b></span><span><button id="createCollection" class="btn btn-default pull-right"><i class="fas fa-database"></i></button>
-            <button id="deleteCollection" class="btn btn-default pull-right"><i class="fa fa-trash-alt"></i></button></span>
+          <div class="card-body">
+            <span class="text-left">Cost : <b><span id="solrcost"></span></b></span><span><button id="createCollection"
+                class="btn btn-default pull-right"><i class="fas fa-database"></i></button>
+              <button id="deleteCollection" class="btn btn-default pull-right"><i
+                  class="fa fa-trash-alt"></i></button></span>
+          </div>
         </div>
       </div>
     </div>
     <div class="container d-none" id="kafka">
       <div class="costkafka container d-none">
         <div class="card">
-          <span class="text-left">Cost : <b><span id="kafkacost"></span></b></span><span><button id="createTopic" class="btn btn-default pull-right"><i class="fab fa-confluence"></i></button>
-            <button id="deleteTopic" class="btn btn-default pull-right"><i class="fa fa-trash-alt"></i></button></span>
+          <div class="card-body">
+            <span class="text-left">Cost : <b><span id="kafkacost"></span></b></span><span><button id="createTopic"
+                class="btn btn-default pull-right"><i class="fab fa-confluence"></i></button>
+              <button id="deleteTopic" class="btn btn-default pull-right"><i
+                  class="fa fa-trash-alt"></i></button></span>
+          </div>
         </div>
       </div>
     </div>
     <div class="container d-none" id="couchdb"></div>
     <div class="container text-center" style="padding-top:20px;" id="welcome">
-      <h1>Welcome !</h1>
-      <hr>
-      <div>
-        <ul>Company Name: <br><b><span id="companyname"></span></b></ul>
-      </div>
-      <hr>
-      <div>
-        <ul>Number of collections : <b><span id="collections"></span></b></ul>
-        <ul>Number of topics : <b><span id="topics"></span></b></ul>
-      </div>
-      <hr>
-      <div>
-        <i>Cost : <b><span id="cost"></span></b></i>
+      <div class="card">
+        <div class="card-body">
+          <h1>Welcome !</h1>
+          <hr>
+          <div>
+            <ul>Company Name: <br><b><span id="companyname"></span></b></ul>
+          </div>
+          <hr>
+          <div>
+            <ul>Number of collections : <b><span id="collections"></span></b></ul>
+            <ul>Number of topics : <b><span id="topics"></span></b></ul>
+          </div>
+          <hr>
+          <div>
+            <i>Cost : <b><span id="cost"></span></b></i>
+          </div>
+        </div>
       </div>
     </div>
     <div class="container template-card-solr d-none">
       <div class="card">
-        <span class="fas fa-sliders-h"></span>
-        <span style="float:right;"><img src="https://lucene.apache.org/solr/assets/images/logo.svg" width="64px;" /></span>
-        <hr>
-        <div class="url"></div>
-        <div class="user"></div>
-        <div class="type"></div>
-        <div class="collections"></div>
-        <div class="ui"></div>
+        <div class="card-body">
+          <span class="fas fa-sliders-h"></span>
+          <span style="float:right;"><img src="https://lucene.apache.org/solr/assets/images/logo.svg"
+              width="64px;" /></span>
+          <hr>
+          <div class="url"></div>
+          <div class="user"></div>
+          <div class="type"></div>
+          <div class="collections"></div>
+          <div class="ui"></div>
+        </div>
       </div>
     </div>
     <div class="container template-card-kafka d-none">
       <div class="card">
-        <span class="fas fa-sliders-h"></span>
-        <span style="float:right;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Apache_kafka.svg/154px-Apache_kafka.svg.png" width="16px;" /></span>
-        <hr>
-        <div class="url"></div>
-        <div class="user"></div>
-        <div class="type"></div>
-        <div class="topics"></div>
-        <div class="ui"></div>
+        <div class="card-body">
+          <span class="fas fa-sliders-h"></span>
+          <span style="float:right;"><img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Apache_kafka.svg/154px-Apache_kafka.svg.png"
+              width="16px;" /></span>
+          <hr>
+          <div class="url"></div>
+          <div class="user"></div>
+          <div class="type"></div>
+          <div class="topics"></div>
+          <div class="ui"></div>
+        </div>
       </div>
     </div>
   </div>

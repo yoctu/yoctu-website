@@ -1,5 +1,9 @@
-.well {
-    background-color: white;
+.navbar {
+    margin-bottom: 20px;
+}
+
+.dropdown-menu {
+    right: 0px;
 }
 
 .loader-container {
@@ -26,6 +30,7 @@
     0% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -35,6 +40,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

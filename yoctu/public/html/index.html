@@ -64,16 +64,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" id="#li_nodered">
+        <li class="nav-item" id="li_nodered">
           <a class="nav-link" onclick='refresh("nodered");'>NODE-RED</a>
         </li>
-        <li class="nav-item" id="#li_solr">
+        <li class="nav-item" id="li_solr">
           <a class="nav-link" onclick='refresh("solr");'>SOLR</a>
         </li>
-        <li class="nav-item" id="#li_kafka">
+        <li class="nav-item" id="li_kafka">
           <a class="nav-link" onclick='refresh("kafka");'>KAFKA</a>
         </li>
-        <li class="nav-item" id="#li_couchdb">
+        <li class="nav-item" id="li_couchdb">
           <a class="nav-link" onclick='refresh("couchdb");'>COUCHDB</a>
         </li>
       </ul>
@@ -84,10 +84,10 @@
           </a>
           <div class="dropdown-menu">
             <div class="dropdown-header nav-user-name user-name"></div>
-            <a href="/profile" class="dropdown-item dropdown-profile route-link">
+            <a href="" onclick='refresh("profile");' class="dropdown-item dropdown-profile route-link">
               <i class="fas fa-user mr-3"></i> Profile
             </a>
-            <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()"></a>
+            <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()"><i class="fa fa-sign-out mr-3"></i>Logout</a>
           </div>
         </li>
       </ul>

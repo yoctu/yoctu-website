@@ -12,6 +12,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="StripeElements.css">
   <link href="/css/yoctu.css" rel="stylesheet">
 </head>
 
@@ -58,7 +60,8 @@
     </div>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark static-top">
       <a class="navbar-brand" href="#">
-        <img src="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-32x32.png" width="32px;" alt="Yoctu">
+        <img src="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-32x32.png" width="32px;"
+          alt="Yoctu">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -87,7 +90,8 @@
             <a href="#" onclick='refresh("profile");' class="dropdown-item dropdown-profile">
               <i class="fas fa-user mr-3"></i> Profile
             </a>
-            <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()"><i class="fas fa-sign-out-alt mr-3 mr-3"></i>Logout</a>
+            <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()"><i
+                class="fas fa-sign-out-alt mr-3 mr-3"></i>Logout</a>
           </div>
         </li>
       </ul>
@@ -124,16 +128,16 @@
       <br>
     </div>
     <div class="container d-none" id="profile">
-        <div class="card d-none" id="profile-yes">
-            <div class="card-body">
-            </div>
-        </div>              
-        <div class="card d-none" id="profile-no">
-            <div class="card-body">
-                <button type="button" class="btn btn-primary" id="addprofile">Add profile</button>
-                <button type="button" class="btn btn-primary" id="createprofile">Create profile</button>
-            </div>
+      <div class="card d-none" id="profile-yes">
+        <div class="card-body">
         </div>
+      </div>
+      <div class="card d-none" id="profile-no">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary" id="addprofile">Add profile</button>
+          <button type="button" class="btn btn-primary" id="createprofile">Create profile</button>
+        </div>
+      </div>
     </div>
     <div class="container d-none" id="couchdb"></div>
     <div class="container text-center" style="padding-top:20px;" id="welcome">
@@ -148,11 +152,26 @@
           <div>
             <ul>Number of collections : <b><span id="collections"></span></b></ul>
             <ul>Number of topics : <b><span id="topics"></span></b></ul>
+            <ul>Number of databases : <b><span id="dbs"></span></b></ul>
           </div>
           <hr>
           <div>
             <i>Cost : <b><span id="cost"></span></b></i>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="container template-card-couchdb d-none">
+      <div class="card">
+        <div class="card-body">
+          <span class="fas fa-sliders-h"></span>
+          <span style="float:right;"><img src="https://couchdb.apache.org/image/logo@2x.png" width="64px;" /></span>
+          <hr>
+          <div class="url"></div>
+          <div class="user"></div>
+          <div class="type"></div>
+          <div class="dbs"></div>
+          <div class="ui"></div>
         </div>
       </div>
     </div>

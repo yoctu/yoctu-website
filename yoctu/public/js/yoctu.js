@@ -1,6 +1,21 @@
-/*var urlParams = new URLSearchParams(window.location.search);
-if (!urlParams.has('code')) window.location.replace("/login");
-else $("#all").removeClass("d-none");*/
+var stripe = Stripe('pk_test_ofHh5O1lHNxqQlhSbWqbYJxi00mW11Bsnv');
+var elements = stripe.elements();
+
+var style = {
+    base: {
+      color: "#32325d",
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: "antialiased",
+      fontSize: "16px",
+      "::placeholder": {
+        color: "#aab7c4"
+      }
+    },
+    invalid: {
+      color: "#fa755a",
+      iconColor: "#fa755a"
+    }
+  };
 
 async function fetchProfile() {
     if (id === "") return {};
@@ -33,7 +48,7 @@ function refresh(menuType) {
         case menuList[3]:
             fetchCouchDB();
             break;
-        case menuList[3]:
+        case menuList[4]:
             fetchProfileUser();
             break;
         default:
@@ -46,10 +61,42 @@ function displayprofile(profile) {
     $(".card-profile-no").addClass("d-none");
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
-        if (Object.keys(profile).length > 0) $(".card-profile-yes").removeClass("d-none");
-        else $(".card-profile-no").removeClass("d-none");
+        if (Object.keys(profile).length > 0) $("#profile-yes").removeClass("d-none");
+        else $("#profile-no").removeClass("d-none");
         $("#profile").removeClass("d-none");
     }, 500)
+}
+
+function displaycouchdb(couchdbProfile) {
+    $("#couchdb").find(".card-couchdb").remove();
+    $(".costcouchdb").addClass("d-none");
+    let costCouchdb = 0.00;
+    for (s in couchdbProfile) {
+        let well = $(".template-card-couchdb").clone();
+        well.appendTo("#couchdb");
+        well.removeClass("template-card-couchdb").addClass("card-couchdb");
+        well.find(".url").html("</div><div>Servers: <div>");
+        for (u in couchdbProfile[s].url) {
+            well.find(".url").append('<div class="text-center">' + couchdbProfile[s].url[u] + '</div>');
+        }
+        well.find(".user").html('User: <div class="text-center">' + couchdbProfile[s].user + '</div>');
+        well.find(".type").html('Type: <div class="text-center">' + couchdbProfile[s].type + '</div>');
+        well.find(".dbs").html("<div>Databases: <div>");
+        for (c in couchdbProfile[s].topics) {
+            well.find(".dbs").append('<div class="text-center">' + c + '</div>');
+            if (couchdbProfile[s].type === "shared") costCouchdb += profile.price.shared.couchdb;
+            else costCouchdb += profile.price.dedicated.couchdb;
+        }
+        well.find(".ui").html();
+    }
+    $("#kafkacost").html(costKafka.toFixed(2));
+    setTimeout(function () {
+        $("#loader-container").addClass("d-none");
+        $(".costkafka").removeClass("d-none");
+        $(".card-kafka").removeClass("d-none");
+        $("#kafka").removeClass("d-none");
+    }, 500);
+
 }
 
 function displaykafka(kafkaProfile) {
@@ -116,27 +163,27 @@ function displaysolr(solrProfile) {
 
 async function fetchProfileUser() {
     profile = await fetchProfile();
-    displayprofile(profile)
+    displayprofile(profile);
 }
 
 async function fetchSolr() {
     profile = await fetchProfile();
-    displaysolr(profile.solr)
+    displaysolr(profile.solr);
 }
 
 async function fetchNode() {
     profile = await fetchProfile();
-    displaynode(profile.nodered)
+    displaynode(profile.nodered);
 }
 
 async function fetchKafka() {
     profile = await fetchProfile();
-    displaykafka(profile.kafka)
+    displaykafka(profile.kafka);
 }
 
 async function fetchCouchDB() {
     profile = await fetchProfile();
-    displaycouchdb(profile.couchdb)
+    displaycouchdb(profile.couchdb);
 }
 
 $("#deleteCollection").on("click", function () {
@@ -242,4 +289,20 @@ $("#createTopic").on("click", function () {
 
 $(document).ready(function () {
     //var id = "13e8b636f819b299a1260466bf000ed9";
+    $("#addprofile").on("click",function() {
+        let output = '<div id="card-element" class="MyCardElement"></div><div id="card-errors" role="alert"></div><button id="submit">Pay</button>';
+        var card = elements.create("card", { style: style });
+        card.mount("#card-element");
+        card.addEventListener('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+              displayError.textContent = event.error.message;
+            } else {
+              displayError.textContent = '';
+            }
+          });
+        $("#QuestionModal").find(".modal-body").html(output);
+        $("#QuestionModal").find(".modal-title").html("Create Company");
+        $("#QuestionModal").modal("show");
+    });
 });

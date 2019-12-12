@@ -42,13 +42,13 @@ function refresh(menuType) {
 }
 
 function displaykafka(kafkaProfile) {
-    $("#kafka").find(".well-kafka").remove();
+    $("#kafka").find(".card-kafka").remove();
     $(".costkafka").addClass("d-none");
     let costKafka = 0.00;
     for (s in kafkaProfile) {
-        let well = $(".template-well-kafka").clone();
+        let well = $(".template-card-kafka").clone();
         well.appendTo("#kafka");
-        well.removeClass("template-well-kafka").addClass("well-kafka");
+        well.removeClass("template-card-kafka").addClass("card-kafka");
         well.find(".url").html("</div><div>Brokers: <div>");
         for (u in kafkaProfile[s].url) {
             well.find(".url").append('<div class="text-center">' + kafkaProfile[s].url[u] + '</div>');
@@ -72,13 +72,13 @@ function displaykafka(kafkaProfile) {
 }
 
 function displaysolr(solrProfile) {
-    $("#solr").find(".well-solr").remove();
+    $("#solr").find(".card-solr").remove();
     $(".costsolr").addClass("d-none");
     let costSolr = 0.00;
     for (s in solrProfile) {
-        let well = $(".template-well-solr").clone();
+        let well = $(".template-card-solr").clone();
         well.appendTo("#solr");
-        well.removeClass("template-well-solr").addClass("well-solr");
+        well.removeClass("template-card-solr").addClass("card-solr");
         well.find(".url").html("</div><div>Servers: <div>");
         for (u in solrProfile[s].url) {
             well.find(".url").append('<div class="text-center">' + solrProfile[s].url[u] + '</div>');

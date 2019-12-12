@@ -16,7 +16,6 @@ const showContentFromUrl = (url) => {
     router[url]();
     return true;
   }
-
   return false;
 };
 
@@ -31,19 +30,11 @@ const showContent = (id) => {
 const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
-
-    if (isAuthenticated) {
-      const user = await auth0.getUser();
-      console.log(user);
-    } else {
-      window.location.replace("/login");
-    }
+    if (isAuthenticated) const user = await auth0.getUser();
+    else window.location.replace("/login");
   } catch (err) {
-    console.log("Error updating UI!", err);
     return;
   }
-
-  console.log("UI updated");
 };
 
 window.onpopstate = (e) => {

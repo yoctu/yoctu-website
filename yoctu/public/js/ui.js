@@ -34,6 +34,9 @@ const updateUI = async () => {
     const isAuthenticated = await auth0.isAuthenticated();
     if (isAuthenticated) {
       user = await auth0.getUser();
+      eachElement(".profile-image", (e) => (e.src = user.picture));
+      eachElement(".user-name", (e) => (e.innerText = user.name));
+      eachElement(".user-email", (e) => (e.innerText = user.email));
       var d = new Date();
       d.setTime(d.getTime() + (1*24*60*60*1000));
       document.cookie = "user=" + JSON.stringify(user) + ";expires=" + d.toUTCString() + ";path=/";

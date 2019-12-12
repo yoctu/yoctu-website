@@ -57,7 +57,7 @@ function displaykafka(kafkaProfile) {
         well.find(".type").html('Type: <div class="text-center">' + kafkaProfile[s].type + '</div>');
         well.find(".topics").html("<div>Topics: <div>");
         for (c in kafkaProfile[s].topics) {
-            well.find(".Topics").append('<div class="text-center">' + c + '</div>');
+            well.find(".topics").append('<div class="text-center">' + c + '</div>');
             if (kafkaProfile[s].type === "shared") costKafka += profile.price.shared.kafka;
             else costKafka += profile.price.dedicated.kafka;
         }
@@ -87,7 +87,7 @@ function displaysolr(solrProfile) {
         well.find(".type").html('Type: <div class="text-center">' + solrProfile[s].type + '</div>');
         well.find(".collections").html("<div>Collections: <div>");
         for (c in solrProfile[s].collections) {
-            well.find(".Collections").append('<div class="text-center">' + c + '</div>');
+            well.find(".collections").append('<div class="text-center">' + c + '</div>');
             if (solrProfile[s].type === "shared") costSolr += profile.price.shared.solr;
             else costSolr += profile.price.dedicated.kafka;
         }

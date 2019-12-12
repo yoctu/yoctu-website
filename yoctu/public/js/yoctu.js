@@ -18,7 +18,7 @@ var style = {
   };
 
 async function fetchProfile() {
-    if (id === "") return {};
+    if (idp === "") return {};
     const result = await $.ajax({
         "url": "/account/" + id,
         "type": "GET"
@@ -59,8 +59,13 @@ function refresh(menuType) {
 }
 
 function displayprofile(profile) {
+    $("#profile-yes").addClass("d-none");
+    $("#profile-no").addClass("d-none");
     $(".card-profile-yes").addClass("d-none");
     $(".card-profile-no").addClass("d-none");
+    if (Object.keys(profile).length > 0) {
+
+    }
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
         if (Object.keys(profile).length > 0) $("#profile-yes").removeClass("d-none");
@@ -203,7 +208,7 @@ $("#deleteCollection").on("click", function () {
         let collection = $("#createname").val();
         $("#QuestionModal").find(".modal-body").html("Deleting collection...");
         $.ajax({
-            url: '/collection/' + id + '/' + collection,
+            url: '/collection/' + idp + '/' + collection,
             type: 'DELETE',
             success: function (response) {
                 fetchSolr();
@@ -230,7 +235,7 @@ $("#createCollection").on("click", function () {
         let collection = $("#createname").val();
         $("#QuestionModal").find(".modal-body").html("Creating collection...");
         $.ajax({
-            url: '/collection/' + id + '/' + collection,
+            url: '/collection/' + idp + '/' + collection,
             type: 'POST',
             //   data: fd,
             //   contentType: false,
@@ -261,7 +266,7 @@ $("#deleteTopic").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
         $.ajax({
-            url: '/topic/' + id + '/' + $("#createname").val(),
+            url: '/topic/' + idp + '/' + $("#createname").val(),
             type: 'DELETE',
             success: function (response) {
                 fetchKafka();
@@ -283,7 +288,7 @@ $("#createTopic").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
         $.ajax({
-            url: '/topic/' + id + '/' + $("#createname").val(),
+            url: '/topic/' + idp + '/' + $("#createname").val(),
             type: 'POST',
             success: function (response) {
                 fetchKafka();
@@ -299,9 +304,10 @@ $("#createTopic").on("click", function () {
 });
 
 $(document).ready(function () {
-    //var id = "13e8b636f819b299a1260466bf000ed9";
-    $("#addprofile").on("click",function() {
+    //var idp = "13e8b636f819b299a1260466bf000ed9";
+    $("#createprofile").on("click",function() {
         let output = '<div id="card-element" class="MyCardElement"></div><div id="card-errors" role="alert"></div><button id="submit">Pay</button>';
+        $("#QuestionModal").find(".modal-body").html(output);
         var card = elements.create("card", { style: style });
         card.mount("#card-element");
         card.addEventListener('change', function(event) {
@@ -312,8 +318,40 @@ $(document).ready(function () {
               displayError.textContent = '';
             }
           });
-        $("#QuestionModal").find(".modal-body").html(output);
         $("#QuestionModal").find(".modal-title").html("Create Company");
         $("#QuestionModal").modal("show");
     });
+
+    $("#addprofile").on("click",function() {
+        $("#confirm-modal-yes").unbind();
+        $("#confirm-modal-yes").on("click", function () {
+            $.ajax({
+                url: '/account/' + $("#companycode").val() + '/' + user.sub,
+                type: 'PUT',
+                success: function (response) {
+                    $("#QuestionModal").modal("d-none");
+                },
+            });
+        });
+        let output = '<div class="form-group"><label>Profile Code : </label><input id="companycode" class="form-control"></input></div>';
+        $("#QuestionModal").find(".modal-body").html(output);
+        $("#QuestionModal").find(".modal-title").html("Add Profile");
+        $("#QuestionModal").modal("show");
+    });
+
+    $("#leaveprofile").on("click",function() {
+        $("#confirm-modal-yes").unbind();
+        $("#confirm-modal-yes").on("click", function () {
+            $.ajax({
+                url: '/account/' + idp + '/' + user.sub,
+                type: 'DELETE',
+                success: function (response) {
+                    $("#QuestionModal").modal("d-none");
+                },
+            });
+        });
+        let output = '<div class="form-group"><label>Profile Code : </label><input id="companycode" class="form-control"></input></div>';
+        $("#QuestionModal").find(".modal-body").html(output);
+        $("#QuestionModal").find(".modal-title").html("Add Profile");
+        $("#QuestionModal").modal("show");
 });

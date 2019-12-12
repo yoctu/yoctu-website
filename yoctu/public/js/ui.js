@@ -30,8 +30,9 @@ const showContent = (id) => {
 const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
-    if (isAuthenticated) const user = await auth0.getUser();
-    else window.location.replace("/login");
+    if (isAuthenticated) {
+      const user = await auth0.getUser();
+    } else window.location.replace("/login");
   } catch (err) {
     return;
   }

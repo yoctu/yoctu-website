@@ -1,9 +1,5 @@
-// The Auth0 client, initialized in configureClient()
 let auth0 = null;
 
-/**
- * Starts the authentication flow
- */
 const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
@@ -22,9 +18,6 @@ const login = async (targetUrl) => {
   }
 };
 
-/**
- * Executes the logout flow
- */
 const logout = () => {
   try {
     console.log("Logging out");
@@ -36,14 +29,8 @@ const logout = () => {
   }
 };
 
-/**
- * Retrieves the auth configuration from the server
- */
 const fetchAuthConfig = () => fetch("/yoctu/auth_config.json");
 
-/**
- * Initializes the Auth0 client
- */
 const configureClient = async () => {
   const response = await fetchAuthConfig();
   const config = await response.json();
@@ -54,11 +41,6 @@ const configureClient = async () => {
   });
 };
 
-/**
- * Checks to see if the user is authenticated. If so, `fn` is executed. Otherwise, the user
- * is prompted to log in
- * @param {*} fn The function to execute if the user is logged in
- */
 const requireAuth = async (fn, targetUrl) => {
   const isAuthenticated = await auth0.isAuthenticated();
 
@@ -69,11 +51,8 @@ const requireAuth = async (fn, targetUrl) => {
   return login(targetUrl);
 };
 
-// Will run when page finishes loading
 window.onload = async () => {
   await configureClient();
-
-  // If unable to parse the history hash, default to the root URL
   if (!showContentFromUrl(window.location.pathname)) {
     showContentFromUrl("/");
     window.history.replaceState({ url: "/" }, {}, "/");
@@ -81,7 +60,6 @@ window.onload = async () => {
 
   const bodyElement = document.getElementsByTagName("body")[0];
 
-  // Listen out for clicks on any hyperlink that navigates to a #/ URL
   bodyElement.addEventListener("click", (e) => {
     if (isRouteLink(e.target)) {
       const url = e.target.getAttribute("href");

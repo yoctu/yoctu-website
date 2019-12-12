@@ -1,258 +1,160 @@
 <!DOCTYPE html>
 <html class="h-100">
-  <head>
-    <meta charset="UTF-8" />
-    <title>SPA SDK Sample</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-  </head>
 
-  <body class="h-100">
-    <div id="app" class="h-100 d-flex flex-column">
-      <div class="nav-container">
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-          <div class="container">
-            <div class="navbar-brand logo"></div>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+<head>
+  <meta charset="UTF-8" />
+  <title>SPA SDK Sample</title>
+  <link rel="icon" type="image/png" href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="https://www.yoctu.com/wp-content/themes/yoctu/images/favicon/favicon-16x16.png" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="/css/yoctu.css" rel="stylesheet">
+</head>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a href="/" class="nav-link route-link">Home</a>
-                </li>
-              </ul>
-              <ul class="navbar-nav d-none d-md-block">
-                <!-- Login button: show if NOT authenticated -->
-                <li class="nav-item auth-invisible">
-                  <button
-                    id="qsLoginBtn"
-                    onclick="login()"
-                    class="btn btn-primary btn-margin auth-invisible hidden"
-                  >
-                    Log in
-                  </button>
-                </li>
-                <!-- / Login button -->
-
-                <!-- Fullsize dropdown: show if authenticated -->
-                <li class="nav-item dropdown auth-visible hidden">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="profileDropDown"
-                    data-toggle="dropdown"
-                  >
-                    <!-- Profile image should be set to the profile picture from the id token -->
-                    <img
-                      alt="Profile picture"
-                      class="nav-user-profile profile-image rounded-circle"
-                      width="50"
-                    />
-                  </a>
-                  <div class="dropdown-menu">
-                    <!-- Show the user's full name from the id token here -->
-                    <div class="dropdown-header nav-user-name user-name"></div>
-                    <a
-                      href="/profile"
-                      class="dropdown-item dropdown-profile route-link"
-                    >
-                      <i class="fas fa-user mr-3"></i> Profile
-                    </a>
-                    <a
-                      href="#"
-                      class="dropdown-item"
-                      id="qsLogoutBtn"
-                      onclick="logout()"
-                    >
-                      <i class="fas fa-power-off mr-3"></i> Log out
-                    </a>
-                  </div>
-                </li>
-                <!-- /Fullsize dropdown -->
-              </ul>
-
-              <!-- Responsive login button: show if NOT authenticated -->
-              <ul class="navbar-nav d-md-none auth-invisible">
-                <button
-                  class="btn btn-primary btn-block auth-invisible hidden"
-                  id="qsLoginBtn"
-                  onclick="login()"
-                >
-                  Log in
-                </button>
-              </ul>
-              <!-- /Responsive login button -->
-
-              <!-- Responsive profile dropdown: show if authenticated -->
-              <ul
-                class="navbar-nav d-md-none auth-visible hidden justify-content-between"
-                style="min-height: 125px"
-              >
-                <li class="nav-item">
-                  <span class="user-info">
-                    <!-- Profile image should be set to the profile picture from the id token -->
-                    <img
-                      alt="Profile picture"
-                      class="nav-user-profile d-inline-block profile-image rounded-circle mr-3"
-                      width="50"
-                    />
-                    <!-- Show the user's full name from the id token here -->
-                    <h6 class="d-inline-block nav-user-name user-name"></h6>
-                  </span>
-                </li>
-                <li>
-                  <i class="fas fa-user mr-3"></i>
-                  <a href="/profile" class="route-link">Profile</a>
-                </li>
-
-                <li>
-                  <i class="fas fa-power-off mr-3"></i>
-                  <a href="#" id="qsLogoutBtn" onclick="logout()">Log out</a>
-                </li>
-              </ul>
+<body>
+  <div id="all" class="hide">
+    <div class="modal fade" id="QuestionModal" role="dialog">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog" style="vertical-align: middle;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+              <h4 class="modal-title">confirm</h4>
             </div>
-          </div>
-        </nav>
-      </div>
-
-      <div id="main-content" class="container mt-5 flex-grow-1">
-        <div id="content-home" class="page">
-          <div class="text-center hero">
-            <img
-              class="mb-3 app-logo"
-              src="/images/logo.png"
-              alt="JavaScript logo"
-              width="75"
-            />
-            <h1 class="mb-4">JavaScript Sample Project</h1>
-
-            <p class="lead">
-              This is a sample application that demonstrates an authentication
-              flow for an SPA, using plain JavaScript
-            </p>
-          </div>
-
-          <div class="next-steps">
-            <h2 class="my-5 text-center">What can I do next?</h2>
-
-            <div class="row">
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/connections">
-                    <i class="fas fa-link"></i> Configure other identity
-                    providers
-                  </a>
-                </h6>
-                <p>
-                  Auth0 supports social providers as Facebook, Twitter,
-                  Instagram and 100+, Enterprise providers as Microsoft Office
-                  365, Google Apps, Azure, and more. You can also use any OAuth2
-                  Authorization Server.
-                </p>
-              </div>
-
-              <div class="col-md"></div>
-
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/multifactor-authentication">
-                    <i class="fas fa-link"></i> Enable Multifactor
-                    Authentication
-                  </a>
-                </h6>
-                <p>
-                  Add an extra layer of security by enabling Multi-factor
-                  Authentication, requiring your users to provide more than one
-                  piece of identifying information. Push notifications,
-                  authenticator apps, SMS, and DUO Security are supported.
-                </p>
-              </div>
+            <div class="modal-body">
             </div>
-
-            <div class="row">
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/anomaly-detection">
-                    <i class="fas fa-link"></i> Anomaly Detection
-                  </a>
-                </h6>
-                <p>
-                  Auth0 can detect anomalies and stop malicious attempts to
-                  access your application. Anomaly detection can alert you and
-                  your users of suspicious activity, as well as block further
-                  login attempts.
-                </p>
-              </div>
-
-              <div class="col-md"></div>
-
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/rules">
-                    <i class="fas fa-link"></i> Learn About Rules
-                  </a>
-                </h6>
-                <p>
-                  Rules are JavaScript functions that execute when a user
-                  authenticates to your application. They run once the
-                  authentication process is complete, and you can use them to
-                  customize and extend Auth0's capabilities.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="page" id="content-profile">
-          <div class="container">
-            <div class="row align-items-center profile-header">
-              <div class="col-md-2">
-                <img
-                  alt="User's profile picture"
-                  class="rounded-circle img-fluid profile-image mb-3 mb-md-0"
-                />
-              </div>
-              <div class="col-md">
-                <h2 class="user-name"></h2>
-                <p class="lead text-muted user-email"></p>
-              </div>
-            </div>
-
-            <div class="row">
-              <pre class="rounded">
-                <code id="profile-data" class="json"></code></pre>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="confirm-modal-yes">Yes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
             </div>
           </div>
         </div>
       </div>
-
-      <footer class="bg-light text-center p-5">
-        <div class="logo"></div>
-        <p>
-          Sample project provided by
-          <a href="https://auth0.com">Auth0</a>
-        </p>
-      </footer>
     </div>
+    <div class="modal fade" id="InformationModal" role="dialog">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog" style="vertical-align: middle;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+              <h4 class="modal-title">info</h4>
+            </div>
+            <div class="modal-body">
+              <div id="InformationModalBody">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Yoctu</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li id="li_nodered"><a onclick='refresh("nodered");'>NODE-RED</a></li>
+          <li id="li_solr"><a onclick='refresh("solr");'>SOLR</a></li>
+          <li id="li_kafka"><a onclick='refresh("kafka");'>KAFKA</a></li>
+          <li id="li_couchdb"><a onclick='refresh("couchdb");'>COUCHDB</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item auth-invisible">
+            <button id="qsLoginBtn" onclick="login()" class="btn btn-primary btn-margin auth-invisible hidden">
+              Log in
+            </button>
+          </li>
+          <li class="nav-item dropdown auth-visible hidden">
+            <a class="nav-link dropdown-toggle" href="#" id="profileDropDown" data-toggle="dropdown">
+              <img alt="Profile picture" class="nav-user-profile profile-image rounded-circle" width="50" />
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-header nav-user-name user-name"></div>
+              <a href="/profile" class="dropdown-item dropdown-profile route-link">
+                <i class="fas fa-user mr-3"></i> Profile
+              </a>
+              <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()">
+            </div>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> LaV</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="loader-container" class="loader-container hide">
+      <div id="loader" class="loader"></div>
+    </div>
+    <div class="container hide" id="nodered"></div>
+    <div class="container hide" id="solr">
+      <div class="costsolr container hide">
+        <div class="well">
+          <span class="text-left">Cost : <b><span id="solrcost"></span></b></span><span><button id="createCollection" class="btn btn-default pull-right"><i class="fas fa-database"></i></button>
+            <button id="deleteCollection" class="btn btn-default pull-right"><i class="fa fa-trash-alt"></i></button></span>
+        </div>
+      </div>
+    </div>
+    <div class="container hide" id="kafka">
+      <div class="costkafka container hide">
+        <div class="well">
+          <span class="text-left">Cost : <b><span id="kafkacost"></span></b></span><span><button id="createTopic" class="btn btn-default pull-right"><i class="fab fa-confluence"></i></button>
+            <button id="deleteTopic" class="btn btn-default pull-right"><i class="fa fa-trash-alt"></i></button></span>
+        </div>
+      </div>
+    </div>
+    <div class="container hide" id="couchdb"></div>
+    <div class="container text-center" style="padding-top:20px;" id="welcome">
+      <h1>Welcome !</h1>
+      <hr>
+      <div>
+        <ul>Company Name: <br><b><span id="companyname"></span></b></ul>
+      </div>
+      <hr>
+      <div>
+        <ul>Number of collections : <b><span id="collections"></span></b></ul>
+        <ul>Number of topics : <b><span id="topics"></span></b></ul>
+      </div>
+      <hr>
+      <div>
+        <i>Cost : <b><span id="cost"></span></b></i>
+      </div>
+    </div>
+    <div class="container template-well-solr hide">
+      <div class="well">
+        <span class="fas fa-sliders-h"></span>
+        <span style="float:right;"><img src="https://lucene.apache.org/solr/assets/images/logo.svg" width="64px;" /></span>
+        <hr>
+        <div class="url"></div>
+        <div class="user"></div>
+        <div class="type"></div>
+        <div class="collections"></div>
+        <div class="ui"></div>
+      </div>
+    </div>
+    <div class="container template-well-kafka hide">
+      <div class="well">
+        <span class="fas fa-sliders-h"></span>
+        <span style="float:right;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Apache_kafka.svg/154px-Apache_kafka.svg.png" width="16px;" /></span>
+        <hr>
+        <div class="url"></div>
+        <div class="user"></div>
+        <div class="type"></div>
+        <div class="topics"></div>
+        <div class="ui"></div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/yoctu.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth0-theme.min.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="js/auth0-theme.min.js"></script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/app.js"></script>
-  </body>
 </html>

@@ -40,7 +40,7 @@ const updateUI = async () => {
       var d = new Date();
       d.setTime(d.getTime() + (1*24*60*60*1000));
       document.cookie = "user=" + JSON.stringify(user) + ";expires=" + d.toUTCString() + ";path=/";
-      document.getElementById("all").classList.remove("hide");
+      document.getElementById("all").classList.remove("d-none");
     } else window.location.replace("/login");
   } catch (err) {
     return;

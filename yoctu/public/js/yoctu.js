@@ -42,7 +42,14 @@ function refresh(menuType) {
 }
 
 function displayprofile(profile) {
-    $("#profile").find(".card-profile").remove();
+    $(".card-profile-yes").addClass("d-none");
+    $(".card-profile-no").addClass("d-none");
+    setTimeout(function () {
+        $("#loader-container").addClass("d-none");
+        if (Object.keys(profile).length > 0) $(".card-profile-yes").removeClass("d-none");
+        else $(".card-profile-no").removeClass("d-none");
+        $("#profile").removeClass("d-none");
+    }, 500)
 }
 
 function displaykafka(kafkaProfile) {
@@ -73,7 +80,7 @@ function displaykafka(kafkaProfile) {
         $(".costkafka").removeClass("d-none");
         $(".card-kafka").removeClass("d-none");
         $("#kafka").removeClass("d-none");
-    }, 500)
+    }, 500);
 }
 
 function displaysolr(solrProfile) {
@@ -103,7 +110,7 @@ function displaysolr(solrProfile) {
         $("#loader-container").addClass("d-none");
         $(".costsolr").removeClass("d-none");
         $(".card-solr").removeClass("d-none");
-        $("#kafka").removeClass("d-none");
+        $("#solr").removeClass("d-none");
     }, 500)
 }
 

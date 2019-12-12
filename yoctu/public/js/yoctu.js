@@ -20,7 +20,6 @@ function refresh(menuType) {
         $("#" + menuList[menu]).addClass("d-none");
         $("#li_" + menuList[menu]).removeClass("active");
     }
-    $("#" + menuType).removeClass("d-none");
     $("#li_" + menuType).addClass("active");
     $("#loader-container").removeClass("d-none");
     switch (menuType) {
@@ -71,7 +70,8 @@ function displaykafka(kafkaProfile) {
         $("#loader-container").addClass("d-none");
         $(".costkafka").removeClass("d-none");
         $(".card-kafka").removeClass("d-none");
-    }, 1000)
+        $("#kafka").removeClass("d-none");
+    }, 500)
 }
 
 function displaysolr(solrProfile) {
@@ -101,6 +101,7 @@ function displaysolr(solrProfile) {
         $("#loader-container").addClass("d-none");
         $(".costsolr").removeClass("d-none");
         $(".card-solr").removeClass("d-none");
+        $("#kafka").removeClass("d-none");
     }, 500)
 }
 

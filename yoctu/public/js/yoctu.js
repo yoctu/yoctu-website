@@ -7,7 +7,7 @@ var profile = {};
 
 async function fetchProfile() {
     const result = await $.ajax({
-        "url": "/profile/" + id,
+        "url": "/account/" + id,
         "type": "GET"
     });
     return result;
@@ -226,7 +226,7 @@ $(document).ready(function () {
 
 
     $.ajax({
-        "url": "/profile/" + id,
+        "url": "/account/" + id,
         "type": "GET",
         "success": function (data) {
             profile = data;

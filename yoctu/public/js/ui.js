@@ -32,6 +32,10 @@ const updateUI = async () => {
     const isAuthenticated = await auth0.isAuthenticated();
     if (isAuthenticated) {
       const user = await auth0.getUser();
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      document.cookie = "auth0=" + JSON.stringigy(user) + ";expires=" + d.toUTCString() + ";path=/";
+      document.getElementById("all").classList.remove("hide");
     } else window.location.replace("/login");
   } catch (err) {
     return;

@@ -30,10 +30,12 @@ function refresh(menuType) {
     let menuList = ["solr", "nodered", "kafka", "couchdb", "welcome", "profile"];
     let cpt = 0;
     for (menu in menuList) {
-        $("#" + menuList[menu]).addClass("d-none");
-        $("#li_" + menuList[menu]).removeClass("active");
+        if ($("#" + menuList[menu])) {
+            $("#" + menuList[menu]).addClass("d-none");
+            $("#li_" + menuList[menu]).removeClass("active");
+        }
     }
-    $("#li_" + menuType).addClass("active");
+    if ($("#li_" + menuType)) $("#li_" + menuType).addClass("active");
     $("#loader-container").removeClass("d-none");
     switch (menuType) {
         case menuList[0]:
@@ -67,6 +69,15 @@ function displayprofile(profile) {
     }, 500)
 }
 
+function displaynode(nodeProfile) {
+    setTimeout(function () {
+        $("#loader-container").addClass("d-none");
+        $(".costnode").removeClass("d-none");
+        $(".card-node").removeClass("d-none");
+        $("#node").removeClass("d-none");
+    }, 500);
+}
+
 function displaycouchdb(couchdbProfile) {
     $("#couchdb").find(".card-couchdb").remove();
     $(".costcouchdb").addClass("d-none");
@@ -89,12 +100,12 @@ function displaycouchdb(couchdbProfile) {
         }
         well.find(".ui").html();
     }
-    $("#kafkacost").html(costKafka.toFixed(2));
+    $("#couchdbcost").html(costCouchdb.toFixed(2));
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
-        $(".costkafka").removeClass("d-none");
-        $(".card-kafka").removeClass("d-none");
-        $("#kafka").removeClass("d-none");
+        $(".costcouchdb").removeClass("d-none");
+        $(".card-couchdb").removeClass("d-none");
+        $("#couchdb").removeClass("d-none");
     }, 500);
 
 }

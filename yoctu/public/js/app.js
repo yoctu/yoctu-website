@@ -53,19 +53,6 @@ window.onload = async () => {
     window.history.replaceState({ url: "/" }, {}, "/");
   }
 
-  const bodyElement = document.getElementsByTagName("body")[0];
-
-  bodyElement.addEventListener("click", (e) => {
-    if (isRouteLink(e.target)) {
-      const url = e.target.getAttribute("href");
-
-      if (showContentFromUrl(url)) {
-        e.preventDefault();
-        window.history.pushState({ url }, {}, url);
-      }
-    }
-  });
-
   const isAuthenticated = await auth0.isAuthenticated();
 
   if (isAuthenticated) {

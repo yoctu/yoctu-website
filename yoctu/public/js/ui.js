@@ -1,3 +1,5 @@
+var user;
+
 const router = {
   "/": () => showContent("all"),
   "/profile": () =>
@@ -31,7 +33,7 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
     if (isAuthenticated) {
-      const user = await auth0.getUser();
+      user = await auth0.getUser();
       var d = new Date();
       d.setTime(d.getTime() + (1*24*60*60*1000));
       document.cookie = "auth0=" + JSON.stringigy(user) + ";expires=" + d.toUTCString() + ";path=/";

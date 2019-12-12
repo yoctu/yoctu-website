@@ -4,7 +4,7 @@
 
 .dropdown-menu {
     right: 0px;
-    left: none;
+    left: unset;
 }
 
 .loader-container {

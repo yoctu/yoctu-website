@@ -1,4 +1,6 @@
-var user;
+var user = {};
+var profile = {};
+var id = "";
 
 const router = {
   "/": () => showContent("all"),
@@ -38,9 +40,19 @@ const updateUI = async () => {
       eachElement(".user-name", (e) => (e.innerText = user.name));
       eachElement(".user-email", (e) => (e.innerText = user.email));
       var d = new Date();
-      d.setTime(d.getTime() + (1*24*60*60*1000));
+      d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
       document.cookie = "user=" + JSON.stringify(user) + ";expires=" + d.toUTCString() + ";path=/";
       document.getElementById("all").classList.remove("d-none");
+      if (user["https://shaq.yoctu.solutions/company"]) {
+        id = user["https://shaq.yoctu.solutions/company"];
+        $.ajax({
+          "url": "/account/" + id,
+          "type": "GET",
+          "success": function (data) {
+            profile = data;
+          }
+        });
+      }
     } else window.location.replace("/login");
   } catch (err) {
     return;

@@ -2,9 +2,6 @@
 if (!urlParams.has('code')) window.location.replace("/login");
 else $("#all").removeClass("d-none");*/
 
-var id = "";
-var profile = {};
-
 async function fetchProfile() {
     if (id === "") return {};
     const result = await $.ajax({
@@ -238,18 +235,10 @@ $("#createTopic").on("click", function () {
 
 $(document).ready(function () {
     //var id = "13e8b636f819b299a1260466bf000ed9";
-    if (user && user["https://shaq.yoctu.solutions/company"]) {
-        id = user["https://shaq.yoctu.solutions/company"];
-        $.ajax({
-            "url": "/account/" + id,
-            "type": "GET",
-            "success": function (data) {
-                profile = data;
-                $("#companyname").text(profile.company.name);
-                $("#topics").text(Object.keys(profile.kafka[0].topics).length);
-                $("#collections").text(Object.keys(profile.solr[0].collections).length);
-                $("#cost").text((Object.keys(profile.kafka[0].topics).length * profile.price.shared.kafka + Object.keys(profile.solr[0].collections).length * profile.price.shared.solr).toFixed(2));
-            }
-        });
+    if (profile) {
+        $("#companyname").text(profile.company.name);
+        $("#topics").text(Object.keys(profile.kafka[0].topics).length);
+        $("#collections").text(Object.keys(profile.solr[0].collections).length);
+        $("#cost").text((Object.keys(profile.kafka[0].topics).length * profile.price.shared.kafka + Object.keys(profile.solr[0].collections).length * profile.price.shared.solr).toFixed(2));
     }
 });

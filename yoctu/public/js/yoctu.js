@@ -1,6 +1,6 @@
 /*var urlParams = new URLSearchParams(window.location.search);
 if (!urlParams.has('code')) window.location.replace("/login");
-else $("#all").removeClass("hide");*/
+else $("#all").removeClass("d-none");*/
 
 var id = "13e8b636f819b299a1260466bf000ed9";
 var profile = {};
@@ -17,12 +17,12 @@ function refresh(menuType) {
     let menuList = ["solr", "nodered", "kafka", "couchdb", "welcome"];
     let cpt = 0;
     for (menu in menuList) {
-        $("#" + menuList[menu]).addClass("hide");
+        $("#" + menuList[menu]).addClass("d-none");
         $("#li_" + menuList[menu]).removeClass("active");
     }
-    $("#" + menuType).removeClass("hide");
+    $("#" + menuType).removeClass("d-none");
     $("#li_" + menuType).addClass("active");
-    $("#loader-container").removeClass("hide");
+    $("#loader-container").removeClass("d-none");
     switch (menuType) {
         case menuList[0]:
             fetchSolr();
@@ -43,7 +43,7 @@ function refresh(menuType) {
 
 function displaykafka(kafkaProfile) {
     $("#kafka").find(".well-kafka").remove();
-    $(".costkafka").addClass("hide");
+    $(".costkafka").addClass("d-none");
     let costKafka = 0.00;
     for (s in kafkaProfile) {
         let well = $(".template-well-kafka").clone();
@@ -65,15 +65,15 @@ function displaykafka(kafkaProfile) {
     }
     $("#kafkacost").html(costKafka.toFixed(2));
     setTimeout(function () {
-        $("#loader-container").addClass("hide");
-        $(".costkafka").removeClass("hide");
-        $(".well-kafka").removeClass("hide");
+        $("#loader-container").addClass("d-none");
+        $(".costkafka").removeClass("d-none");
+        $(".well-kafka").removeClass("d-none");
     }, 1000)
 }
 
 function displaysolr(solrProfile) {
     $("#solr").find(".well-solr").remove();
-    $(".costsolr").addClass("hide");
+    $(".costsolr").addClass("d-none");
     let costSolr = 0.00;
     for (s in solrProfile) {
         let well = $(".template-well-solr").clone();
@@ -95,9 +95,9 @@ function displaysolr(solrProfile) {
     }
     $("#solrcost").html(costSolr.toFixed(2));
     setTimeout(function () {
-        $("#loader-container").addClass("hide");
-        $(".costsolr").removeClass("hide");
-        $(".well-solr").removeClass("hide");
+        $("#loader-container").addClass("d-none");
+        $(".costsolr").removeClass("d-none");
+        $(".well-solr").removeClass("d-none");
     }, 1000)
 }
 
@@ -131,7 +131,7 @@ $("#deleteCollection").on("click", function () {
             type: 'DELETE',
             success: function (response) {
                 fetchSolr();
-                $("#QuestionModal").modal("hide");
+                $("#QuestionModal").modal("d-none");
             },
         });
     });
@@ -161,11 +161,11 @@ $("#createCollection").on("click", function () {
             //   processData: false,
             success: function (response) {
                 fetchSolr();
-                $("#QuestionModal").modal("hide");
+                $("#QuestionModal").modal("d-none");
             },
             statusCode: {
                 406: function (response) {
-                    $("#QuestionModal").modal("hide");
+                    $("#QuestionModal").modal("d-none");
                     $("#InformationModalBody").html("Collection already Exists !");
                     $("#InformationModal").modal("show");
                 },
@@ -189,7 +189,7 @@ $("#deleteTopic").on("click", function () {
             type: 'DELETE',
             success: function (response) {
                 fetchKafka();
-                $("#QuestionModal").modal("hide");
+                $("#QuestionModal").modal("d-none");
             },
         });
     });
@@ -211,7 +211,7 @@ $("#createTopic").on("click", function () {
             type: 'POST',
             success: function (response) {
                 fetchKafka();
-                $("#QuestionModal").modal("hide");
+                $("#QuestionModal").modal("d-none");
             },
         });
     });

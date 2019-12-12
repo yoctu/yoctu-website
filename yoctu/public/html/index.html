@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div id="all" class="hide">
+  <div id="all" class="d-none">
     <div class="modal fade" id="QuestionModal" role="dialog">
       <div class="vertical-alignment-helper">
         <div class="modal-dialog" style="vertical-align: middle;">
@@ -58,7 +58,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <ul class="navbar-nav  mr-auto">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" onclick='refresh("nodered");'>NODE-RED</a>
         </li>
@@ -87,28 +87,28 @@
         </li>
       </ul>
     </nav>
-    <div id="loader-container" class="loader-container hide">
+    <div id="loader-container" class="loader-container d-none">
       <div id="loader" class="loader"></div>
     </div>
     <div id="content-profile"></div>
-    <div class="container hide" id="nodered"></div>
-    <div class="container hide" id="solr">
-      <div class="costsolr container hide">
+    <div class="container d-none" id="nodered"></div>
+    <div class="container d-none" id="solr">
+      <div class="costsolr container d-none">
         <div class="well">
           <span class="text-left">Cost : <b><span id="solrcost"></span></b></span><span><button id="createCollection" class="btn btn-default pull-right"><i class="fas fa-database"></i></button>
             <button id="deleteCollection" class="btn btn-default pull-right"><i class="fa fa-trash-alt"></i></button></span>
         </div>
       </div>
     </div>
-    <div class="container hide" id="kafka">
-      <div class="costkafka container hide">
+    <div class="container d-none" id="kafka">
+      <div class="costkafka container d-none">
         <div class="well">
           <span class="text-left">Cost : <b><span id="kafkacost"></span></b></span><span><button id="createTopic" class="btn btn-default pull-right"><i class="fab fa-confluence"></i></button>
             <button id="deleteTopic" class="btn btn-default pull-right"><i class="fa fa-trash-alt"></i></button></span>
         </div>
       </div>
     </div>
-    <div class="container hide" id="couchdb"></div>
+    <div class="container d-none" id="couchdb"></div>
     <div class="container text-center" style="padding-top:20px;" id="welcome">
       <h1>Welcome !</h1>
       <hr>
@@ -125,7 +125,7 @@
         <i>Cost : <b><span id="cost"></span></b></i>
       </div>
     </div>
-    <div class="container template-well-solr hide">
+    <div class="container template-well-solr d-none">
       <div class="well">
         <span class="fas fa-sliders-h"></span>
         <span style="float:right;"><img src="https://lucene.apache.org/solr/assets/images/logo.svg" width="64px;" /></span>
@@ -137,7 +137,7 @@
         <div class="ui"></div>
       </div>
     </div>
-    <div class="container template-well-kafka hide">
+    <div class="container template-well-kafka d-none">
       <div class="well">
         <span class="fas fa-sliders-h"></span>
         <span style="float:right;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Apache_kafka.svg/154px-Apache_kafka.svg.png" width="16px;" /></span>

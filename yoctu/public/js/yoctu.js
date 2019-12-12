@@ -3,19 +3,19 @@ var elements = stripe.elements();
 
 var style = {
     base: {
-      color: "#32325d",
-      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-      fontSmoothing: "antialiased",
-      fontSize: "16px",
-      "::placeholder": {
-        color: "#aab7c4"
-      }
+        color: "#32325d",
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: "antialiased",
+        fontSize: "16px",
+        "::placeholder": {
+            color: "#aab7c4"
+        }
     },
     invalid: {
-      color: "#fa755a",
-      iconColor: "#fa755a"
+        color: "#fa755a",
+        iconColor: "#fa755a"
     }
-  };
+};
 
 async function fetchProfile() {
     if (idp === "") return {};
@@ -305,24 +305,26 @@ $("#createTopic").on("click", function () {
 
 $(document).ready(function () {
     //var idp = "13e8b636f819b299a1260466bf000ed9";
-    $("#createprofile").on("click",function() {
+    $("#createprofile").on("click", function () {
         let output = '<div id="card-element" class="MyCardElement"></div><div id="card-errors" role="alert"></div><button id="submit">Pay</button>';
         $("#QuestionModal").find(".modal-body").html(output);
-        var card = elements.create("card", { style: style });
+        var card = elements.create("card", {
+            style: style
+        });
         card.mount("#card-element");
-        card.addEventListener('change', function(event) {
+        card.addEventListener('change', function (event) {
             var displayError = document.getElementById('card-errors');
             if (event.error) {
-              displayError.textContent = event.error.message;
+                displayError.textContent = event.error.message;
             } else {
-              displayError.textContent = '';
+                displayError.textContent = '';
             }
-          });
+        });
         $("#QuestionModal").find(".modal-title").html("Create Company");
         $("#QuestionModal").modal("show");
     });
 
-    $("#addprofile").on("click",function() {
+    $("#addprofile").on("click", function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
@@ -339,7 +341,7 @@ $(document).ready(function () {
         $("#QuestionModal").modal("show");
     });
 
-    $("#leaveprofile").on("click",function() {
+    $("#leaveprofile").on("click", function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
@@ -354,4 +356,5 @@ $(document).ready(function () {
         $("#QuestionModal").find(".modal-body").html(output);
         $("#QuestionModal").find(".modal-title").html("Add Profile");
         $("#QuestionModal").modal("show");
+    });
 });

@@ -1,6 +1,6 @@
-var urlParams = new URLSearchParams(window.location.search);
+/*var urlParams = new URLSearchParams(window.location.search);
 if (!urlParams.has('code')) window.location.replace("/login");
-else $("#all").removeClass("hide");
+else $("#all").removeClass("hide");*/
 
 var id = "13e8b636f819b299a1260466bf000ed9";
 var profile = {};
@@ -223,7 +223,7 @@ $("#createTopic").on("click", function () {
 });
 
 $(document).ready(function () {
-   
+
 
     $.ajax({
         "url": "/profile/" + id,

@@ -2,6 +2,7 @@
 if (!urlParams.has('code')) window.location.replace("/login");
 else $("#all").removeClass("d-none");*/
 
+var id = "";
 var profile = {};
 
 async function fetchProfile() {
@@ -237,7 +238,6 @@ $("#createTopic").on("click", function () {
 
 $(document).ready(function () {
     //var id = "13e8b636f819b299a1260466bf000ed9";
-    var id = "";
     if (user && user["https://shaq.yoctu.solutions/company"]) {
         id = user["https://shaq.yoctu.solutions/company"];
         $.ajax({

@@ -43,6 +43,10 @@ function refresh(menuType) {
     }
 }
 
+function displayprofile(profile) {
+    $("#profile").find(".card-profile").remove();
+}
+
 function displaykafka(kafkaProfile) {
     $("#kafka").find(".card-kafka").remove();
     $(".costkafka").addClass("d-none");
@@ -105,7 +109,7 @@ function displaysolr(solrProfile) {
     }, 500)
 }
 
-async function fetchProfileUser()) {
+async function fetchProfileUser() {
     profile = await fetchProfile();
     displayprofile(profile)
 }

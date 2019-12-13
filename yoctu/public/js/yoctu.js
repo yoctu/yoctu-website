@@ -20,7 +20,7 @@ var style = {
 async function fetchProfile() {
     if (idp === "") return {};
     const result = await $.ajax({
-        "url": "/account/" + id,
+        "url": "/account/" + idp,
         "type": "GET"
     });
     return result;

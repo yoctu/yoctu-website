@@ -48,7 +48,7 @@ const updateUI = async () => {
       if (user["https://shaq.yoctu.solutions/profile"]) {
         idp = user["https://shaq.yoctu.solutions/profile"];
         $.ajax({
-          "url": "/account/" + id,
+          "url": "/account/" + idp,
           "type": "GET",
           "success": function (data) {
             profile = data;

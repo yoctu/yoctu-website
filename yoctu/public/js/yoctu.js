@@ -327,7 +327,6 @@ $("#createTopic").on("click", function () {
 });
 
 $(document).ready(function () {
-    //var idp = "13e8b636f819b299a1260466bf000ed9";
     $("#createprofile").on("click", function () {
         let output = '';
         var card = elements.create("card", {

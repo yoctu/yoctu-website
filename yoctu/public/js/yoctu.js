@@ -67,16 +67,23 @@ function displayprofile(profile) {
     if ((Object.keys(profile).length > 0) && (Object.keys(userDesc).length === 0) && (Object.keys(custDesc).length === 0)) {
       $.ajax({
           url: '/customer/' + idc,
-          success: function (response) {
-              custDesc = response;
-              $("#customer_desc").html(response);
+          success: function (responseC) {
+              custDesc = responseC;
+              let outputC = '<div><b>Company : </b></div>';
+              outputC += '<div>Name : ' + custDesc.name + '</div>';
+              outputC += '<div>Code : ' + userDesc.id + '</div>';
+              outputC += '<div>Email : ' + custDesc.email + '</div>';
+              $("#customer_desc").html(outputC);
           },
       });
       $.ajax({
           url: '/user/' + user.sub,
-          success: function (response) {
-              userDesc = response;
-              $("#user_desc").html(response);
+          success: function (responseU) {
+              userDesc = responseU;
+              let outputU = '<div><b>User : </b></div>';
+              outputU += '<div>Name : ' + userDesc.name + '</div>';
+              outputU += '<div>Email : ' + userDesc.email + '</div>';
+              $("#user_desc").html(outputU);
           },
       });
     }

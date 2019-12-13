@@ -174,13 +174,14 @@
     </div>
     <div class="container text-center" style="padding-top:20px;" id="welcome">
       <div class="card">
+
         <div class="card-body">
-          <h1>Welcome !</h1>
-          <hr>
+           <h1 class="card-title">Card title</h1><hr>
           <div id="missingaccount" class="d-none">
               <button class="btn btn-primary" onclick='refresh("profile");'>Add or Create an Account</button>
           </div>
           <div id="summary" class="d-none">
+            <ul>Number of nodered : <b><span id="nodereds">0</span></b></ul>
             <ul>Number of collections : <b><span id="collections">0</span></b></ul>
             <ul>Number of topics : <b><span id="topics">0</span></b></ul>
             <ul>Number of databases : <b><span id="dbs">0</span></b></ul>

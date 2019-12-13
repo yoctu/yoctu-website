@@ -349,10 +349,27 @@ $(document).ready(function () {
                     url: '/customer',
                     type: 'POST',
                     data: data,
-                    success: function (response) {
-                        console.log(response);
-                        $("#loader-container").addClass("d-none");
-                        fetchProfileUser();
+                    success: function (responseC) {
+                        console.log(responseC);
+                        idc = responseC.id;
+                        $.ajax({
+                            url: '/account',
+                            type: 'POST',
+                            success: function (responseA) {
+                                profile = responseA;
+                                idp = responseA.id;
+                                $.ajax({
+                                    url: '/user/join/' + user.sub + '/' + idc + '/' + idp,
+                                    type: 'PATCH',
+                                    contentType: "application/json",
+                                    success: function (responseU) {
+                                        console.log(responseU);
+                                        $("#loader-container").addClass("d-none");
+                                        fetchProfileUser();
+                                    }
+                                });
+                            }
+                        });
                     }
                 });
               });

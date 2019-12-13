@@ -56,6 +56,9 @@ function refresh(menuType) {
         case menuList[3]:
             fetchCouchDB();
             break;
+        case menuList[4]:
+            $("#welcome").removeClass("d-none");
+            break;
         case menuList[5]:
             fetchProfileUser();
             break;

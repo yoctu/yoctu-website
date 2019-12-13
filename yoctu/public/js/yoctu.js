@@ -201,7 +201,7 @@ function displaysolr(solrProfile) {
 }
 
 async function fetchProfileUser() {
-    profile = await fetchProfile();
+    if (Object.keys(profile).length < 1) profile = await fetchProfile();
     displayprofile(profile);
 }
 
@@ -375,7 +375,7 @@ $(document).ready(function () {
                 },
             });
         });
-        let output = '<div class="form-group"><label>Profile Code : </label><input id="companycode" class="form-control"></input></div>';
+        let output = '<div class="form-group">Do you really ant to leave ?</div>';
         $("#QuestionModal").find(".modal-body").html(output);
         $("#QuestionModal").find(".modal-title").html("Add Profile");
         $("#QuestionModal").modal("show");

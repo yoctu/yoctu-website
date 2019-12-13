@@ -53,7 +53,6 @@ const updateUI = async () => {
           "success": function (data) {
             profile = data;
             setTimeout(function() {
-              $("#companyname").text(profile.company.name);
               $("#topics").text(Object.keys(profile.kafka[0].topics).length);
               $("#collections").text(Object.keys(profile.solr[0].collections).length);
               $("#cost").text((Object.keys(profile.kafka[0].topics).length * profile.price.shared.kafka + Object.keys(profile.solr[0].collections).length * profile.price.shared.solr).toFixed(2));

@@ -238,12 +238,12 @@ async function fetchCouchDB() {
 $("#deleteCollection").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
-        server = profile.solr[s].url[0].split(":")[0];
+        server = profile.solr[s].url[0];
         collection = $("#createname").val();
         $("#QuestionModal").find(".modal-body").html("Deleting collection...");
         for (s in profile.solr)
             for (c in profile.solr[s].collections)
-                if (c === collection) server = profile.solr[s].url[0].split(":")[0];
+                if (c === collection) server = profile.solr[s].url[0];
         $.ajax({
             url: '/collection/' + idp + '/' + server + '/' + collection,
             type: 'DELETE',

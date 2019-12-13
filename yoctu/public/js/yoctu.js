@@ -344,6 +344,7 @@ $(document).ready(function () {
                 console.log(result.paymentMethod);
                 let data = [];
                 data["email"] = $("#card-email").val();
+                data["name"] = $("#card-name").val();
                 data["payment_method"] = result.paymentMethod.id;
                 $.ajax({
                     url: '/customer',

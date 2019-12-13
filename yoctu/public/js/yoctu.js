@@ -377,7 +377,7 @@ $(document).ready(function () {
         });
         let output = '<div class="form-group">Do you really ant to leave ?</div>';
         $("#QuestionModal").find(".modal-body").html(output);
-        $("#QuestionModal").find(".modal-title").html("Add Profile");
+        $("#QuestionModal").find(".modal-title").html("Leave");
         $("#QuestionModal").modal("show");
     });
 });

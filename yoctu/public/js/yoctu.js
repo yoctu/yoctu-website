@@ -336,6 +336,24 @@ $("#createTopic").on("click", function () {
     $("#QuestionModal").modal("show");
 });
 
+$("#createDb").on("click", function () {
+    $("#confirm-modal-yes").unbind();
+    $("#confirm-modal-yes").on("click", function () {
+        $.ajax({
+            url: '/db/' + idp + '/' + $("#createname").val(),
+            type: 'POST',
+            success: function (response) {
+                fetchCouchDB();
+                $("#QuestionModal").modal("hide");
+            },
+        });
+    });
+    $("#QuestionModal").find(".modal-body").html('<div class="form-group"><label>Name : </label><input id="createname" class="form-control"></input></div>');
+    $("#QuestionModal").find(".modal-body").append('<div class="form-group"><label>Type : </label><select id="createtype" class="form-control"><option>Shared</option></select></div>');
+    $("#QuestionModal").find(".modal-title").html("Create Database");
+    $("#QuestionModal").modal("show");
+});
+
 $(document).ready(function () {
 
     $("#submitpay").on("click", function () {

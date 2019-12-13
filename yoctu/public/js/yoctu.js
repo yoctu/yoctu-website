@@ -239,8 +239,9 @@ $("#deleteCollection").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
         $("#QuestionModal").find(".modal-body").html("Deleting collection...");
-        server = profile.solr[0].url[0];
+        server = profile.solr[s].url[0].split(":")[0];
         collection = $("#createname").val();
+        console.log(collection);
         for (s in profile.solr)
             for (c in profile.solr[s].collections)
                 if (c === collection) server = profile.solr[s].url[0].split(":")[0];
@@ -253,7 +254,7 @@ $("#deleteCollection").on("click", function () {
             },
         });
     });
-    let output = '<div class="form-group"><label>Collection : </label></input><select id="createname" class="form-control">';
+    let output = '<div class="form-group"><label>Collection : </label><select id="createname" class="form-control">';
     for (s in profile.solr)
         for (c in profile.solr[s].collections)
             output += '<option>' + c + '</option>';

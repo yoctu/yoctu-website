@@ -331,7 +331,7 @@ $(document).ready(function () {
 
     $("#submitpay").on("click", function () {
         if ($("#card-name").val() && $("#card-email").val()) {
-            stripe.createPaymentMethod('card', cardElement, {
+            stripe.createPaymentMethod('card', card, {
                 billing_details: {
                   email: $("#card-email").val()
                 }
@@ -340,6 +340,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: '/customer',
                     type: 'POST',
+                    data: { "email": $("#card-email").val(), "payment_method": result.paymentMethod.id },
                     success: function (response) {
                         console.log(response);
                         fetchProfileUser();

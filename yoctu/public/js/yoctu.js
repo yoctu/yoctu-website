@@ -100,6 +100,7 @@ function displayprofile(profile) {
             if (profile.owner === user.sub) {
                 $("#transfertprofile").removeClass("d-none");
                 $("#destroyprofile").removeClass("d-none");
+                $("#editprofile").removeClass("d-none");
             } else $("#leaveprofile").removeClass("d-none");
         } else $("#profile-no").removeClass("d-none");
         $("#profile").removeClass("d-none");

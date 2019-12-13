@@ -346,6 +346,7 @@ $(document).ready(function () {
                     url: '/customer',
                     type: 'POST',
                     contentType: "application/json",
+                    dataType: "json",
                     data: JSON.stringify({ email: $("#card-email").val(), name: $("#card-name").val(), payment_method: result.paymentMethod.id }),
                     success: function (responseC) {
                         idc = responseC.id;

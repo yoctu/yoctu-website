@@ -74,7 +74,7 @@ function displayprofile(profile) {
               outputC += '<div>Code : ' + custDesc.id + '</div>';
               outputC += '<div>Key : ' + idp + '</div>';
               outputC += '<div>Email : ' + custDesc.email + '</div>';
-              outputC += '<div>Phone : ' + custDesc.email + '</div>';
+              outputC += '<div>Phone : ' + custDesc.phone + '</div>';
               $("#customer_desc").html(outputC);
           },
       });
@@ -351,14 +351,17 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/account/' + $("#companycode").val() + '/' + user.sub,
-                type: 'PUT',
+                url: '/user/' + user.sub + '/' + $("#companycode").val() + '/' + $("#profilecode").val(),
+                type: 'PATCH',
+                contentType: "application/json",
                 success: function (response) {
                     $("#QuestionModal").modal("d-none");
+                    fetchProfileUser();
                 },
             });
         });
-        let output = '<div class="form-group"><label>Profile Code : </label><input id="companycode" class="form-control"></input></div>';
+        let output = '<div class="form-group"><label>Profile Code : </label><input id="profilecode" class="form-control"></input></div>\
+        <div class="form-group"><label>Profile Code : </label><input id="companycode" class="form-control"></input></div>';
         $("#QuestionModal").find(".modal-body").html(output);
         $("#QuestionModal").find(".modal-title").html("Add Profile");
         $("#QuestionModal").modal("show");
@@ -368,10 +371,12 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/account/' + idp + '/' + user.sub,
-                type: 'DELETE',
+                url: '/user/' + user.sub + '/' + idc + '/' + idp,
+                type: 'PATCH',
+                contentType: "application/json",
                 success: function (response) {
                     $("#QuestionModal").modal("d-none");
+                    fetchProfileUser();
                 },
             });
         });

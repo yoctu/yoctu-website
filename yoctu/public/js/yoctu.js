@@ -434,7 +434,7 @@ $(document).ready(function () {
         $("#QuestionModal").modal("show");
     });
 
-    if (Object.keys(profile) > 0) $("#summary").removeClass("d-none");
+    if (Object.keys(profile).length > 0) $("#summary").removeClass("d-none");
     else $("#missingaccount").removeClass("d-none");
 
 });

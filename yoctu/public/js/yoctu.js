@@ -72,7 +72,6 @@ function displayprofile(profile) {
               let outputC = '<div><b>Company : </b></div>';
               outputC += '<div>Name : ' + custDesc.name + '</div>';
               outputC += '<div>Code : ' + custDesc.id + '</div>';
-              outputC += '<div>Key : ' + idp + '</div>';
               outputC += '<div>Email : ' + custDesc.email + '</div>';
               outputC += '<div>Phone : ' + custDesc.phone + '</div>';
               $("#customer_desc").html(outputC);
@@ -82,8 +81,9 @@ function displayprofile(profile) {
           url: '/user/' + user.sub,
           success: function (responseU) {
               userDesc = responseU;
-              let outputU = '<div><b>User : </b></div>';
+              let outputU = '<div><b>Profile : </b></div>';
               outputU += '<div>Name : ' + userDesc.name + '</div>';
+              outputC += '<div>Code : ' + idp + '</div>';
               outputU += '<div>Email : ' + userDesc.email + '</div>';
               $("#user_desc").html(outputU);
           },
@@ -351,7 +351,7 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/user/join/' + user.sub + '/' +  + '/' + $("#profilecode").val(),
+                url: '/user/join/' + user.sub + '/' + $("#companycode").val() + '/' + $("#profilecode").val(),
                 type: 'PATCH',
                 contentType: "application/json",
                 success: function (response) {
@@ -378,6 +378,11 @@ $(document).ready(function () {
                 contentType: "application/json",
                 success: function (response) {
                     $("#QuestionModal").modal("hide");
+                    profile = {};
+                    company = {};
+                    idp = "";
+                    idc = "";
+                    custDesc = {};
                     fetchProfileUser();
                 },
             });

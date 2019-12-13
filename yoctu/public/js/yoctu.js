@@ -64,6 +64,7 @@ function refresh(menuType) {
 function displayprofile(profile) {
     $("#profile-yes").addClass("d-none");
     $("#profile-no").addClass("d-none");
+    $("#profile-no-btn").removeClass("d-none");
     if ((Object.keys(profile).length > 0) && (Object.keys(userDesc).length === 0) && (Object.keys(custDesc).length === 0)) {
       $.ajax({
           url: '/customer/' + idc,
@@ -327,6 +328,28 @@ $("#createTopic").on("click", function () {
 });
 
 $(document).ready(function () {
+
+    $("#submitpay").on("click", function () {
+        if ($("#card-name").val() && $("#card-email").val()) {
+            stripe.createPaymentMethod('card', cardElement, {
+                billing_details: {
+                  email: $("#card-email").val()
+                },
+              }).then(function(result) {
+                console.log(result.paymentMethod);
+                $.ajax({
+                    url: '/customer',
+                    type: 'POST',
+                    data: { email: $("#card-email").val(), payment_method: result.paymentMethod.id },
+                    success: function (response) {
+                        console.log(response);
+                        fetchProfileUser();
+                    }
+                });
+              });
+        }
+    }
+
     $("#createprofile").on("click", function () {
         let output = '';
         var card = elements.create("card", {
@@ -334,6 +357,7 @@ $(document).ready(function () {
         });
         card.mount("#payCard");
         $("#createCustomer").removeClass("d-none");
+        $("#profile-no-btn").addClass("d-none");
         card.addEventListener('change', function (event) {
             var displayError = document.getElementById('card-errors');
             if (event.error) {

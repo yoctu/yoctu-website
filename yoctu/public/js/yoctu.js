@@ -131,7 +131,7 @@ function displaycouchdb(couchdbProfile) {
         well.find(".user").html('User: <div class="text-center">' + couchdbProfile[s].user + '</div>');
         well.find(".type").html('Type: <div class="text-center">' + couchdbProfile[s].type + '</div>');
         well.find(".dbs").html("<div>Databases: <div>");
-        for (c in couchdbProfile[s].topics) {
+        for (c in couchdbProfile[s].dbs) {
             well.find(".dbs").append('<div class="text-center">' + c + '</div>');
             if (couchdbProfile[s].type === "shared") costCouchdb += profile.price.shared.couchdb;
             else costCouchdb += profile.price.dedicated.couchdb;

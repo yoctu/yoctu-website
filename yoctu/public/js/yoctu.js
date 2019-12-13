@@ -72,6 +72,7 @@ function displayprofile(profile) {
               let outputC = '<div><b>Company : </b></div>';
               outputC += '<div>Name : ' + custDesc.name + '</div>';
               outputC += '<div>Code : ' + custDesc.id + '</div>';
+              outputC += '<div>Key : ' + idp + '</div>';
               outputC += '<div>Email : ' + custDesc.email + '</div>';
               outputC += '<div>Phone : ' + custDesc.email + '</div>';
               $("#customer_desc").html(outputC);

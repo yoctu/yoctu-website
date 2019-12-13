@@ -235,7 +235,7 @@ $("#deleteCollection").on("click", function () {
             type: 'DELETE',
             success: function (response) {
                 fetchSolr();
-                $("#QuestionModal").modal("d-none");
+                $("#QuestionModal").modal("hide");
             },
         });
     });
@@ -265,11 +265,11 @@ $("#createCollection").on("click", function () {
             //   processData: false,
             success: function (response) {
                 fetchSolr();
-                $("#QuestionModal").modal("d-none");
+                $("#QuestionModal").modal("hide");
             },
             statusCode: {
                 406: function (response) {
-                    $("#QuestionModal").modal("d-none");
+                    $("#QuestionModal").modal("hide");
                     $("#InformationModalBody").html("Collection already Exists !");
                     $("#InformationModal").modal("show");
                 },
@@ -293,7 +293,7 @@ $("#deleteTopic").on("click", function () {
             type: 'DELETE',
             success: function (response) {
                 fetchKafka();
-                $("#QuestionModal").modal("d-none");
+                $("#QuestionModal").modal("hide");
             },
         });
     });
@@ -315,7 +315,7 @@ $("#createTopic").on("click", function () {
             type: 'POST',
             success: function (response) {
                 fetchKafka();
-                $("#QuestionModal").modal("d-none");
+                $("#QuestionModal").modal("hide");
             },
         });
     });
@@ -351,11 +351,11 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/user/' + user.sub + '/' + $("#companycode").val() + '/' + $("#profilecode").val(),
+                url: '/user/join/' + user.sub + '/' + $("#companycode").val() + '/' + $("#profilecode").val(),
                 type: 'PATCH',
                 contentType: "application/json",
                 success: function (response) {
-                    $("#QuestionModal").modal("d-none");
+                    $("#QuestionModal").modal("hide");
                     fetchProfileUser();
                 },
             });
@@ -371,11 +371,11 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/user/' + user.sub + '/' + idc + '/' + idp,
+                url: '/user/leave/' + user.sub + '/' + idc + '/' + idp,
                 type: 'PATCH',
                 contentType: "application/json",
                 success: function (response) {
-                    $("#QuestionModal").modal("d-none");
+                    $("#QuestionModal").modal("hide");
                     fetchProfileUser();
                 },
             });

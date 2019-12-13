@@ -334,6 +334,7 @@ $(document).ready(function () {
             style: style
         });
         card.mount("#payCard");
+        $("#createCustomer").removeClass("d-none");
         card.addEventListener('change', function (event) {
             var displayError = document.getElementById('card-errors');
             if (event.error) {

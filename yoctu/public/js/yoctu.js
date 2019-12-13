@@ -19,6 +19,9 @@ var style = {
         iconColor: "#fa755a"
     }
 };
+var card = elements.create("card", {
+    style: style
+});
 
 async function fetchProfile() {
     if (idp === "") return {};
@@ -331,6 +334,8 @@ $(document).ready(function () {
 
     $("#submitpay").on("click", function () {
         if ($("#card-name").val() && $("#card-email").val()) {
+            $("#createCustomer").addClass("d-none");
+            $("#loader-container").removeClass("d-none");
             stripe.createPaymentMethod('card', card, {
                 billing_details: {
                   email: $("#card-email").val()
@@ -343,6 +348,7 @@ $(document).ready(function () {
                     data: { "email": $("#card-email").val(), "payment_method": result.paymentMethod.id },
                     success: function (response) {
                         console.log(response);
+                        $("#loader-container").addClass("d-none");
                         fetchProfileUser();
                     }
                 });
@@ -352,9 +358,6 @@ $(document).ready(function () {
 
     $("#createprofile").on("click", function () {
         let output = '';
-        var card = elements.create("card", {
-            style: style
-        });
         card.mount("#payCard");
         $("#createCustomer").removeClass("d-none");
         $("#profile-no-btn").addClass("d-none");

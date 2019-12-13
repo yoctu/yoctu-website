@@ -95,8 +95,13 @@ function displayprofile(profile) {
     }
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
-        if (Object.keys(profile).length > 0) $("#profile-yes").removeClass("d-none");
-        else $("#profile-no").removeClass("d-none");
+        if (Object.keys(profile).length > 0) {
+            $("#profile-yes").removeClass("d-none");
+            if (profile.owner === user.sub) {
+                $("#transfertprofile").removeClass("d-none");
+                $("#destroyprofile").removeClass("d-none");
+            } else $("#leaveprofile").removeClass("d-none");
+        } else $("#profile-no").removeClass("d-none");
         $("#profile").removeClass("d-none");
     }, 1000)
 }
@@ -351,7 +356,7 @@ $(document).ready(function () {
                     success: function (responseC) {
                         idc = responseC.id;
                         $.ajax({
-                            url: '/account',
+                            url: '/account/' + user.sub,
                             type: 'POST',
                             success: function (responseA) {
                                 profile = responseA;

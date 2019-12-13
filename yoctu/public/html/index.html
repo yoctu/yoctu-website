@@ -116,6 +116,19 @@
       </div>
       <br>
     </div>
+    <div class="container d-none" id="couchdb">
+        <div class="costcouchdb container d-none">
+            <div class="card">
+              <div class="card-body">
+                <span class="text-left">Cost : <b><span id="couchdbcost"></span></b></span><span><button id="createDb"
+                    class="btn btn-default float-right"><i class="fas fa-database"></i></button>
+                  <button id="deleteDb" class="btn btn-default float-right"><i
+                      class="fa fa-trash-alt"></i></button></span>
+              </div>
+            </div>
+          </div>
+          <br>
+    </div>
     <div class="container d-none" id="kafka">
       <div class="costkafka container d-none">
         <div class="card">
@@ -134,7 +147,9 @@
         <div class="card-body">
           <div id="user_desc"></div>
           <hr>
-          <button type="button" class="btn btn-primary float-right" id="leaveprofile">Leave</button><br>
+          <button type="button" class="btn btn-primary float-right d-none" id="leaveprofile">Leave</button>
+          <button type="button" class="btn btn-primary float-right d-none" id="transfertprofile" disabled>Leave</button>
+          <button type="button" class="btn btn-danger float-right d-none" id="destroyprofile" disabled>Leave</button><br>
           <div id="customer_desc"></div>
         </div>
       </div>
@@ -156,7 +171,6 @@
         </div>
       </div>
     </div>
-    <div class="container d-none" id="couchdb"></div>
     <div class="container text-center" style="padding-top:20px;" id="welcome">
       <div class="card">
         <div class="card-body">

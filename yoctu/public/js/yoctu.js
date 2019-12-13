@@ -348,7 +348,7 @@ $(document).ready(function () {
                 });
               });
         }
-    }
+    });
 
     $("#createprofile").on("click", function () {
         let output = '';

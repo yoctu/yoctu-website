@@ -334,7 +334,7 @@ $(document).ready(function () {
             stripe.createPaymentMethod('card', cardElement, {
                 billing_details: {
                   email: $("#card-email").val()
-                },
+                }
               }).then(function(result) {
                 console.log(result.paymentMethod);
                 $.ajax({

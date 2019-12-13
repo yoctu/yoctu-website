@@ -1,6 +1,9 @@
 var stripe = Stripe('pk_test_ofHh5O1lHNxqQlhSbWqbYJxi00mW11Bsnv');
 var elements = stripe.elements();
 
+var userDesc = {};
+var custDesc = {};
+
 var style = {
     base: {
         color: "#32325d",
@@ -61,17 +64,28 @@ function refresh(menuType) {
 function displayprofile(profile) {
     $("#profile-yes").addClass("d-none");
     $("#profile-no").addClass("d-none");
-    $(".card-profile-yes").addClass("d-none");
-    $(".card-profile-no").addClass("d-none");
-    if (Object.keys(profile).length > 0) {
-
+    if ((Object.keys(profile).length > 0) && !userDesc && !custDesc)) {
+      $.ajax({
+          url: '/customer/' + idc,
+          success: function (response) {
+              custDesc = response;
+              $("#customer_desc").html(response);
+          },
+      });
+      $.ajax({
+          url: '/user/' + user.sub,
+          success: function (response) {
+              userDesc = response;
+              $("#user_desc").html(response);
+          },
+      });
     }
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
         if (Object.keys(profile).length > 0) $("#profile-yes").removeClass("d-none");
         else $("#profile-no").removeClass("d-none");
         $("#profile").removeClass("d-none");
-    }, 500)
+    }, 1000)
 }
 
 function displaynode(nodeProfile) {

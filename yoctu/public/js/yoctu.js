@@ -332,9 +332,6 @@ $("#createTopic").on("click", function () {
 
 $(document).ready(function () {
 
-    if (Object.keys(profile).length > 0) $("#summary").removeClass("d-none");
-    else $("#missingaccount").removeClass("d-none");
-
     $("#submitpay").on("click", function () {
         if ($("#card-name").val() && $("#card-email").val()) {
             $("#profile-no").addClass("d-none");

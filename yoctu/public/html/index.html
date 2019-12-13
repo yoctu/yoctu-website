@@ -162,7 +162,10 @@
         <div class="card-body">
           <h1>Welcome !</h1>
           <hr>
-          <div>
+          <div id="missingaccount" class="d-none">
+              <button class="btn btn-default" onclick='refresh("profile");'>Add or Create an Account</button>
+          </div>
+          <div id="summary" class="d-none">
             <ul>Number of collections : <b><span id="collections">0</span></b></ul>
             <ul>Number of topics : <b><span id="topics">0</span></b></ul>
             <ul>Number of databases : <b><span id="dbs">0</span></b></ul>

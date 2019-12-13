@@ -413,4 +413,8 @@ $(document).ready(function () {
         $("#QuestionModal").find(".modal-title").html("Leave");
         $("#QuestionModal").modal("show");
     });
+
+    if (Object.keys(profile) > 0) $("#summary").removeClass("d-none");
+    else $("#missingaccount").removeClass("d-none");
+
 });

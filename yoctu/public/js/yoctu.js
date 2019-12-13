@@ -64,7 +64,7 @@ function refresh(menuType) {
 function displayprofile(profile) {
     $("#profile-yes").addClass("d-none");
     $("#profile-no").addClass("d-none");
-    if ((Object.keys(profile).length > 0) && !userDesc && !custDesc)) {
+    if ((Object.keys(profile).length > 0) && !userDesc && !custDesc) {
       $.ajax({
           url: '/customer/' + idc,
           success: function (response) {

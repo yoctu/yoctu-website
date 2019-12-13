@@ -334,7 +334,7 @@ $(document).ready(function () {
 
     $("#submitpay").on("click", function () {
         if ($("#card-name").val() && $("#card-email").val()) {
-            $("#createCustomer").addClass("d-none");
+            $("#profile-no").addClass("d-none");
             $("#loader-container").removeClass("d-none");
             stripe.createPaymentMethod('card', card, {
                 billing_details: {
@@ -342,10 +342,13 @@ $(document).ready(function () {
                 }
               }).then(function(result) {
                 console.log(result.paymentMethod);
+                let data = [];
+                data["email"] = $("#card-email").val();
+                data["payment_method"] = result.paymentMethod.id;
                 $.ajax({
                     url: '/customer',
                     type: 'POST',
-                    data: { "email": $("#card-email").val(), "payment_method": result.paymentMethod.id },
+                    data: data,
                     success: function (response) {
                         console.log(response);
                         $("#loader-container").addClass("d-none");

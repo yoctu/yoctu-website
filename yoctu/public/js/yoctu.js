@@ -335,23 +335,19 @@ $(document).ready(function () {
     $("#submitpay").on("click", function () {
         if ($("#card-name").val() && $("#card-email").val()) {
             $("#profile-no").addClass("d-none");
+            $("createCustomer").addClass("d-none");
             $("#loader-container").removeClass("d-none");
             stripe.createPaymentMethod('card', card, {
                 billing_details: {
                   email: $("#card-email").val()
                 }
               }).then(function(result) {
-                console.log(result.paymentMethod);
-                let data = [];
-                data["email"] = $("#card-email").val();
-                data["name"] = $("#card-name").val();
-                data["payment_method"] = result.paymentMethod.id;
                 $.ajax({
                     url: '/customer',
                     type: 'POST',
-                    data: data,
+                    contentType: "application/json",
+                    data: { email: $("#card-email").val(), name: $("#card-name").val(), payment_method: result.paymentMethod.id},
                     success: function (responseC) {
-                        console.log(responseC);
                         idc = responseC.id;
                         $.ajax({
                             url: '/account',
@@ -364,7 +360,6 @@ $(document).ready(function () {
                                     type: 'PATCH',
                                     contentType: "application/json",
                                     success: function (responseU) {
-                                        console.log(responseU);
                                         $("#loader-container").addClass("d-none");
                                         fetchProfileUser();
                                     }

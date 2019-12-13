@@ -336,6 +336,30 @@ $("#createTopic").on("click", function () {
     $("#QuestionModal").modal("show");
 });
 
+$("#deleteDb").on("click", function () {
+    $("#confirm-modal-yes").unbind();
+    $("#confirm-modal-yes").on("click", function () {
+        let db = $("#createname").val();
+        $("#QuestionModal").find(".modal-body").html("Deleting Database...");
+        $.ajax({
+            url: '/db/' + idp + '/' + db,
+            type: 'DELETE',
+            success: function (response) {
+                fetchCouchDB();
+                $("#QuestionModal").modal("hide");
+            },
+        });
+    });
+    let output = '<div class="form-group"><label>Database : </label><select id="createname" class="form-control">';
+    for (s in profile.couchdb)
+        for (c in profile.couchdb[s].dbs)
+            output += '<option>' + c + '</option>';
+    output += '</select></div>';
+    $("#QuestionModal").find(".modal-body").html(output);
+    $("#QuestionModal").find(".modal-title").html("Delete Database");
+    $("#QuestionModal").modal("show");
+});
+
 $("#createDb").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {

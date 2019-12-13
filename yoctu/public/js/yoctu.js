@@ -238,9 +238,9 @@ async function fetchCouchDB() {
 $("#deleteCollection").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
-        server = profile.solr[s].url[0];
         collection = $("#createname").val();
         $("#QuestionModal").find(".modal-body").html("Deleting collection...");
+        server = profile.solr[s].url[0];
         for (s in profile.solr)
             for (c in profile.solr[s].collections)
                 if (c === collection) server = profile.solr[s].url[0];
@@ -271,8 +271,9 @@ $("#createCollection").on("click", function () {
         //fd.append('file', files);
         let collection = $("#createname").val();
         $("#QuestionModal").find(".modal-body").html("Creating collection...");
+        server = profile.solr[s].url[0];
         $.ajax({
-            url: '/collection/' + idp + '/' + collection,
+            url: '/collection/' + idp + '/' + server + '/' + collection,
             type: 'POST',
             //   data: fd,
             //   contentType: false,
@@ -302,8 +303,14 @@ $("#createCollection").on("click", function () {
 $("#deleteTopic").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
+        let topic = $("#createname").val();
+        $("#QuestionModal").find(".modal-body").html("Deleting Database...");
+        server = profile.kafka[s].url[0];
+        for (s in profile.kafka)
+            for (c in profile.kafka[s].topics)
+                if (c === topic) server = profile.kafka[s].url[0];
         $.ajax({
-            url: '/topic/' + idp + '/' + $("#createname").val(),
+            url: '/topic/' + idp + '/' + server + '/' + topic,
             type: 'DELETE',
             success: function (response) {
                 fetchKafka();
@@ -324,8 +331,9 @@ $("#deleteTopic").on("click", function () {
 $("#createTopic").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
+        server = profile.kafka[s].url[0];
         $.ajax({
-            url: '/topic/' + idp + '/' + $("#createname").val(),
+            url: '/topic/' + idp + '/' + server + '/' + $("#createname").val(),
             type: 'POST',
             success: function (response) {
                 fetchKafka();
@@ -345,8 +353,12 @@ $("#deleteDb").on("click", function () {
     $("#confirm-modal-yes").on("click", function () {
         let db = $("#createname").val();
         $("#QuestionModal").find(".modal-body").html("Deleting Database...");
+        server = profile.couchdb[s].url[0];
+        for (s in profile.couchdb)
+            for (c in profile.couchdb[s].dbs)
+                if (c === db) server = profile.couchdb[s].url[0];
         $.ajax({
-            url: '/db/' + idp + '/' + db,
+            url: '/db/' + idp + '/' + server + '/' + db,
             type: 'DELETE',
             success: function (response) {
                 fetchCouchDB();
@@ -367,8 +379,9 @@ $("#deleteDb").on("click", function () {
 $("#createDb").on("click", function () {
     $("#confirm-modal-yes").unbind();
     $("#confirm-modal-yes").on("click", function () {
+        server = profile.couchdb[s].url[0];
         $.ajax({
-            url: '/db/' + idp + '/' + $("#createname").val(),
+            url: '/db/' + idp + '/' + server + '/' + $("#createname").val(),
             type: 'POST',
             success: function (response) {
                 fetchCouchDB();

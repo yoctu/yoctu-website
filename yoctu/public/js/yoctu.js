@@ -340,7 +340,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: '/customer',
                     type: 'POST',
-                    data: { email: $("#card-email").val(), payment_method: result.paymentMethod.id },
+                    data: { "email": $("#card-email").val(), "payment_method": result.paymentMethod.id },
                     success: function (response) {
                         console.log(response);
                         fetchProfileUser();

@@ -244,7 +244,7 @@ $("#deleteCollection").on("click", function () {
             for (c in profile.solr[s].collections)
                 if (c === $("#createname").val()) server = profile.solr[s].url[0];
         $.ajax({
-            url: '/collection/' + server + '/' + idp + '/' + $("#createname").val(),
+            url: '/collection/' + idp + '/' + server + '/' + $("#createname").val(),
             type: 'DELETE',
             success: function (response) {
                 fetchSolr();

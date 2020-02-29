@@ -102,6 +102,12 @@ function displayprofile(profile) {
 }
 
 function displaynode(nodeProfile) {
+  $("#nodered").html("");
+    for (let s in nodeProfile) {
+      for (let n in nodeProfile[s].nodes) {
+        $("#nodered").append('<div><span> Name : ' + nodeProfile[s].nodes[n].name + ' </span><span> Port : ' + nodeProfile[s].nodes[n].port + ' </span></div>')
+      }
+    }
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
         $(".costnode").removeClass("d-none");

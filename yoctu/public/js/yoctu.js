@@ -117,7 +117,7 @@ async function fetchProfileUser() {
 
 async function fetchNode() {
     profile = await fetchProfile();
-    displaynode(profile.nodered);
+    displaynode(profile.nodes);
 }
 
 $(document).ready(function () {

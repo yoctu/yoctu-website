@@ -52,7 +52,7 @@ const updateUI = async () => {
           "type": "GET",
           "success": function (data) {
             profile = data;
-            $("#body").trigger("click");
+            $("#readyLoad").trigger("click");
           }
         });
       } else $("#missingaccount").removeClass("d-none");

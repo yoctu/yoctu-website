@@ -228,5 +228,5 @@ $(document).ready(function () {
         $("#QuestionModal").modal("show");
     });
 
-    $("#body").on("click", fetchNode());
+    $("#readyLoad").on("click", fetchNode());
 });

@@ -227,6 +227,4 @@ $(document).ready(function () {
         $("#QuestionModal").find(".modal-title").html("Leave");
         $("#QuestionModal").modal("show");
     });
-
-    $("#readyLoad").on("click", fetchNode());
 });

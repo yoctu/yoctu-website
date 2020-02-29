@@ -48,8 +48,8 @@ function refresh(menuType) {
             fetchNode();
             break;
         case menuList[1]:
-            $("#welcome").removeClass("d-none");
             setTimeout(function () {
+                $("#welcome").removeClass("d-none");
                 $("#loader-container").addClass("d-none");
             }, 500);
             break;

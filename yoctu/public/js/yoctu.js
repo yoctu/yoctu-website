@@ -33,7 +33,7 @@ async function fetchProfile() {
 }
 
 function refresh(menuType) {
-    let menuList = ["nodered", "profile"];
+    let menuList = ["nodered", "profile", "welcome"];
     let cpt = 0;
     for (menu in menuList) {
         if ($("#" + menuList[menu])) {

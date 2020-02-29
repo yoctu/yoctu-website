@@ -43,7 +43,7 @@ const updateUI = async () => {
       eachElement(".user-email", (e) => (e.innerText = user.email));
       var d = new Date();
       d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
-      document.cookie = "user=" + JSON.stringify(user) + ";expires=" + d.toUTCString() + ";path=/;SameSite=None;";
+      document.cookie = "user=" + JSON.stringify(user) + ";expires=" + d.toUTCString() + ";path=/;SameSite=Lax;";
       document.getElementById("all").classList.remove("d-none");
       if (user["https://shaq.yoctu.solutions/profile"]) {
         idp = user["https://shaq.yoctu.solutions/profile"];

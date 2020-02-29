@@ -105,12 +105,13 @@ function displayprofile(profile) {
 }
 
 function displaynode(nodeProfile) {
-  $("#nodered").html("");
+  $("#nodered").html('<table class="table"><thead><th>Name</th><th>Port</th><th>Admin</th></thead><tbody>');
     for (let s in nodeProfile) {
       for (let n in nodeProfile[s].nodes) {
-        $("#nodered").append('<div><span> Name : ' + nodeProfile[s].nodes[n].name + ' </span><span> Port : ' + nodeProfile[s].nodes[n].port + ' </span></div>')
+        $("#nodered").append('<tr><td>' + nodeProfile[s].nodes[n].name + ' </td><td>' + nodeProfile[s].nodes[n].port + ' </td><td><a href="http://' + nodeProfile[s].server + ':' + nodeProfile[s].nodes[n].port + '"> connect </a></td></tr>')
       }
     }
+    $("#nodered").append('</tbody></table>');
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
         $(".costnode").removeClass("d-none");

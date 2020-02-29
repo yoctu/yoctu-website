@@ -106,7 +106,7 @@ function displaynode(nodeProfile) {
         $("#loader-container").addClass("d-none");
         $(".costnode").removeClass("d-none");
         $(".card-node").removeClass("d-none");
-        $("#node").removeClass("d-none");
+        $("#nodered").removeClass("d-none");
     }, 500);
 }
 

@@ -33,7 +33,7 @@ async function fetchProfile() {
 }
 
 function refresh(menuType) {
-    let menuList = ["nodered", "welcome", "profile"];
+    let menuList = ["nodered", "profile"];
     let cpt = 0;
     for (menu in menuList) {
         if ($("#" + menuList[menu])) {
@@ -48,12 +48,6 @@ function refresh(menuType) {
             fetchNode();
             break;
         case menuList[1]:
-            setTimeout(function () {
-                $("#welcome").removeClass("d-none");
-                $("#loader-container").addClass("d-none");
-            }, 500);
-            break;
-        case menuList[2]:
             fetchProfileUser();
             break;
         default:
@@ -115,7 +109,6 @@ function displaynode(nodeProfile) {
     $("#nodered").html(table);
     setTimeout(function () {
         $("#loader-container").addClass("d-none");
-        $(".costnode").removeClass("d-none");
         $(".card-node").removeClass("d-none");
         $("#nodered").removeClass("d-none");
     }, 500);
@@ -235,4 +228,5 @@ $(document).ready(function () {
         $("#QuestionModal").modal("show");
     });
 
+    fetchNode();
 });

@@ -99,10 +99,10 @@ function displayprofile(profile) {
 }
 
 function displaynode(nodeProfile) {
-  let table = '<button class="btn btn-primary"> New </button><br><br><table class="table"><thead><th>Name</th><th>Server</th><th>Port</th><th>Connect</th></thead><tbody>';
+  let table = '<button class="btn btn-primary"> New </button><br><br><table class="table"><thead><th>Name</th><th>Owner</th><th>Server</th><th>Port</th><th>Connect</th><th></th></thead><tbody>';
     for (let s in nodeProfile) {
       for (let n in nodeProfile[s].nodes) {
-        table += '<tr><td>' + nodeProfile[s].nodes[n].name + ' </td><td>' + nodeProfile[s].server + '</td><td>' + nodeProfile[s].nodes[n].port + ' </td><td><a href="http://' + nodeProfile[s].server + ':' + nodeProfile[s].nodes[n].port + '" target="_blank"> connect </a></td></tr>';
+        table += '<tr><td>' + nodeProfile[s].nodes[n].name + ' </td><td></td><td>' + nodeProfile[s].server + '</td><td>' + nodeProfile[s].nodes[n].port + ' </td><td><a href="http://' + nodeProfile[s].server + ':' + nodeProfile[s].nodes[n].port + '" target="_blank"> connect </a></td><td></td></tr>';
       }
     }
     table += '</tbody></table>';

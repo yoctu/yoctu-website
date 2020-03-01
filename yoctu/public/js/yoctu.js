@@ -137,7 +137,7 @@ $(document).ready(function () {
                 }
               }).then(function(result) {
                 $.ajax({
-                    url: '/customer',
+                    url: '/api/customer',
                     type: 'POST',
                     contentType: "application/json",
                     dataType: "json",
@@ -145,13 +145,13 @@ $(document).ready(function () {
                     success: function (responseC) {
                         idc = responseC.id;
                         $.ajax({
-                            url: '/account/' + user.sub,
+                            url: '/api/account/' + user.sub,
                             type: 'POST',
                             success: function (responseA) {
                                 profile = responseA;
                                 idp = responseA.id;
                                 $.ajax({
-                                    url: '/user/join/' + user.sub + '/' + idc + '/' + idp,
+                                    url: '/api/user/join/' + user.sub + '/' + idc + '/' + idp,
                                     type: 'PATCH',
                                     contentType: "application/json",
                                     success: function (responseU) {
@@ -186,7 +186,7 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/user/join/' + user.sub + '/' + $("#companycode").val() + '/' + $("#profilecode").val(),
+                url: '/api/user/join/' + user.sub + '/' + $("#companycode").val() + '/' + $("#profilecode").val(),
                 type: 'PATCH',
                 contentType: "application/json",
                 success: function (response) {
@@ -208,7 +208,7 @@ $(document).ready(function () {
         $("#confirm-modal-yes").unbind();
         $("#confirm-modal-yes").on("click", function () {
             $.ajax({
-                url: '/user/leave/' + user.sub + '/' + idc + '/' + idp,
+                url: '/api/user/leave/' + user.sub + '/' + idc + '/' + idp,
                 type: 'PATCH',
                 contentType: "application/json",
                 success: function (response) {

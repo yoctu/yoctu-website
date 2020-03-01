@@ -24,7 +24,7 @@ const logout = () => {
   }
 };
 
-const fetchAuthConfig = () => fetch("/yoctu/auth_config.json");
+const fetchAuthConfig = () => fetch("/api/auth_config.json");
 
 const configureClient = async () => {
   const response = await fetchAuthConfig();
@@ -57,7 +57,7 @@ window.onload = async () => {
 
   if (isAuthenticated) {
     window.history.replaceState({}, document.title, window.location.pathname);
-    
+
     updateUI();
     return;
   }

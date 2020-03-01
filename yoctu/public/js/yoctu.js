@@ -61,7 +61,7 @@ function displayprofile(profile) {
     $("#profile-no-btn").removeClass("d-none");
     if ((Object.keys(profile).length > 0) && (Object.keys(userDesc).length === 0) && (Object.keys(custDesc).length === 0)) {
       $.ajax({
-          url: '/customer/' + idc,
+          url: '/api/customer/' + idc,
           success: function (responseC) {
               custDesc = responseC;
               let outputC = '<div><b>Company : </b></div>';
@@ -73,7 +73,7 @@ function displayprofile(profile) {
           },
       });
       $.ajax({
-          url: '/user/' + user.sub,
+          url: '/api/user/' + user.sub,
           success: function (responseU) {
               userDesc = responseU;
               let outputU = '<div><b>Profile : </b></div>';

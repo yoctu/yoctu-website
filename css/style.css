@@ -46,3 +46,17 @@ h1 {
     margin-top:20px;
     color: blue;
 }
+
+.button {
+    background-color:#0d47a1;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
